@@ -1,0 +1,163 @@
+{
+	"name": "azurecli",
+	"displayName": "Azure CLI Tools",
+	"description": "Tools for developing and running commands of the Azure CLI.",
+	"version": "0.5.0",
+	"icon": "images/azure_icon.png",
+	"publisher": "ms-vscode",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-azurecli.git"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Microsoft/vscode-azurecli/issues"
+	},
+	"engines": {
+		"vscode": "^1.35.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Azure"
+	],
+	"activationEvents": [
+		"onLanguage:azcli",
+		"onCommand:ms-azurecli.installAzureCLI"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"languages": [
+			{
+				"id": "azcli",
+				"aliases": [
+					"Azure CLI Scrapbook",
+					"azcli"
+				],
+				"extensions": [
+					".azcli"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "azcli",
+				"scopeName": "source.azcli",
+				"path": "./syntaxes/azcli.tmLanguage.json"
+			}
+		],
+		"commands": [
+			{
+				"category": "Azure CLI",
+				"command": "ms-azurecli.runLineInTerminal",
+				"title": "Run Line in Terminal"
+			},
+			{
+				"category": "Azure CLI",
+				"command": "ms-azurecli.runLineInEditor",
+				"title": "Run Line in Editor"
+			},
+			{
+				"category": "Azure CLI",
+				"command": "ms-azurecli.toggleLiveQuery",
+				"title": "Toggle Live Query"
+			},
+			{
+				"category": "Azure CLI",
+				"command": "ms-azurecli.installAzureCLI",
+				"title": "Install the Azure CLI"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "ms-azurecli.runLineInTerminal",
+				"key": "ctrl+'",
+				"mac": "cmd+'",
+				"when": "editorTextFocus && editorLangId == 'azcli'"
+			},
+			{
+				"command": "ms-azurecli.runLineInEditor",
+				"key": "ctrl+shift+'",
+				"mac": "cmd+shift+'",
+				"when": "editorTextFocus && editorLangId == 'azcli'"
+			},
+			{
+				"command": "ms-azurecli.toggleLiveQuery",
+				"key": "ctrl+;",
+				"mac": "cmd+;",
+				"when": "editorTextFocus && editorLangId == 'azcli'"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Azure CLI Tools Configuration",
+			"properties": {
+				"azureCLI.showResultInNewEditor": {
+					"type": "boolean",
+					"default": false,
+					"scope": "resource",
+					"description": "Controls whether showing the result from running an Azure CLI command in an editor should always create a new editor."
+				},
+				"azureCLI.lineContinuationCharacter": {
+					"type": "string",
+					"default": "",
+					"scope": "resource",
+					"description": "Override the default continuation character (backtick [`] on Windows otherwise backslash [\\]) used for multiline commands"
+				}
+			}
+		},
+		"menus": {
+			"editor/context": [
+				{
+					"command": "ms-azurecli.runLineInTerminal",
+					"group": "2_run",
+					"when": "editorLangId == 'azcli'"
+				},
+				{
+					"command": "ms-azurecli.runLineInEditor",
+					"group": "2_run",
+					"when": "editorLangId == 'azcli'"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "ms-azurecli.runLineInTerminal",
+					"when": "editorLangId == 'azcli'"
+				},
+				{
+					"command": "ms-azurecli.runLineInEditor",
+					"when": "editorLangId == 'azcli'"
+				},
+				{
+					"command": "ms-azurecli.toggleLiveQuery",
+					"when": "editorLangId == 'azcli'"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/jmespath": "0.15.0",
+		"@types/node": "10.14.1",
+		"@types/semver": "5.5.0",
+		"@types/vscode": "^1.35.0",
+		"tslint": "5.16.0",
+		"typescript": "3.5.2"
+	},
+	"dependencies": {
+		"jmespath": "0.15.0",
+		"semver": "5.6.0",
+		"elegant-spinner": "2.0.0"
+	},
+	"__metadata": {
+		"id": "5dcca53c-1485-4cdc-a643-4a366d2ac9e0",
+		"publisherId": "5f5636e7-69ed-4afe-b5d6-8d231fb3d3ee",
+		"publisherDisplayName": "Microsoft",
+		"installedTimestamp": 1635578447621
+	}
+}

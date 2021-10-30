@@ -1,0 +1,52 @@
+{
+	"name": "java-essentials",
+	"displayName": "Java Essentials",
+	"description": "Java Essentials Extension Pack for Visual Studio Code",
+	"version": "0.0.2",
+	"icon": "icon.png",
+	"publisher": "JillMNolan",
+	"engines": {
+		"vscode": "^1.49.0"
+	},
+	"categories": [
+		"Extension Packs"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jillmnolan/java-essentials"
+	},
+	"extensionPack": [
+		"vscjava.vscode-java-pack",
+		"Pivotal.vscode-spring-boot",
+		"vscjava.vscode-spring-initializr",
+		"vscjava.vscode-spring-boot-dashboard",
+		"adashen.vscode-tomcat",
+		"SummerSun.vscode-jetty",
+		"redhat.vscode-server-connector",
+		"redhat.vscode-community-server-connector",
+		"MicroProfile-Community.vscode-microprofile-pack",
+		"Open-Liberty.liberty-dev-vscode-ext",
+		"redhat.vscode-quarkus",
+		"Payara.payara-vscode",
+		"shengchen.vscode-checkstyle",
+		"SonarSource.sonarlint-vscode",
+		"faustinoaq.javac-linter",
+		"dgileadi.java-decompiler",
+		"GabrielBB.vscode-lombok",
+		"ithildir.java-properties",
+		"BazelBuild.vscode-bazel",
+		"MS-vsliveshare.vsliveshare",
+		"ms-vscode-remote.vscode-remote-extensionpack",
+		"ms-vsts.team",
+		"vsciot-vscode.azure-iot-toolkit",
+		"ms-vscode.vscode-node-azure-pack",
+		"ms-vscode.azure-account",
+		"ms-kubernetes-tools.vscode-kubernetes-tools"
+	],
+	"__metadata": {
+		"id": "36931a3f-f640-4275-a793-083b0e52d97f",
+		"publisherId": "1f07e0b0-3646-4f5d-890b-8893c838cdb6",
+		"publisherDisplayName": "Jill M. Nolan",
+		"installedTimestamp": 1635578439476
+	}
+}

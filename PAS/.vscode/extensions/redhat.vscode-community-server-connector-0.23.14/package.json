@@ -1,0 +1,86 @@
+{
+	"name": "vscode-community-server-connector",
+	"displayName": "Community Server Connectors",
+	"description": "Connects vscode with open source community-driven servers and runtimes.",
+	"version": "0.23.14",
+	"license": "SEE LICENSE IN LICENSE",
+	"publisher": "redhat",
+	"author": "Red Hat",
+	"preview": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/redhat-developer/rsp-server-community.git"
+	},
+	"bugs": "https://github.com/redhat-developer/rsp-server-community.git",
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"activationEvents": [
+		"onView:servers"
+	],
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"server",
+		"runtimes",
+		"adapters"
+	],
+	"icon": "images/community.png",
+	"main": "./out/src/extension",
+	"scripts": {
+		"package": "node ./build/package.js",
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"test": "npm run compile && node ./out/test/test-runner.js",
+		"update-deps": "node_modules/.bin/ncu --upgrade --loglevel verbose --packageFile package.json && npm update",
+		"coverage:upload": "codecov -f coverage/coverage-final.json",
+		"build": "npm run compile && npm run package"
+	},
+	"extensionDependencies": [
+		"redhat.vscode-rsp-ui"
+	],
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.12.35",
+		"@types/sinon": "^7.0.13",
+		"@types/vscode": "^1.30.0",
+		"chai": "^4.2.0",
+		"chai-as-promised": "^7.1.1",
+		"codecov": "^3.7.1",
+		"decache": "^4.5.1",
+		"decompress": "^4.2.1",
+		"download": "^7.1.0",
+		"glob": "^7.1.4",
+		"istanbul": "^0.4.5",
+		"mocha": "^6.1.4",
+		"mocha-jenkins-reporter": "^0.4.1",
+		"remap-istanbul": "^0.13.0",
+		"sinon": "^7.3.2",
+		"sinon-chai": "^3.3.0",
+		"tslint": "^5.18.0",
+		"tslint-eslint-rules": "^5.4.0",
+		"typescript": "^3.5.2",
+		"vscode-test": "^1.2.3"
+	},
+	"dependencies": {
+		"expand-home-dir": "0.0.3",
+		"find-java-home": "^0.2.0",
+		"fs-extra": "7.0.0",
+		"path": "0.12.7",
+		"path-exists": "^3.0.0",
+		"portfinder": "^1.0.20",
+		"rsp-client": "^0.15.0",
+		"tcp-port-used": "^1.0.1",
+		"vscode-server-connector-api": "0.1.7",
+		"wait-on": "^5.0.3"
+	},
+	"__metadata": {
+		"id": "f505f7aa-0a4f-4618-beb3-f2a165319497",
+		"publisherId": "eed56242-9699-4317-8bc7-e9f4b9bdd3ff",
+		"publisherDisplayName": "Red Hat",
+		"installedTimestamp": 1635578472504
+	}
+}

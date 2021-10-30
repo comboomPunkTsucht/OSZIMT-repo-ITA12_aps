@@ -3,7 +3,7 @@
   * description
   *
   * @version 1.0 from 28.10.2021
-  * @author Aps, Fabian; Kanbr, Abdulaziz; 
+  * @author Aps, Fabian; Kanbr, Abdulaziz; Martin
   * @klasse ITA12
   */
 

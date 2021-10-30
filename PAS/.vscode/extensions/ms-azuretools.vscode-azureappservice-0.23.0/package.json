@@ -1,0 +1,831 @@
+{
+	"name": "vscode-azureappservice",
+	"displayName": "Azure App Service",
+	"description": "%appService.description%",
+	"version": "0.23.0",
+	"publisher": "ms-azuretools",
+	"icon": "resources/WebApp.png",
+	"aiKey": "AIF-d9b70cd4-b9f9-4d70-929b-a071c400b217",
+	"engines": {
+		"vscode": "^1.53.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-azureappservice"
+	},
+	"galleryBanner": {
+		"color": "#3a3d41",
+		"theme": "dark"
+	},
+	"homepage": "https://github.com/Microsoft/vscode-azureappservice/blob/main/README.md",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"categories": [
+		"Azure"
+	],
+	"keywords": [
+		"Azure",
+		"App Service",
+		"multi-root ready"
+	],
+	"preview": true,
+	"activationEvents": [
+		"onCommand:appService.CreateWebApp",
+		"onCommand:appService.CreateWebAppAdvanced",
+		"onCommand:appService.Refresh",
+		"onCommand:appService.LoadMore",
+		"onCommand:appService.OpenInPortal",
+		"onCommand:appService.Browse",
+		"onCommand:appService.Start",
+		"onCommand:appService.Stop",
+		"onCommand:appService.Restart",
+		"onCommand:appService.Delete",
+		"onCommand:appService.Deploy",
+		"onCommand:appService.ConfigureDeploymentSource",
+		"onCommand:appService.DeploymentScript",
+		"onCommand:appService.SwapSlots",
+		"onCommand:appService.appSettings.Add",
+		"onCommand:appService.appSettings.Edit",
+		"onCommand:appService.appSettings.Rename",
+		"onCommand:appService.appSettings.Delete",
+		"onCommand:appService.appSettings.Download",
+		"onCommand:appService.appSettings.Upload",
+		"onCommand:appService.appSettings.ToggleSlotSetting",
+		"onCommand:appService.startStreamingLogs",
+		"onCommand:appService.StopLogStream",
+		"onCommand:appService.StartRemoteDebug",
+		"onCommand:appService.StartSsh",
+		"onCommand:appService.CreateSlot",
+		"onCommand:appService.DeploySlot",
+		"onCommand:appService.EnableFileLogging",
+		"onCommand:appService.viewDeploymentLogs",
+		"onCommand:appService.Redeploy",
+		"onCommand:appService.ViewCommitInGitHub",
+		"onCommand:appService.DisconnectRepo",
+		"onCommand:appService.connectToGitHub",
+		"onCommand:appService.AddAzureDatabasesConnection",
+		"onCommand:appService.RemoveCosmosDBConnection",
+		"onCommand:appService.ReportIssue",
+		"onCommand:appService.RevealConnection",
+		"onCommand:appService.RevealConnectionInAppSettings",
+		"onCommand:appService.ViewProperties",
+		"onFileSystem:azureAppService",
+		"onView:azureAppService"
+	],
+	"main": "./main.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "appService.selectSubscriptions",
+				"title": "%appService.selectSubscriptions%",
+				"icon": "$(filter)"
+			},
+			{
+				"command": "appService.CreateWebApp",
+				"title": "%appService.CreateWebApp%",
+				"category": "Azure App Service",
+				"icon": "$(add)"
+			},
+			{
+				"command": "appService.CreateWebAppAdvanced",
+				"title": "%appService.CreateWebAppAdvanced%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.Deploy",
+				"title": "%appService.Deploy%",
+				"category": "Azure App Service",
+				"icon": "$(cloud-upload)"
+			},
+			{
+				"command": "appService.Refresh",
+				"title": "%appService.Refresh%",
+				"category": "Azure App Service",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "appService.LoadMore",
+				"title": "%appService.LoadMore%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.OpenInPortal",
+				"title": "%appService.OpenInPortal%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.Browse",
+				"title": "%appService.Browse%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.Start",
+				"title": "%appService.Start%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.Stop",
+				"title": "%appService.Stop%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.Restart",
+				"title": "%appService.Restart%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.Delete",
+				"title": "%appService.Delete%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.DeploymentScript",
+				"title": "%appService.DeploymentScript%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.ConfigureDeploymentSource",
+				"title": "%appService.ConfigureDeploymentSource%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.SwapSlots",
+				"title": "%appService.SwapSlots%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.appSettings.Add",
+				"title": "%appService.appSettings.Add%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.appSettings.Edit",
+				"title": "%appService.appSettings.Edit%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.appSettings.Rename",
+				"title": "%appService.appSettings.Rename%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.appSettings.Delete",
+				"title": "%appService.appSettings.Delete%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.appSettings.Download",
+				"title": "%appService.appSettings.Download%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.appSettings.Upload",
+				"title": "%appService.appSettings.Upload%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.appSettings.ToggleSlotSetting",
+				"title": "%appService.appSettings.ToggleSlotSetting%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.startStreamingLogs",
+				"title": "%appService.startStreamingLogs%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.StopLogStream",
+				"title": "%appService.StopLogStream%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.CreateSlot",
+				"title": "%appService.CreateSlot%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.DeploySlot",
+				"title": "%appService.DeploySlot%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.StartRemoteDebug",
+				"title": "%appService.StartRemoteDebug%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.StartSsh",
+				"title": "%appService.StartSsh%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.ScaleUp",
+				"title": "%appService.ScaleUp%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.EnableFileLogging",
+				"title": "%appService.EnableFileLogging%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.InstallCosmosDBExtension",
+				"title": "%appService.InstallCosmosDBExtension%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.RevealConnection",
+				"title": "%appService.RevealConnection%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.AddAzureDatabasesConnection",
+				"title": "%appService.AddAzureDatabasesConnection%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.RemoveCosmosDBConnection",
+				"title": "%appService.RemoveCosmosDBConnection%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.Redeploy",
+				"title": "%appService.Redeploy%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.viewDeploymentLogs",
+				"title": "%appService.viewDeploymentLogs%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.ViewCommitInGitHub",
+				"title": "%appService.ViewCommitInGitHub%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.connectToGitHub",
+				"title": "%appService.connectToGitHub%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.DisconnectRepo",
+				"title": "%appService.DisconnectRepo%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.RevealConnectionInAppSettings",
+				"title": "%appService.RevealConnectionInAppSettings%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.toggleAppSettingVisibility",
+				"title": "%appService.toggleAppSettingVisibility%",
+				"category": "Azure App Service",
+				"icon": "$(eye)"
+			},
+			{
+				"command": "appService.ViewProperties",
+				"title": "%appService.ViewProperties%",
+				"category": "Azure App Service"
+			},
+			{
+				"command": "appService.ReportIssue",
+				"title": "%appService.ReportIssue%",
+				"category": "Azure App Service"
+			}
+		],
+		"views": {
+			"azure": [
+				{
+					"id": "azureAppService",
+					"name": "App Service",
+					"when": "config.appService.showExplorer == true"
+				}
+			]
+		},
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "appService.selectSubscriptions",
+					"when": "never"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "never"
+				},
+				{
+					"command": "appService.LoadMore",
+					"when": "never"
+				},
+				{
+					"command": "appService.ScaleUp",
+					"when": "never"
+				},
+				{
+					"command": "appService.InstallCosmosDBExtension",
+					"when": "never"
+				},
+				{
+					"command": "appService.appSettings.Delete",
+					"when": "never"
+				},
+				{
+					"command": "appService.toggleAppSettingVisibility",
+					"when": "never"
+				}
+			],
+			"view/title": [
+				{
+					"command": "appService.CreateWebApp",
+					"when": "view == azureAppService",
+					"group": "navigation@1"
+				},
+				{
+					"command": "appService.Deploy",
+					"when": "view == azureAppService",
+					"group": "navigation@2"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService",
+					"group": "navigation@3"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "appService.selectSubscriptions",
+					"when": "view == azureAppService && viewItem == azureextensionui.azureSubscription",
+					"group": "inline"
+				},
+				{
+					"command": "appService.CreateWebApp",
+					"when": "view == azureAppService && viewItem == azureextensionui.azureSubscription",
+					"group": "1_subscriptionGeneralCommands@1"
+				},
+				{
+					"command": "appService.CreateWebAppAdvanced",
+					"when": "view == azureAppService && viewItem == azureextensionui.azureSubscription",
+					"group": "1_subscriptionGeneralCommands@2"
+				},
+				{
+					"command": "appService.OpenInPortal",
+					"when": "view == azureAppService && viewItem == azureextensionui.azureSubscription",
+					"group": "1_subscriptionGeneralCommands@3"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService && viewItem == azureextensionui.azureSubscription",
+					"group": "2_subscriptionGeneralCommands@1"
+				},
+				{
+					"command": "appService.OpenInPortal",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "1_appServiceGeneralCommands@1"
+				},
+				{
+					"command": "appService.Browse",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "1_appServiceGeneralCommands@2"
+				},
+				{
+					"command": "appService.Deploy",
+					"when": "view == azureAppService && viewItem == appService",
+					"group": "2_appServiceDeployCommands@1"
+				},
+				{
+					"command": "appService.DeploySlot",
+					"when": "view == azureAppService && viewItem == deploymentSlot",
+					"group": "2_appServiceDeployCommands@1"
+				},
+				{
+					"command": "appService.ConfigureDeploymentSource",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "2_appServiceDeployCommands@2"
+				},
+				{
+					"command": "appService.Start",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "3_appServiceControlCommands@1"
+				},
+				{
+					"command": "appService.Stop",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "3_appServiceControlCommands@2"
+				},
+				{
+					"command": "appService.Restart",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "3_appServiceControlCommands@3"
+				},
+				{
+					"command": "appService.SwapSlots",
+					"when": "view == azureAppService && viewItem == deploymentSlot",
+					"group": "3_appServiceControlCommands@4"
+				},
+				{
+					"command": "appService.Delete",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "3_appServiceControlCommands@5"
+				},
+				{
+					"command": "appService.startStreamingLogs",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "4_appServiceDiagnosticsCommands@1"
+				},
+				{
+					"command": "appService.StopLogStream",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "4_appServiceDiagnosticsCommands@2"
+				},
+				{
+					"command": "appService.DeploymentScript",
+					"when": "view == azureAppService && viewItem == appService",
+					"group": "5_appServiceMiscCommands@1"
+				},
+				{
+					"command": "appService.ViewProperties",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "7_commonCommands@1"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "7_commonCommands@2"
+				},
+				{
+					"command": "appService.StartRemoteDebug",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "5_appServiceRemoteCommands@1"
+				},
+				{
+					"command": "appService.StartSsh",
+					"when": "view == azureAppService && viewItem =~ /^(appService|deploymentSlot)$/",
+					"group": "5_appServiceRemoteCommands@2"
+				},
+				{
+					"command": "appService.CreateSlot",
+					"when": "view == azureAppService && viewItem == deploymentSlots",
+					"group": "1_deploymentSlotsGeneralCommands@1"
+				},
+				{
+					"command": "appService.OpenInPortal",
+					"when": "view == azureAppService && viewItem == deploymentSlots",
+					"group": "1_deploymentSlotsGeneralCommands@2"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService && viewItem == deploymentSlots",
+					"group": "2_deploymentSlotsGeneralCommands@1"
+				},
+				{
+					"command": "appService.EnableFileLogging",
+					"when": "view == azureAppService && viewItem == logFiles",
+					"group": "1_folderGeneralCommands@1"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService && viewItem == siteFiles",
+					"group": "1_folderGeneralCommands@2"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService && viewItem == folder",
+					"group": "1_subFolderRefreshCommands@1"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService && viewItem == logFiles",
+					"group": "2_folderGeneralCommands@1"
+				},
+				{
+					"command": "appService.OpenInPortal",
+					"when": "view == azureAppService && viewItem == webJobs",
+					"group": "1_webJobsGeneralCommands@1"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService && viewItem == webJobs",
+					"group": "2_webJobsGeneralCommands@1"
+				},
+				{
+					"command": "appService.appSettings.Add",
+					"when": "view == azureAppService && viewItem == applicationSettings",
+					"group": "1_appSettingEnv@1"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService && viewItem == applicationSettings",
+					"group": "2_appSettingsGeneral@1"
+				},
+				{
+					"command": "appService.appSettings.Download",
+					"when": "view == azureAppService && viewItem == applicationSettings",
+					"group": "1_appSettingEnv@2"
+				},
+				{
+					"command": "appService.appSettings.Upload",
+					"when": "view == azureAppService && viewItem == applicationSettings",
+					"group": "1_appSettingEnv@3"
+				},
+				{
+					"command": "appService.appSettings.Edit",
+					"when": "view == azureAppService && viewItem =~ /^applicationSettingItem(|NoSlots)$/",
+					"group": "1_appSettingItemEdit@1"
+				},
+				{
+					"command": "appService.appSettings.Rename",
+					"when": "view == azureAppService && viewItem =~ /^applicationSettingItem(|NoSlots)$/",
+					"group": "1_appSettingItemEdit@2"
+				},
+				{
+					"command": "appService.appSettings.Delete",
+					"when": "view == azureAppService && viewItem =~ /^applicationSettingItem(|NoSlots)$/",
+					"group": "1_appSettingItemEdit@3"
+				},
+				{
+					"command": "appService.appSettings.ToggleSlotSetting",
+					"when": "view == azureAppService && viewItem == applicationSettingItem",
+					"group": "1_appSettingItemEdit@4"
+				},
+				{
+					"command": "appService.toggleAppSettingVisibility",
+					"when": "view == azureAppService && viewItem =~ /^applicationSettingItem(|NoSlots)$/",
+					"group": "inline"
+				},
+				{
+					"command": "appService.ScaleUp",
+					"when": "view == azureAppService && viewItem == deploymentNASlots"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService && viewItem == connections",
+					"group": "1@1"
+				},
+				{
+					"command": "appService.AddAzureDatabasesConnection",
+					"when": "view == azureAppService && viewItem == сosmosDBConnections",
+					"group": "1@1"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService && viewItem == сosmosDBConnections",
+					"group": "2@2"
+				},
+				{
+					"command": "appService.RevealConnection",
+					"when": "view == azureAppService && viewItem == cosmosDBConnection",
+					"group": "1@1"
+				},
+				{
+					"command": "appService.RevealConnectionInAppSettings",
+					"when": "view == azureAppService && viewItem == cosmosDBConnection",
+					"group": "1@2"
+				},
+				{
+					"command": "appService.RemoveCosmosDBConnection",
+					"when": "view == azureAppService && viewItem == cosmosDBConnection",
+					"group": "2@1"
+				},
+				{
+					"command": "appService.OpenInPortal",
+					"when": "view == azureAppService && viewItem =~ /^deployments(C|Unc)onnected$/",
+					"group": "1@1"
+				},
+				{
+					"command": "appService.ConfigureDeploymentSource",
+					"when": "view == azureAppService && viewItem =~ /^deployments(C|Unc)onnected$/",
+					"group": "1@2"
+				},
+				{
+					"command": "appService.DisconnectRepo",
+					"when": "view == azureAppService && viewItem == deploymentsConnected",
+					"group": "1@3"
+				},
+				{
+					"command": "appService.Refresh",
+					"when": "view == azureAppService && viewItem =~ /^deployments(C|Unc)onnected$/",
+					"group": "2@1"
+				},
+				{
+					"command": "appService.viewDeploymentLogs",
+					"when": "view == azureAppService && viewItem =~ /deployment//",
+					"group": "1@1"
+				},
+				{
+					"command": "appService.Redeploy",
+					"when": "view == azureAppService && viewItem =~ /deployment//",
+					"group": "1@2"
+				},
+				{
+					"command": "appService.ViewCommitInGitHub",
+					"when": "view == azureAppService && viewItem == deployment/github",
+					"group": "1@3"
+				},
+				{
+					"command": "appService.OpenInPortal",
+					"when": "view == azureAppService && viewItem =~ /deployment//",
+					"group": "1@4"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "appService.Deploy",
+					"when": "explorerResourceIsFolder == true",
+					"group": "zzz_azuretools_deploy@1"
+				},
+				{
+					"command": "appService.Deploy",
+					"when": "explorerResourceIsFolder == false && resourceExtname =~ /.[j|w]ar$/",
+					"group": "zzz_azuretools_deploy@1"
+				},
+				{
+					"command": "appService.appSettings.Upload",
+					"when": "resourceFilename == .env",
+					"group": "zzz_azuretools_appsettings@1"
+				}
+			]
+		},
+		"configuration": {
+			"title": "Azure App Service",
+			"properties": {
+				"appService.showExplorer": {
+					"type": "boolean",
+					"default": true,
+					"description": "%appService.showExplorer%"
+				},
+				"appService.zipGlobPattern": {
+					"scope": "resource",
+					"type": "string",
+					"default": "**/*",
+					"description": "%appService.zipGlobPattern%"
+				},
+				"appService.zipIgnorePattern": {
+					"scope": "resource",
+					"type": [
+						"string",
+						"array"
+					],
+					"default": [],
+					"description": "%appService.zipIgnorePattern%"
+				},
+				"appService.showSavePrompt": {
+					"type": "boolean",
+					"default": true,
+					"description": "%appService.showSavePrompt%"
+				},
+				"appService.showBuildDuringDeployPrompt": {
+					"scope": "resource",
+					"type": "boolean",
+					"default": true,
+					"description": "%appService.showBuildDuringDeployPrompt%"
+				},
+				"appService.deploySubpath": {
+					"scope": "resource",
+					"type": "string",
+					"description": "%appService.deploySubpath%"
+				},
+				"appService.defaultWebAppToDeploy": {
+					"scope": "resource",
+					"type": "string",
+					"description": "%appService.defaultWebAppToDeploy%"
+				},
+				"appService.connections": {
+					"type": "array",
+					"description": "%appService.connections%",
+					"required": [
+						"webAppId"
+					],
+					"items": {
+						"type": "object",
+						"description": "%appService.connections.connection%",
+						"additionalProperties": false,
+						"properties": {
+							"webAppId": {
+								"type": "string",
+								"description": "%appService.connections.appId%"
+							},
+							"cosmosDB": {
+								"type": "array",
+								"description": "%appService.connections.dbArray%",
+								"items": {
+									"type": "string",
+									"description": "%appService.connections.connId%"
+								}
+							}
+						}
+					}
+				},
+				"appService.showPreDeployWarning": {
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%appService.showPreDeployWarning%",
+					"default": true
+				},
+				"appService.preDeployTask": {
+					"scope": "resource",
+					"type": "string",
+					"description": "%appService.preDeployTask%"
+				},
+				"appService.postDeployTask": {
+					"scope": "resource",
+					"type": "string",
+					"description": "%appService.postDeployTask%"
+				},
+				"appService.showPlanPerformanceWarning": {
+					"type": "boolean",
+					"default": true,
+					"description": "%appService.showPlanPerformanceWarning%"
+				},
+				"appService.showDeploySubpathWarning": {
+					"type": "boolean",
+					"description": "%appService.showDeploySubpathWarning%",
+					"default": true
+				},
+				"appService.enableOutputTimestamps": {
+					"type": "boolean",
+					"description": "%appService.enableOutputTimestamps%",
+					"default": true
+				},
+				"appService.enablePythonRemoteDebugging": {
+					"type": "boolean",
+					"description": "%appService.enablePythonRemoteDebugging%",
+					"default": false
+				},
+				"appService.showDeployConfirmation": {
+					"type": "boolean",
+					"description": "%appService.showDeployConfirmation%",
+					"default": true
+				},
+				"appService.showHiddenStacks": {
+					"type": "boolean",
+					"description": "%appService.showHiddenStacks%",
+					"default": false
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run webpack-prod",
+		"build": "tsc",
+		"cleanReadme": "gulp cleanReadme",
+		"compile": "tsc -watch",
+		"package": "vsce package --githubBranch main",
+		"lint": "eslint --ext .ts .",
+		"lint-fix": "eslint --ext .ts . --fix",
+		"pretest": "npm run webpack-prod && gulp preTest",
+		"test": "node ./out/test/runTest.js",
+		"webpack": "npm run build && gulp webpack-dev",
+		"webpack-prod": "npm run build && gulp webpack-prod",
+		"webpack-profile": "webpack --profile --json --mode production > webpack-stats.json && echo Use http://webpack.github.io/analyse to analyze the stats",
+		"all": "npm i && npm run lint && npm test"
+	},
+	"devDependencies": {
+		"@types/dotenv": "^6.1.1",
+		"@types/fs-extra": "^8.0.0",
+		"@types/gulp": "^4.0.6",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "^12.0.0",
+		"@types/vscode": "1.53.0",
+		"@typescript-eslint/eslint-plugin": "^4.28.3",
+		"@typescript-eslint/parser": "^4.28.3",
+		"eslint": "^7.19.0",
+		"eslint-plugin-import": "^2.22.1",
+		"glob": "^7.1.6",
+		"gulp": "^4.0.2",
+		"mocha": "^8.3.2",
+		"mocha-junit-reporter": "^2.0.0",
+		"mocha-multi-reporters": "^1.5.1",
+		"ts-node": "^7.0.1",
+		"typescript": "^4.3.5",
+		"vsce": "^1.87.0",
+		"vscode-azureextensiondev": "^0.9.6",
+		"vscode-test": "^1.5.2",
+		"webpack": "^5.28.0",
+		"webpack-cli": "^4.6.0"
+	},
+	"dependencies": {
+		"@azure/arm-appservice": "^6.1.0",
+		"@azure/arm-resources": "^4.0.0",
+		"@azure/ms-rest-js": "^2.2.1",
+		"dotenv": "^6.2.0",
+		"fast-xml-parser": "^3.19.0",
+		"fs-extra": "^8.0.0",
+		"moment": "^2.24.0",
+		"open": "^8.0.4",
+		"portfinder": "^1.0.25",
+		"vscode-azureappservice": "^0.85.2",
+		"vscode-azureextensionui": "^0.47.2",
+		"vscode-azurekudu": "^0.2.0",
+		"vscode-nls": "^4.1.1"
+	},
+	"extensionDependencies": [
+		"ms-vscode.azure-account",
+		"ms-azuretools.vscode-azureresourcegroups"
+	],
+	"__metadata": {
+		"id": "42691ca6-18d6-4efe-9e9a-1aabad399d4b",
+		"publisherId": "52b787f2-79a9-4f32-99b4-393afe3005d3",
+		"publisherDisplayName": "Microsoft",
+		"installedTimestamp": 1635578435284
+	}
+}
