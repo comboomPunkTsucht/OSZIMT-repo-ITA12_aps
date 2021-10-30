@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class VanDusenAlgo {
+	public static void main(String[] args) {
+
+Scanner x = new Scanner(System.in);
+
+// EINGABE
+// Fragt den Benutzer nach einer Zahl
+final int WICHTIGEKONSTANTE_FUER_DIE_FORMEL = 8;
+System.out.print("Bitte geben Sie eine ganze Zahl ein: ");
+int a = x.nextInt(); 
+int z;
+if(a < 0) {
+    System.out.println("Keine Garantie bei negativen Zahlen!"); //fail-save ausage
+	}
+z = a * a + WICHTIGEKONSTANTE_FUER_DIE_FORMEL * a + 7;	
+System.out.print("Das Ergebnis der Verarbeitung ist: ");
+System.out.println(z);
+
+}
+}

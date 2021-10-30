@@ -1,0 +1,76 @@
+/**
+  *
+  * description
+  *
+  * @version 1.0 from 23.09.2021
+  * @author Aps, Fabian
+  * @class ITA12
+  */
+
+//Imports
+import java.util.*;
+
+
+
+public class EVA_Aps_Fabian_ITA12_2 { //start class
+
+  public static void main(String[] args) {
+    
+    //variableln
+
+    Scanner scanner = new Scanner(System.in);
+    Scanner scanner_eingabe = new Scanner(System.in);
+    byte eingabe_auswahl = 0;
+    double eingabe = 0.00;
+    double ergebniss = 0.00; 
+
+    //Verarbeitung + Eingabe
+  
+  System.out.println("Wählen sie ihr Pogramm:");
+  System.out.println("[0] Positivitets überprüfer");
+  System.out.println("[1] Bereich überprüfer");
+  System.out.println("[2] Kopfrechnungsaufgabengenerator");
+  System.out.print(">> ");
+  
+  eingabe_auswahl = scanner.nextByte();
+
+    switch (eingabe_auswahl) {
+        case 0:
+        
+        System.out.print("Geben sie bitte ihren Betrag ein: >> ");
+        eingabe = scanner_eingabe.nextDouble();
+
+        if (eingabe > 0) {
+            ergebniss = (eingabe * 19) / 100;
+
+            System.out.print("Ihre Mehrwertssteuer Betragen: " + ergebniss + " €");  
+        } else {
+           System.out.print("Entschuldigung, dieser Betrag ist negativ!");  
+        }
+      
+            break;
+            
+        case 1:
+
+            
+         break;
+
+        case 2:
+
+          
+        break;
+
+        default:
+        
+        if (eingabe_auswahl >= 3) {
+            System.out.print("Das habe ich nicht Verstanden!!"); 
+        };
+           
+        
+        break;
+    }
+
+
+  }
+}// end class
+
