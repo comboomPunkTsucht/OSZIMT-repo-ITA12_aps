@@ -1,0 +1,277 @@
+{
+    "$comment": "DO NOT EDIT - This file was built from grammars/arm-expression-string.tmLanguage.json",
+    "name": "Azure Resource Manager Template Expressions",
+    "scopeName": "source.tle.arm-template",
+    "uuid": "3ADA43CD-2258-4907-8477-169A7FDDF216",
+    "patterns": [
+        {
+            "include": "#expressionstring"
+        }
+    ],
+    "repository": {
+        "expressionstring": {
+            "name": "meta.expression.tle.arm-template",
+            "begin": "(?x)  \"\\[(?!\\[)  (?= (?:''|(?:\\\\(?:[\"\\\\/bfnrt]|u[0-9a-fA-F]{4}))|[^\"])* ( \\]\"|$ ) )",
+            "$beginComment": "An expression must start with '[' (no whitespace before), not start with '[[', and end with ']' (no whitespace after)",
+            "$beginComment2": "Since we can't check if an expression ends with ']' for multi-line strings, we also assume a string which starts with '[' and",
+            "$beginComment3": "   isn't terminated on the first line is an expression",
+            "end": "\\]\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "support.function.expression.begin.tle.arm-template"
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "name": "support.function.expression.end.tle.arm-template"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#expression"
+                },
+                {
+                    "name": "invalid.illegal.expected-expression.tle.arm-template",
+                    "match": "[^\\s]"
+                }
+            ]
+        },
+        "expression": {
+            "patterns": [
+                {
+                    "include": "#string"
+                },
+                {
+                    "include": "#number"
+                },
+                {
+                    "include": "#parameters-ref-with-string-literal"
+                },
+                {
+                    "include": "#variables-ref-with-string-literal"
+                },
+                {
+                    "include": "#functionname"
+                },
+                {
+                    "include": "#functioncall"
+                },
+                {
+                    "include": "#propertyaccess"
+                },
+                {
+                    "include": "#arrayaccess"
+                }
+            ]
+        },
+        "number": {
+            "name": "constant.numeric.tle.arm-template",
+            "match": "[+-]?[0-9]+(\\.[0-9]+)?([Ee][+-]?[0-9]+)?"
+        },
+        "string": {
+            "name": "string.quoted.single.tle.arm-template",
+            "begin": "[']",
+            "beginCaptures": {
+                "0": {
+                    "$comment": "Apostrophe that starts a string",
+                    "name": "punctuation.definition.string.begin.tle.arm-template"
+                }
+            },
+            "end": "['](?!['])",
+            "endCaptures": {
+                "0": {
+                    "$comment": "Apostrophe that ends a string",
+                    "name": "punctuation.definition.string.end.tle.arm-template"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#stringcontent"
+                }
+            ]
+        },
+        "stringcontent": {
+            "patterns": [
+                {
+                    "$comment": "Escaped JSON string characters",
+                    "match": "(?:\\\\(?:[\"\\\\/bfnrt]|u[0-9a-fA-F]{4}))",
+                    "name": "constant.character.escape.backslash.tle.arm-template"
+                },
+                {
+                    "$comment": "Escaped apostrophe (interpreted by ARM backend)",
+                    "name": "constant.character.escape.single.tle.arm-template",
+                    "match": "''"
+                },
+                {
+                    "match": "\\\\.",
+                    "name": "invalid.illegal.unrecognized-string-escape.tle.arm-template"
+                }
+            ]
+        },
+        "parameters-ref-with-string-literal": {
+            "$comment1": "When we have 'parameters' with a string literal (instead of an expression), we want to colorize the parameter name along with 'parameters'",
+            "$comment2": "When its parameter is an expression, it will be handled by functionname/functioncall",
+            "name": "meta.parameters-reference.tle.arm-template",
+            "match": "(?x) \\s* ((?i)parameters) \\s* (\\() \\s* (' [^']* ') \\s* (\\))",
+            "captures": {
+                "1": {
+                    "$comment": "parameters",
+                    "name": "support.type.parameters.tle.arm-template"
+                },
+                "2": {
+                    "$comment": "Opening paren",
+                    "name": "meta.brace.round.tle.arm-template"
+                },
+                "3": {
+                    "$comment": "Parameter name in single quotes",
+                    "name": "support.type.parameters.parameter-name.tle.arm-template"
+                },
+                "4": {
+                    "$comment": "Closing paren",
+                    "name": "meta.brace.round.tle.arm-template"
+                }
+            }
+        },
+        "variables-ref-with-string-literal": {
+            "$comment1": "When we have 'variables' with a string literal (instead of an expression), we want to colorize the variable name along with 'variables'",
+            "$comment2": "When its parameter is an expression, it will be handled by functionname/functioncall",
+            "name": "meta.variables-reference.tle.arm-template",
+            "match": "(?x) \\s* ((?i)variables) \\s* (\\() \\s* (' [^']* ') \\s* (\\))",
+            "captures": {
+                "1": {
+                    "$comment": "variables",
+                    "name": "variable.language.variables.tle.arm-template"
+                },
+                "2": {
+                    "$comment": "Opening paren",
+                    "name": "meta.brace.round.tle.arm-template"
+                },
+                "3": {
+                    "$comment": "variable name in single quotes",
+                    "name": "variable.language.variables.variable-name.tle.arm-template"
+                },
+                "4": {
+                    "$comment": "Closing paren",
+                    "name": "meta.brace.round.tle.arm-template"
+                }
+            }
+        },
+        "functionname": {
+            "match": "(?x)(?i) \\s* (?: (?:((?:[_$[:alpha:]][_$[:alnum:]]*))\\s*(\\.)\\s*((?:[_$[:alpha:]][_$[:alnum:]]*))) | (parameters) | (variables) | ((?:if|and|or|not)) | ((?:(?i)add|and|array|base64|base64ToJson|base64ToString|bool|coalesce|concat|contains|copyIndex|createArray|createObject|dataUri|dataUriToString|dateTimeAdd|deployment|div|empty|endsWith|environment|equals|extensionResourceId|false|first|float|format|greater|greaterOrEquals|guid|if|indexOf|int|intersection|json|last|lastIndexOf|length|less|lessOrEquals|list|listAccountSas|listAdminKeys|listAuthKeys|listCallbackUrl|listChannelWithKeys|listClusterAdminCredential|listConnectionStrings|listCredentials|listCredential|listKeys|listKeyValue|listPackage|listQueryKeys|listSecrets|listServiceSas|listSyncFunctionTriggerStatus|max|min|mod|mul|newGuid|not|null|or|padLeft|parameters|pickZones|providers|range|reference|replace|resourceGroup|resourceId|skip|split|startsWith|string|sub|subscription|subscriptionResourceId|substring|take|tenantResourceId|toLower|toUpper|trim|true|union|uniqueString|uri|uriComponent|uriComponentToString|utcNow|variables)) | ((?:[_$[:alpha:]][_$[:alnum:]]*)) ) (?![_$[:alnum:]] (?# Make sure we don't match a well-known name like 'add' inside something like 'add2'))",
+            "captures": {
+                "1": {
+                    "$comment": "user namespace (capturing group inside ns-userfunc)",
+                    "name": "entity.name.tag.usernamespace.tle.arm-template"
+                },
+                "2": {
+                    "$comment": "dot (capturing group inside ns-userfunc)",
+                    "name": "punctuation.accessor.userfunction.tle.arm-template"
+                },
+                "3": {
+                    "$comment": "user function name (capturing group inside ns-userfunc)",
+                    "name": "entity.name.tag.userfunction.tle.arm-template"
+                },
+                "4": {
+                    "$comment": "parameters",
+                    "name": "support.type.parameters.tle.arm-template"
+                },
+                "5": {
+                    "$comment": "variables",
+                    "name": "variable.language.variables.tle.arm-template"
+                },
+                "6": {
+                    "$comment": "logical functions",
+                    "name": "keyword.control.logical.tle.arm-template"
+                },
+                "7": {
+                    "$comment": "built-in function name",
+                    "name": "support.function.builtin.tle.arm-template"
+                },
+                "8": {
+                    "$comment": "other function name",
+                    "name": "meta.unrecognized-identifier.tle.arm-template"
+                }
+            }
+        },
+        "functioncall": {
+            "$comment": "This matches just the parentheses and arguments of a function call",
+            "name": "meta.function-call.tle.arm-template",
+            "begin": "(?x) \\s* (\\() \\s*",
+            "end": "\\s*\\)",
+            "beginCaptures": {
+                "1": {
+                    "name": "meta.brace.round.tle.arm-template"
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "$comment": "closing paren",
+                    "name": "meta.brace.round.tle.arm-template"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functionargs"
+                }
+            ]
+        },
+        "functionargs": {
+            "name": "meta.function-arguments.tle.arm-template",
+            "begin": "\\G\\s*",
+            "end": "\\s*(?=\\))",
+            "patterns": [
+                {
+                    "include": "#expression"
+                },
+                {
+                    "name": "punctuation.separator.comma.tle.arm-template",
+                    "match": ","
+                },
+                {
+                    "match": "[^\\s,)]",
+                    "name": "invalid.illegal.expected-comma.tle.arm-template"
+                }
+            ]
+        },
+        "propertyaccess": {
+            "name": "meta.property-access.tle.arm-template",
+            "match": "(?x) (?<= ^ | (?: [_$[:alnum:])\\]] )) (?# if preceded by end paren/bracket/word or beginning of line)  \\s*  (?<dot>\\.) \\s* (?<propertyname>(?:[_$[:alpha:]][_$[:alnum:]]*))",
+            "captures": {
+                "1": {
+                    "name": "punctuation.accessor.property.tle.arm-template"
+                },
+                "2": {
+                    "name": "variable.entity.property.tle.arm-template"
+                }
+            }
+        },
+        "arrayaccess": {
+            "patterns": [
+                {
+                    "match": "\\s*\\[\\s*\\]",
+                    "name": "invalid.illegal.empty-array-access.tle.arm-template"
+                },
+                {
+                    "name": "meta.array-access.tle.arm-template",
+                    "begin": "(?x) (?<= ^ | (?: [_$[:alnum:])\\]] )) (?# if preceded by end paren/bracket/word or beginning of line)  \\s*  (?<openbracket>\\[)",
+                    "end": "\\s*(])",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "meta.brace.square.tle.arm-template"
+                        }
+                    },
+                    "endCaptures": {
+                        "1": {
+                            "name": "meta.brace.square.tle.arm-template"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

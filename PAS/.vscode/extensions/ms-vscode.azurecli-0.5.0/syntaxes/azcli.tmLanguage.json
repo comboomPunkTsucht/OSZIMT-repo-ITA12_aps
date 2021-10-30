@@ -1,0 +1,73 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Azure CLI Scrapbook",
+	"patterns": [
+		{
+			"include": "#subcommand"
+		},
+		{
+			"include": "#argumentName"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#argumentValueUnquoted"
+		},
+		{
+			"include": "#argumentValueSingleQuoted"
+		},
+		{
+			"include": "#argumentValueDoubleQuoted"
+		}
+	],
+	"repository": {
+		"subcommand": {
+			"patterns": [{
+				"name": "storage.type.azcli",
+				"match": "^([^\\s#-]-+|[^#-])+"
+			}]
+		},
+		"argumentName": {
+			"patterns": [{
+				"name": "variable.other.azcli",
+				"match": "-[^\\s#]*\\s*"
+			}]
+		},
+		"argumentValueUnquoted": {
+			"patterns": [{
+				"name": "string.unquoted.azcli",
+				"match": "[^\\s#]+\\s*"
+			}]
+		},
+		"argumentValueSingleQuoted": {
+			"name": "string.quoted.single.azcli",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.azcli",
+					"match": "\\\\."
+				}
+			]
+		},
+		"argumentValueDoubleQuoted": {
+			"name": "string.quoted.double.azcli",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.azcli",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.hash.azcli",
+				"match": "\\#.*"
+			}]
+		}
+	},
+	"scopeName": "source.azcli"
+}

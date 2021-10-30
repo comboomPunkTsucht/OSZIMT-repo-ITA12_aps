@@ -1,0 +1,63 @@
+{
+	"name": "legendary-dark",
+	"displayName": "Legendary Dark",
+	"description": "🔥 This is Legendary Dark, a beautiful combination of the dark goodness of Andromeda by EliverLara and vibrant colors from SythWave '84 by robb0wen to make identification easy. 😊",
+	"icon": "images/Logo.png",
+	"publisher": "LlewellynPaintsil",
+	"author": {
+		"name": "Llewellyn Adonteng Paintsil",
+		"url": "https://github.com/Llewellyn500",
+		"email": "llewellynpaintsil34@gmail.com"
+	},
+	"version": "5.0.0",
+	"engines": {
+		"vscode": "^1.40.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Llewellyn500/Legendary-Dark"
+	},
+	"galleryBanner": {
+		"color": "#09131b",
+		"theme": "dark"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"Llewellyn500 Theme",
+		"llewellyn",
+		"dark",
+		"vscode theme",
+		"Legendary Dark",
+		"SynthWave '84",
+		"legendary dark",
+		"light theme",
+		"cool",
+		"awesome",
+		"colorfully",
+		"color",
+		"low contrast",
+		"Dark Theme",
+		"blue",
+		"SynthWave",
+		"Andromeda",
+		"Grey",
+		"Best"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Legendary Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Legendary Dark-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "9568c899-4a90-46b0-b4b2-6a29fe8d225f",
+		"publisherId": "937d4e4b-a9bc-4e1f-9ea8-bbe49dd6a706",
+		"publisherDisplayName": "Llewellyn Adonteng Paintsil",
+		"installedTimestamp": 1635578440331
+	}
+}

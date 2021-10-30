@@ -1,0 +1,189 @@
+{
+    /*
+        Known contexts (see KnownContexts.ts)
+
+        empty-document (also works for plain JSON files)
+        parameter-definitions
+        parameter-values
+        userfunc-parameter-definitions
+        resource-body
+
+        If a location in a template document does not match one of the above, then it will
+        be set to the name of the property containing the current array or object (e.g. "resources" or "outputs"),
+        if any.
+    */
+    "$schema": "./snippets.schema.json",
+    "Azure Resource Manager (ARM) Template": {
+        "prefix": "arm!",
+        "body": [
+            "{",
+            "\t\"\\$schema\": \"https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#\",",
+            "\t\"contentVersion\": \"1.0.0.0\",",
+            "\t\"parameters\": {},",
+            "\t\"functions\": [],",
+            "\t\"variables\": {},",
+            "\t\"resources\": [],",
+            "\t\"outputs\": {}",
+            "}"
+        ],
+        "description": "Resource Group Template",
+        "context": "empty-document"
+    },
+    "Azure Resource Manager (ARM) Template Subscription": {
+        "prefix": "arm!s",
+        "body": [
+            "{",
+            "\t\"\\$schema\": \"https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#\",",
+            "\t\"contentVersion\": \"1.0.0.0\",",
+            "\t\"parameters\": {},",
+            "\t\"functions\": [],",
+            "\t\"variables\": {},",
+            "\t\"resources\": [],",
+            "\t\"outputs\": {}",
+            "}"
+        ],
+        "description": "Subscription Template",
+        "context": "empty-document"
+    },
+    "Azure Resource Manager (ARM) Template Management Group": {
+        "prefix": "arm!mg",
+        "body": [
+            "{",
+            "\t\"\\$schema\": \"https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#\",",
+            "\t\"contentVersion\": \"1.0.0.0\",",
+            "\t\"parameters\": {},",
+            "\t\"functions\": [],",
+            "\t\"variables\": {},",
+            "\t\"resources\": [],",
+            "\t\"outputs\": {}",
+            "}"
+        ],
+        "description": "Management Group Template",
+        "context": "empty-document"
+    },
+    "Azure Resource Manager (ARM) Template Tenant": {
+        "prefix": "arm!t",
+        "body": [
+            "{",
+            "\t\"\\$schema\": \"https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#\",",
+            "\t\"contentVersion\": \"1.0.0.0\",",
+            "\t\"parameters\": {},",
+            "\t\"functions\": [],",
+            "\t\"variables\": {},",
+            "\t\"resources\": [],",
+            "\t\"outputs\": {}",
+            "}"
+        ],
+        "description": "Tenant Template",
+        "context": "empty-document"
+    },
+    "Azure Resource Manager (ARM) Parameters Template": {
+        "prefix": "armp!",
+        "body": [
+            "{",
+            "\t\"\\$schema\": \"https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#\",",
+            "\t\"contentVersion\": \"1.0.0.0\",",
+            "\t\"parameters\": {",
+            "\t}",
+            "}"
+        ],
+        "description": "Parameters Template",
+        "context": "empty-document"
+    },
+    "Variable": {
+        "prefix": "new-variable",
+        "body": [
+            "\"${1:variable1}\": \"${2:value}\""
+        ],
+        "description": "ARM Template Variable Definition",
+        "context": "variables"
+    },
+    "Parameter": {
+        "prefix": "new-parameter",
+        "body": [
+            "\"${1:parameter1}\": {",
+            "\t\"type\": \"${2|string,securestring,int,bool,object,secureobject,array|}\",",
+            "\t\"metadata\": {",
+            "\t\t\"description\": \"${3:description}\"",
+            "\t}",
+            "}"
+        ],
+        "description": "ARM Template Parameter Definition",
+        "context": "parameter-definitions"
+    },
+    "Output": {
+        "prefix": "new-output",
+        "body": [
+            "\"${1:output1}\": {",
+            "\t\"type\": \"${2|string,securestring,int,bool,object,secureobject,array|}\",",
+            "\t\"value\": \"${3:value}\"",
+            "}"
+        ],
+        "description": "ARM Template Output",
+        "context": "outputs"
+    },
+    "Tag Section": {
+        "prefix": "arm-tags",
+        "body": [
+            "\"tags\": {",
+            "\t\"${1:tagName}\": \"${2:tagValue}\"",
+            "}"
+        ],
+        "description": "Tag Section",
+        "context": "resource-body"
+    },
+    "User Function": {
+        "prefix": "new-user-function",
+        "body": [
+            "\"${1:functionname}\": {",
+            "\t\"parameters\": [",
+            "\t\t{",
+            "\t\t\t\"name\": \"${2:parametername}\",",
+            "\t\t\t\"type\": \"${3|string,securestring,int,bool,object,secureobject,array|}\"",
+            "\t\t}",
+            "\t],",
+            "\t\"output\": {",
+            "\t\t\"value\": \"${4:function-return-value}\",",
+            "\t\t\"type\": \"${5|string,securestring,int,bool,object,secureobject,array|}\"",
+            "\t}",
+            "}"
+        ],
+        "description": "User-defined namespace and member function, should be placed inside a \"members\" object inside \"functions\"",
+        "context": "members"
+    },
+    "User Function Namespace": {
+        "prefix": "new-userfunc-namespace",
+        "body": [
+            "{",
+            "\t\"namespace\": \"${1:namespacename}\",",
+            "\t\"members\": {",
+            "\t\t\"${2:functionname}\": {",
+            "\t\t\t\"parameters\": [",
+            "\t\t\t\t{",
+            "\t\t\t\t\t\"name\": \"${3:parametername}\",",
+            "\t\t\t\t\t\"type\": \"${4|string,securestring,int,bool,object,secureobject,array|}\"",
+            "\t\t\t\t}",
+            "\t\t\t],",
+            "\t\t\t\"output\": {",
+            "\t\t\t\t\"value\": \"${5:function-return-value}\",",
+            "\t\t\t\t\"type\": \"${6|string,securestring,int,bool,object,secureobject,array|}\"",
+            "\t\t\t}",
+            "\t\t}",
+            "\t}",
+            "}"
+        ],
+        "description": "User-defined namespace and member function",
+        "context": "functions"
+    },
+    "User Function Parameter Definition": {
+        "prefix": "new-userfunc-parameter",
+        "body": [
+            "{",
+            "\t\"name\": \"${1:parameter1}\",",
+            "\t\"type\": \"${2|string,securestring,int,bool,object,secureobject,array|}\"",
+            "}"
+        ],
+        "description": "ARM Template Parameter Definition",
+        "context": "userfunc-parameter-definitions"
+    }
+}

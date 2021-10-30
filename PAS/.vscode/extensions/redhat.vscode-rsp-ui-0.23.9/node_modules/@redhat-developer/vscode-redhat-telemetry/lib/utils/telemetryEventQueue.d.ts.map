@@ -1,0 +1,1 @@
+{"version":3,"file":"telemetryEventQueue.d.ts","sourceRoot":"","sources":["../../src/utils/telemetryEventQueue.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAE,MAAM,yBAAyB,CAAC;AAEzD,eAAO,MAAM,cAAc,KAAK,CAAC;AAEjC,qBAAa,mBAAmB;IAC9B,MAAM,EAAE,cAAc,EAAE,GAAG,SAAS,CAAC;;IAS9B,QAAQ,CAAC,CAAC,EAAE,cAAc;IAO1B,UAAU;CAGlB"}
