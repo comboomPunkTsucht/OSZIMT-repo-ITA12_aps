@@ -1,0 +1,16 @@
+/**
+ *
+ * Beschreibung
+ *
+ * @version 1.0 vom 22.08.2021
+ * @author 
+ */
+
+public class SmileyAps {
+  
+  public static void main(String[] args) {
+    
+  } // end of main
+
+} // end of class SmileyAps
+
