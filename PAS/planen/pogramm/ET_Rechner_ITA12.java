@@ -148,10 +148,6 @@ public class ET_Rechner_ITA12 {
       switch (unterauswahl) {
       case 0:
 
-        break;
-
-      case 1:
-
         powerP = rnum1;
         stromstearkeI = rnum2;
 
@@ -164,14 +160,28 @@ public class ET_Rechner_ITA12 {
 
         break;
 
-      case 2:
+      case 1:
 
         spannungU = rnum1;
         stromstearkeI = rnum2;
 
         soll_ergebniss = spannungU * stromstearkeI;
-        System.out.println("Berechnen Sie die Leistung aus U =" + spannungU + " V und I = " + stromstearkeI + " A.");
+
+        System.out.println("Berechnen Sie die Leistung aus U =" +spannungU + " V und I = " + stromstearkeI + " A.");
         System.out.print("Ergebniss in Watt (auf 2 nachkommerstellen) =>");
+
+        eingabe_ergebniss = scanner_ergebniss.nextDouble();
+
+        break;
+
+      case 2:
+
+        spannungU = rnum1;
+        powerP = rnum2;
+
+        soll_ergebniss = powerP / stromstearkeI;
+        System.out.println("Berechnen Sie die Leistung aus U =" + spannungU + " V und I = " + powerP + " W.");
+        System.out.print("Ergebniss in Ampere (auf 2 nachkommerstellen) =>");
 
         eingabe_ergebniss = scanner_ergebniss.nextDouble();
 
