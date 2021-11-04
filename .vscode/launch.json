@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Operatoren",
+            "request": "launch",
+            "mainClass": "Operatoren",
+            "projectName": "OSZIMT-repo-ITA12_aps_1d5b8f88"
+        },
+        {
+            "type": "java",
             "request": "attach",
             "name": "Java",
             "port": 5005,
