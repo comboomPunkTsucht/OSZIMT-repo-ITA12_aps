@@ -6,13 +6,6 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch ET_Rechner_ITA12",
-            "request": "launch",
-            "mainClass": "ET_Rechner_ITA12",
-            "projectName": "OSZIMT-repo-ITA12_aps_1d5b8f88"
-        },
-        {
-            "type": "java",
             "request": "attach",
             "name": "Java",
             "port": 5005,
