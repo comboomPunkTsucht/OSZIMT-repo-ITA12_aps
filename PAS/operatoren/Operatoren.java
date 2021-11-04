@@ -1,5 +1,6 @@
 /* Operatoren.java
    Uebung zu Operatoren in Java
+   Aps, Fabian
 */
 
 import java.util.*;
