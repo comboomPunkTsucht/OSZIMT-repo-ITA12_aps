@@ -3,7 +3,7 @@
  * Beschreibung
  *
  * @version 1.0 vom 08.01.2018
- * @author
+ * @author Aps, Fabian
  */
 
 public class LogischeOperatoren {
