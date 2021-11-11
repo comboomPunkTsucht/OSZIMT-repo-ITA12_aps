@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LogischeOperatoren",
+            "request": "launch",
+            "mainClass": "LogischeOperatoren",
+            "projectName": "OSZIMT-repo-ITA12_aps_1d5b8f88"
+        },
+        {
+            "type": "java",
             "name": "Launch Operatoren",
             "request": "launch",
             "mainClass": "Operatoren",
