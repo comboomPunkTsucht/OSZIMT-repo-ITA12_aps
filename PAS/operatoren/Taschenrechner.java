@@ -4,8 +4,8 @@ import java.util.Scanner;
  *
  * Taschenrechner.java - leider nicht ganz fertig :(
  *
- * @version 0.1 vom 07.11.2018
- * @author F. Iesling
+ * @version 0.1 vom 07.11.2018 - 11.11.2021
+ * @author F. Iesling - Aps, Fabian
  */
 
 // Scanner-Klasse importieren
