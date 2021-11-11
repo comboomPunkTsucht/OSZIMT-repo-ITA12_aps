@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TaschenrechnerGUI",
+            "request": "launch",
+            "mainClass": "TaschenrechnerGUI.TaschenrechnerGUI",
+            "projectName": "OSZIMT-repo-ITA12_aps_1d5b8f88"
+        },
+        {
+            "type": "java",
             "name": "Launch App",
             "request": "launch",
             "mainClass": "TaschenrechnerGUI.TaschenrechnerGUI.src.App",
