@@ -1,0 +1,34 @@
+public class Steuersatz {
+    public static void main(String [] args) {
+        do {
+        //Scanner for marks
+        Scanner auswahl_scan = new Scanner(System.in);
+        Scanner nettobetrag_scan = new Scanner(System.in);
+
+        System.out.println("-----------------------------------------------------");
+        System.out.println("|     What tax rate do you need for the result?     |");
+        System.out.println("|     [0] den Ermeasigten (7%)                      |");
+        System.out.println("|     [1] den Vollen (19%)                          |");
+        System.out.println("-----------------------------------------------------");
+        System.out.println("-----------------------------------------------------");
+        System.out.println("|If you want to exit the program, please press 'Q'  |");
+        System.out.println("-----------------------------------------------------");
+        System.out.println(": =>");
+
+        cahr auswahl = auswahl_scan.next().charAt(0);
+        
+        switch (auswahl) {}
+        case '0' :
+            double nettobetrag = nettobetrag_scan.nextDouble();
+            double Steuersatz = (nettobetrag * 107) / 100;
+            System.out.println("Dein Bruto berag ist " + Steuersatz + " €");
+            break;
+        case '1' :
+            double nettobetrag = nettobetrag_scan.nextDouble();
+            double Steuersatz = (nettobetrag * 119) / 100;
+            System.out.println("Dein Bruto berag ist " + Steuersatz + " €");
+            break;
+        }
+        } while ( auswahl == 'Q' || auswahl == 'q');
+    }
+}

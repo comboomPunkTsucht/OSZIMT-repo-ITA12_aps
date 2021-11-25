@@ -4,12 +4,12 @@ ITA12
 25.11.2021
 */
 
-public class mark {
+public class Mark {
     public static void main(String [] args) {
        
        do {
           //Scanner for marks
-        Scanner mark = new Scanner(System.in);
+        Scanner mark_scan = new Scanner(System.in);
 
         System.out.println("-----------------------------------------------------");
         System.out.println("|     Please enter your grade (1 <-> 6).            |");
@@ -19,13 +19,11 @@ public class mark {
         System.out.println("-----------------------------------------------------");
         System.out.println(": =>");
 
-        cahr eingabe = mark.next().charAt(0)
+        cahr eingabe = mark_scan.charAt(0);
 
         
         
-        if ( eingabe == 'Q' || eingabe == 'q' ) {
-            boolean exit = true;
-        } else {
+        
             switch (eingabe) {
                 case '1':
                     System.out.println("1 = Sehr Gut");
@@ -39,19 +37,19 @@ public class mark {
                 case '4':
                     System.out.println("4 = Mangelhaft");
                     break;
-                    case '5':
+                case '5':
                     System.out.println("5 = Mangelhaft");
                     break;
-                    case '6':
-                    System.out.println("6 = Ungenügend")
+                case '6':
+                    System.out.println("6 = Ungenügend");
                     break;
                 default:
-                System.out.println("How was that again?")
+                System.out.println("How was that again?");
                     break;
             }
             
-        } 
-       } while (exit == false);
+         
+       } while ((eingabe != 'Q') || (eingabe != 'q'));
        
         
     }
