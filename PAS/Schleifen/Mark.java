@@ -3,10 +3,10 @@ Aps, Fabian
 ITA12
 25.11.2021
 */
-
+import java.util.*;
 public class Mark {
     public static void main(String [] args) {
-       
+       char eingabe;
        do {
           //Scanner for marks
         Scanner mark_scan = new Scanner(System.in);
@@ -17,9 +17,9 @@ public class Mark {
         System.out.println("-----------------------------------------------------");
         System.out.println("|If you want to exit the program, please press 'Q'  |");
         System.out.println("-----------------------------------------------------");
-        System.out.println(": =>");
+        System.out.print(": =>");
 
-        cahr eingabe = mark_scan.charAt(0);
+        eingabe = mark_scan.next().charAt(0);
 
         
         
@@ -43,6 +43,10 @@ public class Mark {
                 case '6':
                     System.out.println("6 = Ungenügend");
                     break;
+                case 'q':
+                break;
+                case 'Q':
+                break;
                 default:
                 System.out.println("How was that again?");
                     break;

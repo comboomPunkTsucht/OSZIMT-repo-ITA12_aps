@@ -3,9 +3,11 @@ Aps, Fabian
 ITA12
 25.11.2021
 */
+import java.util.*;
 
 public class Steuersatz {
     public static void main(String [] args) {
+        char auswahl;
         do {
         //Scanner for Steuersatz
         Scanner auswahl_scan = new Scanner(System.in);
@@ -19,9 +21,9 @@ public class Steuersatz {
         System.out.println("-----------------------------------------------------");
         System.out.println("|If you want to exit the program, please press 'Q'  |");
         System.out.println("-----------------------------------------------------");
-        System.out.println(": =>");
+        System.out.print(": =>");
 
-        cahr auswahl = auswahl_scan.charAt(0);
+         auswahl = auswahl_scan.next().charAt(0);
         
         switch (auswahl) {
         case '0':
