@@ -4,8 +4,10 @@ public static void temp() {
 public static void main(String[] args) {
 
 int zahl;
-zahl ++;
-    if (zahl == 2) {
+zahl = 1;
     
-}    
+    while (zahl < 2) {
+        System.out.println(zahl);
+        zahl++;
+    }   
 }}
