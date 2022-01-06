@@ -56,7 +56,7 @@ public class Whileschleifen {
 		 * 8
 		 * 9
 		 */
-		Scanner start_eingabe = new Scanner(System.in);
+		Scanner = new Scanner(System.in);
 		Scanner end_eingabe = new Scanner(System.in);
 
 		System.out.println("*********************************");
@@ -66,7 +66,7 @@ public class Whileschleifen {
 
 		int x = start_eingabe.nextInt();
 		System.out.println("*********************************");
-		System.out.println("* Geben Sie ihren Endwert ein *");
+		System.out.println("* Geben Sie ihren Endwert ein   *");
 		System.out.println("*********************************");
 		System.out.print("=> ");
 
@@ -94,7 +94,20 @@ public class Whileschleifen {
 		 * . . . .
 		 * int laenge = inputString.length();
 		 */
+		Scanner wort_eingabe = new Scanner(System.in);
 
+		System.out.println("*********************************");
+		System.out.println("* Geben Sie ihr Word ein        *");
+		System.out.println("*********************************");
+		System.out.print("=> ");
+		String word = wort_eingabe.nextLine();
+
+		int w_length = word.length();
+
+		while (w_length > 0) {
+			System.out.println(word);
+			w_length--;
+		}
 		/*
 		 * Zusatzaufgabe
 		 * 
