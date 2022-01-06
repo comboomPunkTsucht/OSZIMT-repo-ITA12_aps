@@ -56,7 +56,7 @@ public class Whileschleifen {
 		 * 8
 		 * 9
 		 */
-		Scanner = new Scanner(System.in);
+		Scanner start_eingabe = new Scanner(System.in);
 		Scanner end_eingabe = new Scanner(System.in);
 
 		System.out.println("*********************************");
