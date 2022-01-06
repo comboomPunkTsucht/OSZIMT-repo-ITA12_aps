@@ -128,6 +128,35 @@ public class Whileschleifen {
 		 * Hinweis: Verwenden Sie System.out.print(".") innerhalb einer Schleife, um die
 		 * Punkte auszugeben.
 		 */
+
+		Scanner fwort_eingabe = new Scanner(System.in);
+
+		System.out.println("*********************************");
+		System.out.println("* Geben Sie ihr 1. Word ein     *");
+		System.out.println("*********************************");
+		System.out.print("=> ");
+		String fword = fwort_eingabe.nextLine();
+
+		int fw_length = fword.length();
+
+		Scanner swort_eingabe = new Scanner(System.in);
+
+		System.out.println("*********************************");
+		System.out.println("* Geben Sie ihr 2. Word ein     *");
+		System.out.println("*********************************");
+		System.out.print("=> ");
+		String sword = swort_eingabe.nextLine();
+
+		int sw_length = sword.length();
+
+		int dot_number = 30 - (fw_length + sw_length);
+
+		System.out.print(fword);
+		while (dot_number >= 0) {
+			System.out.print(".");
+			dot_number--;
+		}
+		System.out.println(sword);
 	}
 
 }
