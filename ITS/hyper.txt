@@ -206,6 +206,78 @@ JNZ DEKR
 RET
 END
 J
+----------------------------------------------------------------------------------------------------------------------------
+
+Aufgabe 1
 
 
+A
+E000
+START: MVI A,0AA
+OUT 13
+CALL ZEIT
+MVI A,55
+OUT 13
+CALL ZEIT
+JMP START
+END
+N
+A
+E100
+ZEIT: MVI B,02
+DEKR: CALL 0895
+DCR B
+JNZ DEKR
+RET
+END
+J
 
+
+Aufgabe 2
+A
+E000
+START: MVI A,0AA
+CMA
+OUT 13
+CALL ZEIT
+MVI A,55
+CMA
+OUT 13
+CALL ZEIT
+JMP START
+END
+N
+A
+E100
+ZEIT: MVI B,02
+DEKR: CALL 0895
+DCR B
+JNZ DEKR
+RET
+END
+J
+
+AUFGABE 3
+
+A
+E000
+START: MVI A,0F
+CMA
+OUT 13
+CALL ZEIT
+MVI A,0F0
+CMA
+OUT 13
+CALL ZEIT
+JMP START
+END
+N
+A
+E100
+ZEIT: MVI B,08
+DEKR: CALL 0895
+DCR B
+JNZ DEKR
+RET
+END
+J
