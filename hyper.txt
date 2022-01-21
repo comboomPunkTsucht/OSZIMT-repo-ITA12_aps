@@ -62,8 +62,8 @@ J
 A
 E080
 IN 12
-MVI C,0F
-ADD C
+MVI D,0F
+ADD D
 OUT 13
 JMP 0E080
 END
@@ -71,8 +71,8 @@ J
 A
 E090
 IN 12
-MVI C,0F
-SUB C
+MVI D,0F
+SUB D
 OUT 13
 JMP 0E090
 END
@@ -99,11 +99,11 @@ J
 A 
 E000
 START: IN 12
-ZEIT: MVI C,0FF
+ZEIT: MVI D,0FF
 lADE: MVI B,0FF
 DEKR: DCR B
 JNZ DEKR
-DCR C
+DCR D
 JNZ LADE
 OUT 13
 JMP START
@@ -114,28 +114,28 @@ A
 E000
 MVI A,0AA
 START: CMA
-ZEIT: MVI C,0FF
+ZEIT: MVI D,0FF
 lADE: MVI B,0FF
 DEKR: DCR B
 JNZ DEKR
-DCR C
+DCR D
 JNZ LADE
 OUT 13
 JMP START
 END
 J
 
--------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
 
 A
 E000
 IN 12
 START: CMA
-ZEIT: MVI C,0FF
+ZEIT: MVI D,0FF
 lADE: MVI B,0FF
 DEKR: DCR B
 JNZ DEKR
-DCR C
+DCR D
 JNZ LADE
 OUT 13
 JMP START
@@ -206,9 +206,9 @@ JNZ DEKR
 RET
 END
 J
-----------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------
 
-Aufgabe 1
+//Aufgabe 1
 
 
 A
@@ -233,7 +233,7 @@ END
 J
 
 
-Aufgabe 2
+//Aufgabe 2
 A
 E000
 START: MVI A,0AA
@@ -257,7 +257,7 @@ RET
 END
 J
 
-AUFGABE 3
+//AUFGABE 3
 
 A
 E000
@@ -280,12 +280,12 @@ RET
 END
 J
 
-AUFGABE 4 ## WIP
+//AUFGABE 4
 
 A
 E000
-START: MVI A,001
-RLC
+MVI A,001
+START: RLC
 OUT 13
 CALL ZEIT
 RLC
@@ -296,7 +296,136 @@ END
 N
 A
 E100
-ZEIT: MVI B,02
+ZEIT: STA 0E150
+MVI B,02
+DEKR: CALL 0895
+DCR B
+JNZ DEKR
+LDA 0E150
+RET
+END
+J
+
+
+
+//AUFGABE 5
+
+
+A
+E000
+MVI A,001
+START: OUT 13
+CALL ZEIT
+INR A
+OUT 13
+CALL ZEIT
+JMP START
+END
+N
+A
+E100
+ZEIT: STA 0E150
+MVI B,02
+DEKR: CALL 0895
+DCR B
+JNZ DEKR
+LDA 0E150
+RET
+END
+J
+
+
+
+//AUFGABE 6
+
+
+A
+E000
+MVI A,001
+MVI D,09
+START: OUT 13
+CALL ZEIT
+INR A
+DCR D
+JNZ START
+END
+N
+A
+E100
+ZEIT: STA 0E150
+PUSH PSW
+PUSH D
+MVI B,02
+DEKR: CALL 0895
+DCR B
+JNZ DEKR
+POP D
+POP PSW
+LDA 0E150
+RET
+END
+J
+
+//AUFGABE 6 mit LC usw.
+A
+E000
+LC
+MVI A,001
+MVI D,09
+START: OUT 13
+CALL ZEIT
+INR A
+DCR D
+JNZ START
+JMP 0E000
+END
+N
+A
+E100
+ZEIT: STA 0E150
+PUSH PSW
+PUSH D
+MVI B,02
+DEKR: CALL 0895
+DCR B
+JNZ DEKR
+POP D
+POP PSW
+LDA 0E150
+RET
+END
+J
+
+
+//---------------------------------------------------------------------------------------------------------------------
+// Ampelsteuerung
+
+A
+E000
+START: MVI A,44
+OUT 13
+MVI A,00
+CALL ZEIT
+IN 12
+JZ START
+MVI A,42
+OUT 13
+CALL ZEIT
+MVI A,43
+OUT 13
+CALL ZEIT
+MVI A,81
+OUT 13
+CALL ZEIT
+MVI A,42
+OUT 13
+CALL ZEIT
+JMP START
+END
+N
+A
+E100
+ZEIT: MVI B,29
 DEKR: CALL 0895
 DCR B
 JNZ DEKR
