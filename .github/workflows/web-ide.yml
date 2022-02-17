@@ -1,0 +1,2 @@
+- name: Try in Web IDE
+  uses: redhat-actions/try-in-web-ide@v1
