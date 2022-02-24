@@ -1,0 +1,76 @@
+import java.util.*;
+
+public class Pancanche {
+
+    // finel varibels
+    public static float usdeur = 0.8739F;// stand 13.1.22
+    public static float eurusd = 1.1442F;// stand 13.1.22
+    public static final String sternchen = "*************************";// max 25 zeichen
+
+    public static void welcomePrompt() {
+
+        System.out.println(sternchen);
+        System.out.println("*  select you option    *");
+        System.out.println("*    [E]UR -> USD       *");
+        System.out.println("*    [U]SD -> EUR       *");
+        System.out.println(sternchen);
+        System.out.print("=> ");
+    }
+
+    public static double toUSD(double a) {
+        double b = a * usdeur * 0.99;
+        return b;
+    }
+
+    public static double toEUR(double a) {
+        double b = a * eurusd * 0.99;
+        return b;
+    }
+
+    public static int changeTOct(double a) {
+        int b = (int) (a * 100);
+        return b;
+    }
+
+    public static void givePromp(int a, int b, double c, char d) {
+        while (a >= b) {
+            a -= b;
+            System.out.println("* " + c + " " + d + " *");
+        }
+    }
+
+    public static void main(String[] args) {
+        // variabeln und Scanner aus
+        Scanner select_scan = new Scanner(System.in);
+        Scanner amount_scan = new Scanner(System.in);
+
+        double amount = 0.00;
+        int amount_ct = 0;
+        char select = 'Q';
+        char currency_car = '/';
+
+        welcomePrompt();
+        select = select_scan.next().charAt(0);
+        if (select == 'e' || select == 'E') {
+            currency_car = '$';
+            System.out.println(sternchen);
+            System.out.println("*    Enter your amount    *");
+            System.out.println(sternchen);
+            System.out.print("=>");
+            amount = amount_scan.nextDouble();
+
+            amount = toUSD(amount);
+            amount_ct = changeTOct(amount);
+        } else {
+            currency_car = '€';
+            System.out.println(sternchen);
+            System.out.println("*    Enter your amount    *");
+            System.out.println(sternchen);
+            System.out.print("=>");
+            amount = amount_scan.nextDouble();
+
+            amount = toEUR(amount);
+            amount_ct = changeTOct(amount);
+        }
+    }
+}
