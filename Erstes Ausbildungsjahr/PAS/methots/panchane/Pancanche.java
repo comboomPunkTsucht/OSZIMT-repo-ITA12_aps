@@ -39,11 +39,12 @@ public class Pancanche {
         return b;
     }
 
-    public static void givePromp(int a, int b, double c, char d) {
+    public static int givePromp(int a, int b, double c, char d) {
         while (a >= b) {
             a -= b;
             System.out.println("* " + c + " " + d + " *");
         }
+        return a;
     }
 
     public static void main(String[] args) {
@@ -54,12 +55,14 @@ public class Pancanche {
         double amount = 0.00;
         int amount_ct = 0;
         char select = 'Q';
-        char currency_car = '/';
+        char select_promp = 'n';
+        char currency_char = '/';
 
+        do {
         welcomePrompt();
         select = select_scan.next().charAt(0);
         if (select == 'e' || select == 'E') {
-            currency_car = '$';
+            currency_char = '$';
             System.out.println(sternchen);
             System.out.println("*    Enter your amount    *");
             System.out.println(sternchen);
@@ -69,7 +72,7 @@ public class Pancanche {
             amount = toUSD(amount);
             amount_ct = changeTOct(amount);
         } else {
-            currency_car = '€';
+            currency_char = '€';
             System.out.println(sternchen);
             System.out.println("*    Enter your amount    *");
             System.out.println(sternchen);
@@ -79,5 +82,40 @@ public class Pancanche {
             amount = toEUR(amount);
             amount_ct = changeTOct(amount);
         }
-    }
+        System.out.println(sternchen);
+        System.out.println("*      Your Amount     *");
+        System.out.println("* " + amount + " " + currency_char + " *");
+        System.out.println("* Would you want to change it? y/N*");
+        System.out.println(sternchen);
+        //System.out.println(https://hanime.tv)
+       // System.out.println(https://hentaiheaven.org)
+       // System.out.println(https://yande.re)
+       // System.out.println(https://nhentai.net)
+        select_promp = select_scan.next().charAt(0);
+        if (select_promp == 'y' || select_promp == 'Y') {
+            System.out.println(sternchen);
+            amount_ct = givePromp(amount_ct, 5000, 50.00, currency_char);
+            amount_ct = givePromp(amount_ct, 2000, 20.00, currency_char);
+            amount_ct = givePromp(amount_ct, 1000, 10.00, currency_char);
+            amount_ct = givePromp(amount_ct, 500, 5.00, currency_char);
+            amount_ct = givePromp(amount_ct, 200, 2.00, currency_char);
+            amount_ct = givePromp(amount_ct, 100, 1.00, currency_char);
+            amount_ct = givePromp(amount_ct, 50, 0.50, currency_char);
+            amount_ct = givePromp(amount_ct, 20, 0.20, currency_char);
+            amount_ct = givePromp(amount_ct, 10, 0.10, currency_char);
+            amount_ct = givePromp(amount_ct, 5, 0.05, currency_char);
+            amount_ct = givePromp(amount_ct, 2, 0.02, currency_char);
+            amount_ct = givePromp(amount_ct, 1, 0.01, currency_char);
+            System.out.println("* Good Bye *");
+            System.out.println(sternchen);
+            select = select_scan.next().charAt(0);
+        }
+        }while (select != 'q' || select != 'Q');
+
+//System.out.println(https://hanime.tv)
+//System.out.println(https://hentaiheaven.org)
+//System.out.println(https://yande.re)
+//System.out.println(https://nhentai.net)
+//System.out.println(https://)
+}
 }
