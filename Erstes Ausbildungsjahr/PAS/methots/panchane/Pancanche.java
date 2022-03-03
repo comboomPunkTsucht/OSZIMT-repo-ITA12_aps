@@ -39,7 +39,7 @@ public class Pancanche {
         return b;
     }
 
-    public static int givePromp(int a, int b, double c, char d) {
+    public static int givePromp(int a, int b, double c, String d) {
         while (a >= b) {
             a -= b;
             System.out.println("* " + c + " " + d + " *");
@@ -56,13 +56,13 @@ public class Pancanche {
         int amount_ct = 0;
         char select = 'Q';
         char select_promp = 'n';
-        char currency_char = '/';
+        String currency_char = "/";
 
         do {
         welcomePrompt();
         select = select_scan.next().charAt(0);
         if (select == 'e' || select == 'E') {
-            currency_char = '$';
+            currency_char = "USD";
             System.out.println(sternchen);
             System.out.println("*    Enter your amount    *");
             System.out.println(sternchen);
@@ -72,7 +72,7 @@ public class Pancanche {
             amount = toUSD(amount);
             amount_ct = changeTOct(amount);
         } else {
-            currency_char = '€';
+            currency_char = "EUR";
             System.out.println(sternchen);
             System.out.println("*    Enter your amount    *");
             System.out.println(sternchen);
