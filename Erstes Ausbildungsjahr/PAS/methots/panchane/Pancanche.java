@@ -87,10 +87,6 @@ public class Pancanche {
         System.out.println("* " + amount + " " + currency_char + " *");
         System.out.println("* Would you want to change it? y/N*");
         System.out.println(sternchen);
-        //System.out.println(https://hanime.tv)
-       // System.out.println(https://hentaiheaven.org)
-       // System.out.println(https://yande.re)
-       // System.out.println(https://nhentai.net)
         select_promp = select_scan.next().charAt(0);
         if (select_promp == 'y' || select_promp == 'Y') {
             System.out.println(sternchen);
@@ -111,11 +107,5 @@ public class Pancanche {
             select = select_scan.next().charAt(0);
         }
         }while (select != 'q' || select != 'Q');
-
-//System.out.println(https://hanime.tv)
-//System.out.println(https://hentaiheaven.org)
-//System.out.println(https://yande.re)
-//System.out.println(https://nhentai.net)
-//System.out.println(https://)
-}
+    }
 }
