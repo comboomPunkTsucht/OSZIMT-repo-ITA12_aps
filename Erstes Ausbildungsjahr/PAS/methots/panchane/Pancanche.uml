@@ -1,0 +1,29 @@
+﻿[Files]
+File0=..\..\Users\user\Desktop\OSZIMT-repo-ITA12_aps\Erstes Ausbildungsjahr\PAS\methots\panchane\Pancanche.java
+
+[Box:  - Pancanche]
+X=20
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Diagram]
+comments=0
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+ShowConnections=0
+Fontname=Segoe UI
+Fontsize=12
+ShowObjectDiagram=0
+
+[Interactive]
+I0=
+
