@@ -37,3 +37,9 @@ for (int i = 0; i <= 4; i++) {
     istGroesserals42(one1[i])
 }
 ```
+
+
+A:istnichtGroesserals42 || istGroesserals42
+B:istnichtGroesserals42 || istnichtGroesserals42 || istGroesserals42
+C:istnichtGroesserals42 || istnichtGroesserals42 || istnichtGroesserals42 || istGroesserals42 *
+D:istGroesserals42
