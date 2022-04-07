@@ -1,5 +1,10 @@
 public class D4dot4 {
 
+  /**
+   * @author Aps, Fabian, ITA12
+   * @version 1.0
+   */
+
   public static void main(String[] args) {
     int[] x = { 12, 11, -1 };
     double[] y = { 1.3, 1.4, -12.3, 2.23 };
@@ -12,6 +17,7 @@ public class D4dot4 {
     System.out.println(z[1]);
     System.out.println(v[0]);
     array_a2();
+    array_a3();
   }
 
   public static void array_a2() {
@@ -35,5 +41,14 @@ public class D4dot4 {
     System.out.println("0 | " + y[0]);
     System.out.println("1 | " + y[1]);
     System.out.println("2 | " + y[2]);
+  }
+
+  public static void array_a3() {
+    System.out.println("A3");
+    int[] a = new int[100];
+    for (int i = 0; i <= 99; i++) {
+      a[i] = (i + 1);
+      System.out.println(a[i]);
+    }
   }
 }
