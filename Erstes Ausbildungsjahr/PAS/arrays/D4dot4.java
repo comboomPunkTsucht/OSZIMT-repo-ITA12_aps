@@ -18,6 +18,22 @@ public class D4dot4 {
     System.out.println(v[0]);
     array_a2();
     array_a3();
+    
+    System.out.println("A4");
+    int[] array = {3, 2, 5, 7, 9, 12, 97, 24, 54};
+    // drei Variablen für die Summen deklarieren und initialisieren
+    // Summen berechnen
+    for ( int index = 0; index < array.length; index++ ) {
+      int i = index + 1;
+      array[i] = array[index];
+    }
+    // Summen ausgeben
+    System.out.println( . . . );
+  
+  
+  
+  
+  
   }
 
   public static void array_a2() {
