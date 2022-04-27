@@ -60,14 +60,23 @@ public class D4dot4 {
     for (int index = 0; index < array.length; index++) {
       int sum1 = 0;
       int sum2 = 0;
+      int sum = 0;
       if (array[index] % 2 == 0) {
         sum2 += array[index];
       } else {
         sum2 += array[index];
       }
+      sum = sum1 + sum2;
       // Summen ausgeben
       System.out.println(
-        "ungerade : " + sum1 + System.lineSeparator() + "gerade : " + sum2
+        "ungerade : " +
+        sum1 +
+        System.lineSeparator() +
+        "gerade : " +
+        sum2 +
+        System.lineSeparator() +
+        "alles : " +
+        sum
       );
     }
   }
