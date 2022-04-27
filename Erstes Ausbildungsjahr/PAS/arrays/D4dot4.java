@@ -57,11 +57,11 @@ public class D4dot4 {
     int[] array = { 3, 2, 5, 7, 9, 12, 97, 24, 54 };
     // drei Variablen für die Summen deklarieren und initialisieren
     // Summen berechnen
+    int sum1 = 0;
+    int sum2 = 0;
+    int sum = 0;
     for (int index = 0; index < array.length; index++) {
-      int sum1 = 0;
-      int sum2 = 0;
-      int sum = 0;
-      if (array[index] % 2 == 0) {
+      if (index % 2 == 0) {
         sum2 += array[index];
       } else {
         sum2 += array[index];
