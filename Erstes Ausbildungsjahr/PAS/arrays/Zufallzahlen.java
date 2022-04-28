@@ -2,9 +2,9 @@ import java.util.*;
 
 public class Zufallzahlen {
 
-  public int min = 1;
-  public int max = 49;
-  public Random rand = new Random();
+  public static int min = 1;
+  public static int max = 49;
+  public static Random rand = new Random();
 
   public static void main(String[] args) {
     gebeArrayAus(lottozahlenGenerator());
@@ -16,11 +16,11 @@ public class Zufallzahlen {
     }
   } // end gebeArrayAus
 
-  public static int lottozahlenGenerator() {
+  public static int[] lottozahlenGenerator() {
     int[] zufallarray = new int[6];
     for (int i = 0; i < zufallarray.length; i++) {
       zufallarray[i] = rand.nextInt(max);
     }
-    return zufallarray[]
+    return zufallarray;
   } //end lottozahlenGenerator
 } //end of class
