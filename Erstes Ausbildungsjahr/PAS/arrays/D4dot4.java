@@ -79,5 +79,16 @@ public class D4dot4 {
         sum
       );
     }
+    System.out.println("A5");
+    int[] int1 = new int[1];
+    System.out.println("int: " + int1[0]);
+    double[] double1 = new double[1];
+    System.out.println("double: " + double1[0]);
+    char[] char1 = new char[1];
+    System.out.println("char: " + char1[0]);
+    String[] String1 = new String[1];
+    System.out.println("String: " + String1[0]);
+    boolean[] boolean1 = new boolean[1];
+    System.out.println("boolean: " + boolean1[0]);
   }
 }
