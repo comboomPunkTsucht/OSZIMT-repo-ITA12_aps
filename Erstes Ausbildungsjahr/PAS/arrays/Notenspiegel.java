@@ -15,7 +15,7 @@ public class  Notenspiegel {
         System.out.println("Notenspiegel: ");
         System.out.println("\t 1 \t 2 \t 3 \t 4 \t 5 \t 6");
         System.out.println("\t" + notenanzahl[0] + "\t" + notenanzahl[1] + "\t" + notenanzahl[2] + "\t" + notenanzahl[3] + "\t" + notenanzahl[4] + "\t" + notenanzahl[5]);
-        System.out.println(" ")
+        System.out.println(" ");
         System.out.println("Notendurchschnitt: " + notendurchschnitt);
 
     }// end of main
