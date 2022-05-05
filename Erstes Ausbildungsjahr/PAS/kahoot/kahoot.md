@@ -82,6 +82,7 @@ public static void testeWuerfel() {
           six++;
           break;
       }
+    }
 ```
 *wahr
 
