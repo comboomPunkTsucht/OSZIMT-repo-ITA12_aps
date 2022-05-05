@@ -86,6 +86,7 @@ public static void testeWuerfel() {
 *wahr
 
 # 6.Frage
+# Quiz
 # Was Wird in dem Folgendem Codeschnipsel getan?
 ```java
 int[] array = { 3, 2, 5, 7, 9, 12, 97, 24, 54 };
@@ -114,5 +115,7 @@ int[] array = { 3, 2, 5, 7, 9, 12, 97, 24, 54 };
       );
     }
 ```
-A: Es werden Alle Werte Addirt und Alle ungeraden B: Es werden alle Werte Addiert
-B: Es werden Alle Werte Addirt und Alle geraden D: Es werden alle Werte Addiert und Alle geraden und Alle ungeraden
+A: Es werden Alle Werte Addirt und Alle ungeraden 
+B: Es werden alle Werte Addiert
+c: Es werden Alle Werte Addirt und Alle geraden 
+D: Es werden alle Werte Addiert und Alle geraden und Alle ungeraden*
