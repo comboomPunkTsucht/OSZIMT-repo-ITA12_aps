@@ -1,5 +1,13 @@
 import java.util.*;
 
+/**
+ *OSZIMT-repo-ITA12_aps: https://github.com/comboomPunkTsucht/OSZIMT-repo-ITA12_aps/tree/main/Erstes%20Ausbildungsjahr/PAS/arrays
+ *
+ * @author Aps,Fabian mcpeaps_HD@outlook.com
+ * @className Notenspiegel
+ * @description
+ * @date 2022/05/05 13:06:28
+ */
 public class Notenspiegel {
 
   public static void main(String[] args) {
