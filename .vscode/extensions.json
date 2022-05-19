@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "ms-playwright.playwright",
+        "ortoni.ortoni",
+        "nitayneeman.playwright-snippets",
+        "deepakkamboj0121.vscode-playwright-test-snippets",
+        "sakamoto66.vscode-playwright-test-runner",
+        "mskelton.playwright-test-snippets",
+        "ryanrosello-og.playwright-vscode-trace-viewer"
+    ]
+}
