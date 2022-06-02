@@ -6,7 +6,7 @@ public class Wetterstation {
 
   public static void main(String[] args) {
     dumptable(random_Array());
-    fahreheit_gay(random_Array());
+    fahrenheit_gay(random_Array());
   }
 
   public static int[] random_Array() { //<--  // Die Listen für die Messwerte deklarieren und initialisieren
@@ -61,12 +61,9 @@ public class Wetterstation {
       default:
         System.out.println("Falsche Taste");
     }
-  } 
+  }
 
-
-
-
-  public static void min_own(int array[]) {
+  public static void min_own(int array[]) { // <--Das Maximum und das Minimum aus dem Array heraussuchen (zwei Methoden)
     int min = -5;
     for (int i = 0; i < array.length; i++) {
       if (array[i] > min) {
@@ -75,22 +72,23 @@ public class Wetterstation {
     }
     System.out.println("Der kleinste Wert ist: " + min);
   }
-  public static void max_own() { 
+
+  public static void max_own(int[] array) { // <--Das Maximum und das Minimum aus dem Array heraussuchen (zwei Methoden)
     int max = 5;
-  for (int i = 0; i < array.length; i++) {
-    if (array[i] < max) {
-      max = array[i];
+    for (int i = 0; i < array.length; i++) {
+      if (array[i] > max) {
+        max = array[i];
+      }
+      System.out.println("Der groeste Wert ist: " + max);
     }
   }
-  System.out.println("Der groeste Wert ist: " + max);
 
-  public static void fahrenheit_gay() {
-   
-   
-   
-    ( array[i] * 9/5) + 32 
+  public static double[] fahrenheit_gay(int array[]) {
+    double fahrenheit[];
+    for (int i = 0; i < array.length; i++) {
+      fahrenheit[i] = (array[i] * 9 / 5) + 32;
+    }
+
+    return fahrenheit;
   }
-  
-}  // <--Das Maximum und das Minimum aus dem Array heraussuchen (zwei Methoden) 
-
 }
