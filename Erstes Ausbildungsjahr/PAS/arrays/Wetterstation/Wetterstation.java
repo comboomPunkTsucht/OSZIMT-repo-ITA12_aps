@@ -6,7 +6,7 @@ public class Wetterstation {
 
   public static void main(String[] args) {
     dumptable(random_Array());
-    fahrenheit_gay(random_Array());
+    dumptable(random_Array(fahrenheit_gay(random_Array())));
   }
 
   public static int[] random_Array() { //<--  // Die Listen für die Messwerte deklarieren und initialisieren
