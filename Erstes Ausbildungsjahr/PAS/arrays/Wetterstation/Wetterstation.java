@@ -92,4 +92,11 @@ public class Wetterstation {
 
     return fahrenheit;
   }
+  public static double durchschnitt (int[] array){
+    int sum = 0;
+    double durchschnitt = 0;
+    for(int i = 0; i < array.length; i++){
+    sum =+ array[i];}
+    durchschnitt = sum/array.length;
+    return(durchschnitt);}
 }
