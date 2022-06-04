@@ -6,7 +6,7 @@ public class Wetterstation {
 
   public static void main(String[] args) {
     dumptable(random_Array());
-    dumptable(random_Array(fahrenheit_gay(random_Array())));
+    dumptable(fahrenheit_gay(random_Array()));
   }
 
   public static int[] random_Array() { //<--  // Die Listen für die Messwerte deklarieren und initialisieren
@@ -26,10 +26,11 @@ public class Wetterstation {
     for (int i = 0; i < array.length; i++) {
       System.out.print(i + "| \t ");
     }
-    System.out.println(" ");
+    System.out.println("\n-----------------------------------------------------------------------------------------");
     for (int i = 0; i < array.length; i++) {
       System.out.print(array[i] + "| \t ");
     }
+    System.out.println("\n-----------------------------------------------------------------------------------------");
   } //<-- // Es werden alle gespeicherten Werte als Tabelle ausgegeben
 
   // Der Benutzer wird nach dem Tag und der Art des Werts gefragt, dann wird der Wert an die passende Stelle gespeichert
@@ -83,10 +84,10 @@ public class Wetterstation {
     }
   }
 
-  public static double[] fahrenheit_gay(int array[]) {
-    double[] fahrenheit = new double[31];
+  public static int[] fahrenheit_gay(int array[]) {
+    int[] fahrenheit = new int[31];
     for (int i = 0; i < array.length; i++) {
-      fahrenheit[i] = (array[i] * 9.0 / 5.0) + 32.0;
+      fahrenheit[i] = (array[i] * (9 / 5)) + 32;
     }
 
     return fahrenheit;
