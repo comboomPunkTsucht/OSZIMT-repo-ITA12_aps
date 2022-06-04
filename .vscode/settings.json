@@ -1,3 +1,45 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "cSpell.words": [
+        "Ausgabe",
+        "ausgegeben",
+        "Auswertung",
+        "beenden",
+        "Benutzer",
+        "Bereich",
+        "dann",
+        "Daten",
+        "deklarieren",
+        "dumptable",
+        "eine",
+        "Eingabe",
+        "Falsche",
+        "gefragt",
+        "gespeichert",
+        "gespeicherten",
+        "groeste",
+        "heraussuchen",
+        "ingeben",
+        "initialisieren",
+        "kleinste",
+        "Messwerte",
+        "Methoden",
+        "nach",
+        "passende",
+        "Programm",
+        "Stelle",
+        "Tabelle",
+        "usgeben",
+        "Waele",
+        "werden",
+        "Werte",
+        "Werts",
+        "Wetterstation",
+        "wird",
+        "zufälligen",
+        "zwei"
+    ],
+    "java.project.sourcePaths": [
+        "Erstes Ausbildungsjahr/PAS/arrays/Wetterstation"
+    ]
 }
