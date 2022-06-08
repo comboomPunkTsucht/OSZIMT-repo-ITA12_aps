@@ -1,0 +1,28 @@
+{
+    "name": "comboomPunkTsucht-theme",
+    "displayName": "comboom.sucht - theme",
+    "description": "comboom.sucht theme",
+    "version": "0.0.2",
+    "publisher": "mahd",
+    "keywords":[
+        "comboom.sucht",
+        "comboom.sucht - theme",
+        "comboom.sucht - theme - 0.0.2"
+    ],
+    ]
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "comboom.sucht - Theme",
+                "uiTheme": "vs-dark",
+                "path": "./themes/comboom.sucht - Theme-color-theme.json"
+            }
+        ]
+    }
+}
