@@ -9,12 +9,12 @@ public class Wetterstation {
     dumptable(fahrenheit_gay(random_Array()));
   }
 
-  public static int[] random_Array() { //<--  // Die Listen für die Messwerte deklarieren und initialisieren
+  public static double[] random_Array() { //<--  // Die Listen für die Messwerte deklarieren und initialisieren
     //<-- // Alle Messwerte mit zufälligen Daten im Bereich von -5 … +5 Grad belegen
     int min = -5;
     int max = 5;
 
-    int[] array = new int[31];
+    double[] array = new double[31];
 
     for (int i = 0; i < array.length; i++) {
       array[i] = r.nextInt(max - min + 1) + min;
@@ -22,7 +22,7 @@ public class Wetterstation {
     return array;
   }
 
-  public static void dumptable(int array[]) {
+  public static void dumptable(double array[]) {
     for (int i = 0; i < array.length; i++) {
       System.out.print(i + "| \t ");
     }
@@ -84,19 +84,21 @@ public class Wetterstation {
     }
   }
 
-  public static int[] fahrenheit_gay(int array[]) {
-    int[] fahrenheit = new int[31];
+  public static double[] fahrenheit_gay(double array[]) {
+    double[] fahrenheit = new double[31];
     for (int i = 0; i < array.length; i++) {
-      fahrenheit[i] = (array[i] * (9 / 5)) + 32;
+      fahrenheit[i] = 32.0 + (array[i] *9/5.0);
     }
 
     return fahrenheit;
   }
-  public static double durchschnitt (int[] array){
+  public static double durchschnitt(int[] array) { 
     int sum = 0;
     double durchschnitt = 0;
     for(int i = 0; i < array.length; i++){
-    sum =+ array[i];}
+    sum =+ array[i];
+    }
     durchschnitt = sum/array.length;
-    return(durchschnitt);}
+    return(durchschnitt);
+    } 
 }
