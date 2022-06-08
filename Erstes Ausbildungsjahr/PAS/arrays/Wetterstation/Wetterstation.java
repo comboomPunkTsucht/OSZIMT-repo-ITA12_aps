@@ -89,7 +89,6 @@ public class Wetterstation {
     for (int i = 0; i < array.length; i++) {
       fahrenheit[i] = array[i] * 1.8 + 32.0;
       fahrenheit[i] = Math.round(fahrenheit[i] * 10.0) / 10.0;
-      //fahrenheit[i] = array;
     }
 
     return fahrenheit;
