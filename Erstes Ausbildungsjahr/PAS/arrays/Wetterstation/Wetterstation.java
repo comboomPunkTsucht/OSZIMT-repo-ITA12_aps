@@ -87,7 +87,9 @@ public class Wetterstation {
   public static double[] fahrenheit_gay(double array[]) {
     double[] fahrenheit = new double[31];
     for (int i = 0; i < array.length; i++) {
-      fahrenheit[i] = 32.0 + (array[i] *9/5.0);
+      fahrenheit[i] = array[i] * 1.8 + 32.0;
+      fahrenheit[i] = Math.round(fahrenheit[i] * 10.0) / 10.0;
+      //fahrenheit[i] = array;
     }
 
     return fahrenheit;
@@ -102,3 +104,4 @@ public class Wetterstation {
     return(durchschnitt);
     } 
 }
+
