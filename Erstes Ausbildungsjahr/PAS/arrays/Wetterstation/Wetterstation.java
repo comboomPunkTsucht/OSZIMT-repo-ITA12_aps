@@ -12,7 +12,7 @@ public class Wetterstation {
     do{
     //temp = random_Array();
     System.out.print(
-      "************************************************************** \n * Waele eine option * \n * Messwerte [e]ingeben * \n * 2. Messwerte [a]usgeben * \n * 3. [D]urchschnitt ausgeben * \n * [Q] Programm beenden * \n ************************************************************** \n"
+      "************************************************************** \n * Waele eine option * \n * Messwerte [e]ingeben * \n * 2. Messwerte [a]usgeben * \n * 3. [D]urchschnitt ausgeben * \n * [>] 4. Max * \n * [<] 5. Min * \n * [Q] Programm beenden * \n ************************************************************** \n"
     );
     key = scanner.next().charAt(0);
 
@@ -64,9 +64,18 @@ public class Wetterstation {
         System.out.println("Der Durchschnitt betreagt: " + ((durchschnitt(temp) *10) /10 ) + " Grad Celsius und " + (Math.round(((durchschnitt(temp)*9/5)+ 32) *10.0)/ 10.0) + " Fahrenheit");
         break;
         case '>':
+        System.out.println("Max");
         break;
         case '<':
-        min
+        System.out.println("Min");
+        break;
+        case 'q':
+        System.out.println("Programm beendet");
+        System.exit(0);
+        break;
+        case 'Q':
+        System.out.println("Programm beendet");
+        System.exit(0);
         break;
       default:
         System.out.println("Falsche Taste");
