@@ -3,10 +3,57 @@ import java.util.*;
 public class Wetterstation {
 
   public static Random r = new Random();
+  public static Scanner scanner = new Scanner(System.in);
 
   public static void main(String[] args) {
-    dumptable(random_Array());
-    dumptable(fahrenheit_gay(random_Array()));
+    double[] temp = new double[31];
+    //temp = random_Array();
+    System.out.print(
+      "************************************************************** \n * Waele eine option * \n * Messwerte [e]ingeben * \n * 2. Messwerte [a]usgeben * \n * [Q] Programm beenden * \n ************************************************************** \n"
+    );
+char key = scanner.next().charAt(0);
+
+    do{
+    switch (key) {
+      case 'a':
+        //System.out.println("Ausgabe");
+        dumptable(temp);
+        dumptable(fahrenheit_gay(temp));
+        break;
+      case 'A':
+        //System.out.println("Ausgabe");
+        dumptable(temp);
+        dumptable(fahrenheit_gay(temp));
+        break;
+      case 'e':
+        //System.out.println("Eingabe");
+        System.out.println("Möchten sie zufällige Werte Y/n");
+        char key2 = scanner.next().charAt(0);
+        if (key2 == 'y' || key2 == 'Y') {
+          temp = random_Array();
+        } else if (key2 == 'n' || key2 == 'N') {
+          temp = eingabe_Array();
+        else{
+          temp = random_Array();
+        }
+        break;
+      case 'E':
+        //System.out.println("Eingabe");
+        System.out.println("Möchten sie zufällige Werte Y/n");
+        char key_2 = scanner.next().charAt(0);
+        if (key_2 == 'y' || key_2 == 'Y') {
+          temp = random_Array();
+        } else if (key_2 == 'n' || key_2 == 'N') {
+          temp = eingabe_Array();
+        else{
+          temp = random_Array();
+        }
+        break;
+      default:
+        System.out.println("Falsche Taste");
+    }
+    }while(key != 'q' || key != 'Q');
+    
   }
 
   public static double[] random_Array() { //<--  // Die Listen für die Messwerte deklarieren und initialisieren
@@ -21,6 +68,18 @@ public class Wetterstation {
     }
     return array;
   }
+  public static double[] eingabe_Array() {
+    double eingabe [] = new double[30];
+    
+    for(int i = 0; i < eingabe.length; i++){
+       eingabe[i] = scanner.nextDouble();
+       System.out.println("geben sie die nächste Messwert in Grad Celsius für den " + ( i+ 1) + " Tag ein");
+       System.out.print("> ");
+       
+      }
+    return eingabe;
+  };
+
 
   public static void dumptable(double array[]) {
     for (int i = 0; i < array.length; i++) {
@@ -35,34 +94,7 @@ public class Wetterstation {
 
   // Der Benutzer wird nach dem Tag und der Art des Werts gefragt, dann wird der Wert an die passende Stelle gespeichert
   // \/
-  public static void menu(char key) {
-    System.out.print(
-      "************************************************************** \n * Waele eine option * \n * Messwerte [e]ingeben * \n * 2. Messwerte [a]usgeben * \n * [Q] Programm beenden * \n ************************************************************** \n"
-    );
-
-    switch (key) {
-      case 'q':
-        System.out.println("Auswertung");
-        break;
-      case 'Q':
-        System.out.println("Auswertung");
-        break;
-      case 'a':
-        System.out.println("Ausgabe");
-        break;
-      case 'A':
-        System.out.println("Ausgabe");
-        break;
-      case 'e':
-        System.out.println("Eingabe");
-        break;
-      case 'E':
-        System.out.println("Eingabe");
-        break;
-      default:
-        System.out.println("Falsche Taste");
-    }
-  }
+ 
 
   public static void min_own(int array[]) { // <--Das Maximum und das Minimum aus dem Array heraussuchen (zwei Methoden)
     int min = -5;
@@ -87,7 +119,7 @@ public class Wetterstation {
   public static double[] fahrenheit_gay(double array[]) {
     double[] fahrenheit = new double[31];
     for (int i = 0; i < array.length; i++) {
-      fahrenheit[i] = array[i] * 1.8 + 32.0;
+      fahrenheit[i] = (array[i] * (9.0/5.0)) + 32.0;
       fahrenheit[i] = Math.round(fahrenheit[i] * 10.0) / 10.0;
     }
 
