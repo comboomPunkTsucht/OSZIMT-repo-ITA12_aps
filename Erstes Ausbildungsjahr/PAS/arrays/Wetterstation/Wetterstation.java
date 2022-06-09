@@ -15,7 +15,7 @@ public class Wetterstation {
     do {
       //temp = random_Array();
       System.out.print(
-        "************************************************************** \n * Waele eine option * \n * Messwerte [e]ingeben * \n * 2. Messwerte [a]usgeben * \n * 3. [D]urchschnitt ausgeben * \n * [>] 4. Max * \n * [<] 5. Min * \n * [Q] Programm beenden * \n ************************************************************** \n"
+        "************************************************************** \n * Waele eine option * \n * 1. Messwerte eingeben [e]* \n * 2. Messwerte ausgeben [a]* \n * 3. Durchschnitt ausgeben [d] * \n * 4. Max [>] * \n * 5. Min [<] * \n * 6. Frosttage [f] * \n * 7. Programm beenden [q]* \n ************************************************************** \n"
       );
       key = scanner.next().charAt(0);
 
@@ -75,10 +75,16 @@ public class Wetterstation {
           );
           break;
         case '>':
-          max_own(temp[]);
+          max_own(temp);
           break;
         case '<':
-          min_own(temp[]);
+          min_own(temp);
+          break;
+        case 'f':
+          frosttage(temp);
+          break;
+        case 'F':
+          frosttage(temp);
           break;
         case 'q':
           System.out.println("Programm beendet");
@@ -164,14 +170,14 @@ public class Wetterstation {
     return fahrenheit;
   }
 
-  public static double frosttage(double[] array) {
+  public static void frosttage(double[] array) {
     int sum = 0;
     for (int i = 0; i < array.length; i++) {
       if (array[i] <= 0) {
         sum++;
       }
     }
-    return sum;
+    System.out.println("Es sind " + sum + " Frosttage");
   }
 
   public static double durchschnitt(double[] array) {
