@@ -7,14 +7,18 @@ public class Wetterstation {
 
   public static void main(String[] args) {
     double[] temp = new double[31];
+    char key;
+    temp = random_Array();
+    do{
     //temp = random_Array();
     System.out.print(
-      "************************************************************** \n * Waele eine option * \n * Messwerte [e]ingeben * \n * 2. Messwerte [a]usgeben * \n * [Q] Programm beenden * \n ************************************************************** \n"
+      "************************************************************** \n * Waele eine option * \n * Messwerte [e]ingeben * \n * 2. Messwerte [a]usgeben * \n * 3. [D]urchschnitt ausgeben * \n * [Q] Programm beenden * \n ************************************************************** \n"
     );
-char key = scanner.next().charAt(0);
+    key = scanner.next().charAt(0);
 
-    do{
+    
     switch (key) {
+      
       case 'a':
         //System.out.println("Ausgabe");
         dumptable(temp);
@@ -33,6 +37,7 @@ char key = scanner.next().charAt(0);
           temp = random_Array();
         } else if (key2 == 'n' || key2 == 'N') {
           temp = eingabe_Array();
+        }
         else{
           temp = random_Array();
         }
@@ -45,10 +50,23 @@ char key = scanner.next().charAt(0);
           temp = random_Array();
         } else if (key_2 == 'n' || key_2 == 'N') {
           temp = eingabe_Array();
+        }
         else{
           temp = random_Array();
         }
         break;
+      case 'D':
+        //System.out.println("Durchschnitt");
+        System.out.println("Der Durchschnitt betreagt: " + ((durchschnitt(temp) *10) /10 ) + " Grad Celsius und " + (Math.round(((durchschnitt(temp)*9/5)+ 32) *10.0)/ 10.0) + " Fahrenheit");
+        break;
+        case 'd':
+        //System.out.println("Durchschnitt");
+        System.out.println("Der Durchschnitt betreagt: " + ((durchschnitt(temp) *10) /10 ) + " Grad Celsius und " + (Math.round(((durchschnitt(temp)*9/5)+ 32) *10.0)/ 10.0) + " Fahrenheit");
+        break;
+        case 'M':
+        
+        break;
+        case 
       default:
         System.out.println("Falsche Taste");
     }
@@ -69,12 +87,13 @@ char key = scanner.next().charAt(0);
     return array;
   }
   public static double[] eingabe_Array() {
-    double eingabe [] = new double[30];
+    double eingabe [] = new double[31];
     
     for(int i = 0; i < eingabe.length; i++){
-       eingabe[i] = scanner.nextDouble();
-       System.out.println("geben sie die nächste Messwert in Grad Celsius für den " + ( i+ 1) + " Tag ein");
-       System.out.print("> ");
+      System.out.println("geben sie die nächste Messwert in Grad Celsius für den " + ( i+ 1) + " Tag ein");
+       System.out.print("> "); 
+      eingabe[i] = scanner.nextDouble();
+       
        
       }
     return eingabe;
@@ -125,14 +144,14 @@ char key = scanner.next().charAt(0);
 
     return fahrenheit;
   }
-  public static double durchschnitt(int[] array) { 
-    int sum = 0;
+  public static double durchschnitt(double[] array) { 
+    double sum = 0;
     double durchschnitt = 0;
     for(int i = 0; i < array.length; i++){
     sum =+ array[i];
     }
     durchschnitt = sum/array.length;
-    return(durchschnitt);
+    return durchschnitt;
     } 
 }
 
