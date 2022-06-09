@@ -63,10 +63,11 @@ public class Wetterstation {
         //System.out.println("Durchschnitt");
         System.out.println("Der Durchschnitt betreagt: " + ((durchschnitt(temp) *10) /10 ) + " Grad Celsius und " + (Math.round(((durchschnitt(temp)*9/5)+ 32) *10.0)/ 10.0) + " Fahrenheit");
         break;
-        case 'M':
-        
+        case '>':
         break;
-        case 
+        case '<':
+        min
+        break;
       default:
         System.out.println("Falsche Taste");
     }
