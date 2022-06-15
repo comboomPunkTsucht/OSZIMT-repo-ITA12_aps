@@ -2,15 +2,15 @@
     "name": "comboomPunkTsucht-theme",
     "displayName": "comboom.sucht - theme",
     "description": "comboom.sucht theme",
-    "version": "0.0.3",
+    "version": "0.0.6",
     "publisher": "mahd",
-    "keywords":[
+    "keywords": [
         "comboom.sucht",
         "comboom.sucht - theme",
-        "comboom.sucht - theme - 0.0.3"
+        "comboom.sucht - theme - 0.0.6"
     ],
     "engines": {
-        "vscode": "^1.67.0"
+        "vscode": "^1.68.1"
     },
     "categories": [
         "Themes"
