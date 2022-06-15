@@ -1,10 +1,20 @@
 import java.util.*;
 
+/**
+ * @author <a href="mailto:mcpeaps_HD@outlook.com" /a>Aps,Fabian; Babig,Kevin
+ * @version 1.00 from 24/03/2022
+ * @see <a href="https://github.com/comboomPunkTsucht/OSZIMT-repo-ITA12_aps" />Github-Repo
+ *
+ */
+
 public class Wetterstation {
 
   public static Random r = new Random();
   public static Scanner scanner = new Scanner(System.in);
 
+  /**
+   * main-Methode
+   */
   public static void main(String[] args) {
     double[] temp = new double[31];
     char key;
@@ -100,6 +110,10 @@ public class Wetterstation {
     } while (key != 'q' || key != 'Q');
   }
 
+  /**
+   * @param i++
+   * @return double[]
+   */
   public static double[] random_Array() { //<--  // Die Listen für die Messwerte deklarieren und initialisieren
     //<-- // Alle Messwerte mit zufälligen Daten im Bereich von -5 … +5 Grad belegen
     int min = -5;
@@ -113,6 +127,9 @@ public class Wetterstation {
     return array;
   }
 
+  /**
+   * @return double[]
+   */
   public static double[] eingabe_Array() {
     double eingabe[] = new double[31];
 
@@ -128,6 +145,9 @@ public class Wetterstation {
     return eingabe;
   }
 
+  /**
+   * @param array[]
+   */
   public static void dumptable(double array[]) {
     for (int i = 0; i < array.length; i++) {
       System.out.print(i + "| \t ");
@@ -143,6 +163,9 @@ public class Wetterstation {
     );
   } //<-- // Es werden alle gespeicherten Werte als Tabelle ausgegeben
 
+  /**
+   * @param array[]
+   */
   // Der Benutzer wird nach dem Tag und der Art des Werts gefragt, dann wird der Wert an die passende Stelle gespeichert
   // \/
 
@@ -153,6 +176,9 @@ public class Wetterstation {
     System.out.println("Der kleinste Wert ist: " + min);
   }
 
+  /**
+   * @param array[]
+   */
   public static void max_own(double[] array) { // <--Das Maximum und das Minimum aus dem Array heraussuchen (zwei Methoden)
     double max = 0;
     Arrays.sort(array);
@@ -160,6 +186,10 @@ public class Wetterstation {
     System.out.println("Der groeste Wert ist: " + max);
   }
 
+  /**
+   * @param array[]
+   * @return double[]
+   */
   public static double[] fahrenheit_gay(double array[]) {
     double[] fahrenheit = new double[31];
     for (int i = 0; i < array.length; i++) {
@@ -170,6 +200,9 @@ public class Wetterstation {
     return fahrenheit;
   }
 
+  /**
+   * @param array
+   */
   public static void frosttage(double[] array) {
     int sum = 0;
     for (int i = 0; i < array.length; i++) {
@@ -180,6 +213,10 @@ public class Wetterstation {
     System.out.println("Es sind " + sum + " Frosttage");
   }
 
+  /**
+   * @param array
+   * @return double
+   */
   public static double durchschnitt(double[] array) {
     double sum = 0;
     double durchschnitt = 0;
