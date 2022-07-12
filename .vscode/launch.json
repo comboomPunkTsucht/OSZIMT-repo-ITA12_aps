@@ -21,13 +21,6 @@
         },
         {
             "type": "java",
-            "name": "Launch Wetterstation",
-            "request": "launch",
-            "mainClass": "Wetterstation",
-            "projectName": "OSZIMT-repo-ITA12_aps_ab6ff2f2"
-        },
-        {
-            "type": "java",
             "request": "attach",
             "name": "Java",
             "port": 5005,
@@ -46,7 +39,7 @@
             "type": "java",
             "request": "launch",
             "stopOnEntry": true,
-            "jdkPath": "${env:JAVA_HOME}/bin",
+            "jdkPath": "/usr/lib/jvm/java-17-openjdk-amd64/bin/",
             "cwd": "${fileDirname}",
             "startupClass": "${fileBasenameNoExtension}",
             "classpath": [
@@ -59,7 +52,7 @@
             "type": "java",
             "request": "launch",
             "stopOnEntry": true,
-            "jdkPath": "${env:JAVA_HOME}/bin",
+            "jdkPath": "/usr/lib/jvm/java-17-openjdk-amd64/bin/",
             "cwd": "${fileDirname}",
             "startupClass": "${fileBasenameNoExtension}",
             "classpath": [
