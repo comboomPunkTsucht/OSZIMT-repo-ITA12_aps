@@ -1,5 +1,3 @@
-package String.Hangman;
-
 import java.util.*;
 
 public class hangmain {
