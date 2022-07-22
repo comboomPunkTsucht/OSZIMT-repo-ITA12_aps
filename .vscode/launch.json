@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Wetterstation",
+            "request": "launch",
+            "mainClass": "Wetterstation",
+            "projectName": "OSZIMT-repo-ITA12_aps_ab6ff2f2"
+        },
+        {
+            "type": "java",
             "name": "Launch Compare",
             "request": "launch",
             "mainClass": "Compare",
