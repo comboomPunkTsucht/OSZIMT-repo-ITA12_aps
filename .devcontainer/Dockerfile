@@ -22,9 +22,8 @@ RUN [[ "${TARGETPLATFORM}" == "linux/amd64" ]] || exit 0 && \
     pacman -Syy --noconfirm --needed archlinux-keyring manjaro-keyring && \
     pacman-key --populate archlinux manjaro
 
-RUN [[ "${TARGETPLATFORM}" == "linux/arm64" ]] || exit 0 && \
-    pacman -Syy --noconfirm --needed archlinuxarm-keyring manjaro-arm-keyring && \
-    pacman-key --populate archlinuxarm manjaro-arm
+
+
 
 RUN rm /usr/include/bits/struct_stat.h \
         /usr/include/bits/types/struct___jmp_buf_tag.h \
@@ -66,8 +65,7 @@ RUN pacman -Syy --noconfirm --needed \
     texinfo \
     lsb-release \
     manjaro-release \
-    which \
-    fish
+    which
 
 # Enable at least one locale in locale.gen
 RUN sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen && \
