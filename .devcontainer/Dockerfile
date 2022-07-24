@@ -79,5 +79,5 @@ RUN ls /etc/*-release && cat /etc/*-release
 RUN id -u builder &>/dev/null || (useradd -d /builder -m builder && \
     echo "builder ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers)
 
-CMD ["/usr/bin/fish"]
+CMD ["/usr/bin/bash"]
 
