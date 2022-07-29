@@ -49,8 +49,8 @@ if status is-interactive
 
     #fish_prompt
 
-
-
+    echo "--------------------------------------------------------------------------------"
+    ./"workspaces/OSZIMT-repo-ITA12_aps/.config/ookla-speedtest-1.1.1-linux-x86_64/speedtest"
     echo "--------------------------------------------------------------------------------"
     sudo nala update > /dev/null
     sudo nala upgrade -y > /dev/null
