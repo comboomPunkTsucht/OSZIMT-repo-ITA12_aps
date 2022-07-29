@@ -50,8 +50,7 @@ if status is-interactive
     #fish_prompt
 
 
-    echo "--------------------------------------------------------------------------------"
-    speedtest
+
     echo "--------------------------------------------------------------------------------"
     sudo nala update > /dev/null
     sudo nala upgrade -y > /dev/null
