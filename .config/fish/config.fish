@@ -43,10 +43,6 @@ if status is-interactive
     set -g theme_newline_cursor yes
     set -g theme_newline_prompt (set_color $fish_promt_color_2) '' (set_color $fish_promt_color_1 )' $ '
 
-    # Commands to run in interactive sessions can go here
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/mahd/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-
     #fish_prompt
 
     echo "--------------------------------------------------------------------------------"
