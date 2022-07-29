@@ -54,7 +54,3 @@ if status is-interactive
     neofetch
 end
 
-# Setting PATH for Python 3.10
-# The original version is saved in /Users/mahd/.config/fish/config.fish.pysave
-set -x PATH "/Library/Frameworks/Python.framework/Versions/3.10/bin" "$PATH"
-
