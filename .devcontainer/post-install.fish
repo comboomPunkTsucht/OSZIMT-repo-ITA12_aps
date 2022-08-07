@@ -8,3 +8,4 @@ fish -c "omf install bobthefish"
 cp -r /workspaces/OSZIMT-repo-ITA12_aps/.config/  /home/vscode/
 fish
 bash /workspaces/OSZIMT-repo-ITA12_aps/.config/font.sh
+git config -e # gpgsign = true --> gpgsign = false
