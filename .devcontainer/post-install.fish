@@ -8,3 +8,4 @@ fish -c "omf install bobthefish"
 cp -r /workspaces/OSZIMT-repo-ITA12_aps/.config/  /home/vscode/
 fish
 bash /workspaces/OSZIMT-repo-ITA12_aps/.config/font.sh
+wget -O ~/vsls-reqs https://aka.ms/vsls-linux-prereq-script && chmod +x ~/vsls-reqs && ~/vsls-reqs
