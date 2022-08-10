@@ -34,6 +34,7 @@
 		"fish": "latest",
 		"java": "latest",
 		"desktop-lite": "latest",
+		"dotnet": "latest",
 		"python": "latest"
 	},
 	"customizations": {
