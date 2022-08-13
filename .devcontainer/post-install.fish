@@ -8,4 +8,8 @@ fish -c "omf install bobthefish"
 cp -r /workspaces/OSZIMT-repo-ITA12_aps/.config/  /home/vscode/
 fish
 bash /workspaces/OSZIMT-repo-ITA12_aps/.config/font.sh
-wget -O ~/vsls-reqs https://aka.ms/vsls-linux-prereq-script && chmod +x ~/vsls-reqs && ~/vsls-reqs
+wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+sudo wget -O ~/vsls-reqs https://aka.ms/vsls-linux-prereq-script 
+sudo chmod +x ~/vsls-reqs
+sudo ~/vsls-reqs
