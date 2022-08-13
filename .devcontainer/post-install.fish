@@ -15,3 +15,4 @@ sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb
 sudo wget -O ~/vsls-reqs https://aka.ms/vsls-linux-prereq-script 
 sudo chmod +x ~/vsls-reqs
 sudo ~/vsls-reqs
+cd ..
