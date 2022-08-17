@@ -11,7 +11,7 @@ public class hangmain {
     input = new Scanner(System.in);
     //optinos for the game
     System.out.println("Hangman options");
-    System.out.print("type your guess word: ");
+    System.out.print("type your guess word(not case sensitive): ");
     String word = input.nextLine();
     System.out.println("");
     System.out.print(
@@ -19,12 +19,12 @@ public class hangmain {
     );
     maxWrong = input.nextInt();
     maxWrong = maxWrong + word.length();
-    if (maxWrong < 0) {
+    if (maxWrong < word.length()) {
       maxWrong = word.length();
     }
     System.out.println("");
 
-    for (int i = 0; i < 300; i++) {
+    for (int i = 0; i < 30000; i++) {
       System.out.println("");
     }
 
