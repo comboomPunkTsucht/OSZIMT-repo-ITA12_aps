@@ -11,8 +11,9 @@ fish
 cd ..
 bash /workspaces/OSZIMT-repo-ITA12_aps/.config/font.sh
 wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
-sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+sudo dpkg -i /workspaces/OSZIMT-repo-ITA12_aps/.config/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
 sudo wget -O ~/vsls-reqs https://aka.ms/vsls-linux-prereq-script 
 sudo chmod +x ~/vsls-reqs
 sudo ~/vsls-reqs
+sudo dpkg -i /workspaces/OSZIMT-repo-ITA12_aps/.config/javafx_scenebuilder-2_0-linux-x64.deb
 cd ..
