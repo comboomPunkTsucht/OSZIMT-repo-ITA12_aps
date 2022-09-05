@@ -2,6 +2,7 @@ sudo echo 'deb https://deb.volian.org/volian/ scar main' | sudo tee /etc/apt/sou
 sudo wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
 sudo apt update
 sudo apt install nala neofetch cmatrix htop openjdk-17-jdk -yf
+sudo gem install lolcat -yf
 cd /workspaces/OSZIMT-repo-ITA12_aps/.config/ookla-speedtest-1.1.1-linux-x86_64/
 sudo chmod +x ./"speedtest"
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
