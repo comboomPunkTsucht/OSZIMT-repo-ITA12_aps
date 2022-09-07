@@ -10,17 +10,25 @@ import java.util.*;
 
 public class Lerntagebuch_Vorlage_B_C {
 
-  public Scanner scan = new Scanner(System.in);
+  public static Scanner scan = new Scanner(System.in);
 
   public static void main(String[] args) {
     /*** Vorbereiten der Arrays ***/
 
     // Vorbereiten der Laenge (Standard-Wert 10)
     int laenge = 10;
+    int eleange;
 
     // Frage so lange weiter, bis die Laenge gueltig ist- mindestens 10 Eintraege
     // Tipp: fussgesteuerte Schleife ...solange laenge kleiner als 10
-
+    do {
+      System.out.println("******************************************");
+      System.out.println("* Geben Sie die Menge der Datenzeilen an *");
+      System.out.println("*       !!(nicht kleiner als 10)!!       *");
+      System.out.println("******************************************");
+      System.out.print("=> ");
+      eleange = scan.nextInt();
+    } while (!(eleange >= laenge));
     // Erstellen der Arrays fuer die vier Spalten:
 
     int[] durraration = new int[laenge];
@@ -32,14 +40,8 @@ public class Lerntagebuch_Vorlage_B_C {
 
     /*** Hauptschleife ***/
 
-    durraration[0] = 45;
-    activity[0] = "Übung zu Schleifen und Methode";
-    subject[0] = "PAS";
-    date[0] = "11.08.";
-
     // Variable fuer die Eingabe (Zeichen oder ganze Zahl)
-    int eingabe = 0;
-
+    int i = 0;
     // Anfang der fussgesteuerten Schleife
     do {
       /*** Ausgabe der Eintraege ***/
