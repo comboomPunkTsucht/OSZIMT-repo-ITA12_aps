@@ -35,10 +35,10 @@ public class learndiary {
   public static int getlength() {
     int length = 10;
     do {
-      System.out.println("******************************************");
-      System.out.println("* Geben Sie die Menge der Datenzeilen an *");
-      System.out.println("*       !!(nicht kleiner als 10)!!       *");
-      System.out.println("******************************************");
+      System.out.println("***********************************");
+      System.out.println("* Specify the amount of data rows *");
+      System.out.println("*     !!(not smaller than 10)!!   *");
+      System.out.println("***********************************");
       System.out.print("=> ");
       length = scan.nextInt();
     } while (!(length >= 10));
@@ -48,7 +48,10 @@ public class learndiary {
   public static String setDate() {
     int month;
     do {
-      System.out.print("set Month: ");
+      System.out.println("*************");
+      System.out.println("* set Month *");
+      System.out.println("*************");
+      System.out.print("=> ");
       month = scan.nextInt();
     } while (!(month <= 12 && month >= 1));
     System.out.println(" ");
@@ -95,7 +98,10 @@ public class learndiary {
 
     int dayOfMonth;
     do {
-      System.out.print("set day of Month: ");
+      System.out.println("********************");
+      System.out.println("* set day of Month *");
+      System.out.println("********************");
+      System.out.print("=> ");
       dayOfMonth = scan.nextInt();
     } while (!(dayOfMonth <= maxDays && dayOfMonth > 0));
     System.out.println(" ");
@@ -130,34 +136,56 @@ public class learndiary {
 
     boolean quit = false;
 
-    char menu = 'i';
+    char menu;
 
     int i = 4;
 
     do {
       output_table(date, subject, activity, durraration, length);
 
-      System.out.println("select an option:");
-      System.out.println("[i] input data");
-      System.out.println("[q] quit");
+      System.out.println("********************");
+      System.out.println("* select an option *");
+      System.out.println("*  [i] input data  *");
+      System.out.println("*     [q] quit     *");
+      System.out.println("********************");
       System.out.print("=> ");
       menu = scan.next().charAt(0);
 
       switch (menu) {
         case 'q':
           quit = true;
+          break;
         case 'i':
           date[i] = setDate();
+          System.out.println("****************");
+          System.out.println("* what Subject *");
+          System.out.println("****************");
+          System.out.print("=> ");
           subject[i] = scan.next();
+          System.out.println("*****************");
+          System.out.println("* what activity *");
+          System.out.println("*****************");
+          System.out.print("=> ");
           activity[i] = scan.next();
+          System.out.println("*************************");
+          System.out.println("* what durraration[min] *");
+          System.out.println("*************************");
+          System.out.print("=> ");
           durraration[i] = scan.nextInt();
+          break;
         default:
           System.out.println(
-            "user interface is resetting, data will not be cleared"
+            "*************************************************************"
+          );
+          System.out.println(
+            "* !!user interface is resetting, data will not be cleared!! *"
+          );
+          System.out.println(
+            "*************************************************************"
           );
           break;
       }
       i++;
-    } while (quit = false);
+    } while (quit == false);
   }
 }
