@@ -1,9 +1,23 @@
+/**
+ * It's a simple program that allows you to input data into an array and then outputs it in a table
+ * @author Aps, Fabian, ITA12
+ * @version 1.0.1 - 07.09.2022
+ */
 import java.util.*;
 
 public class learndiary {
 
   public static Scanner scan = new Scanner(System.in);
 
+  /**
+   * It prints out a table of the data in the arrays
+   *
+   * @param date an array of strings that contains the dates of the activities
+   * @param subject The subject of the activity.
+   * @param activity the activity that was done
+   * @param duration an array of integers
+   * @param length the number of rows in the table
+   */
   public static void output_table(
     String[] date,
     String[] subject,
@@ -32,23 +46,38 @@ public class learndiary {
     System.out.println("************************************************");
   }
 
+  /**
+   * It asks the user to input a number, and if the number is less than 10, it will ask the user to
+   * input a number again
+   *
+   * @return The length of the array.
+   */
   public static int getlength() {
     int length = 10;
     do {
-      System.out.println("******************************************");
-      System.out.println("* Geben Sie die Menge der Datenzeilen an *");
-      System.out.println("*       !!(nicht kleiner als 10)!!       *");
-      System.out.println("******************************************");
+      System.out.println("***********************************");
+      System.out.println("* Specify the amount of data rows *");
+      System.out.println("*     !!(not smaller than 10)!!   *");
+      System.out.println("***********************************");
       System.out.print("=> ");
       length = scan.nextInt();
     } while (!(length >= 10));
     return length;
   }
 
+  /**
+   * It asks the user to input a month and a day of the month, and then returns a string containing the
+   * day and month in the format "dd.mm."
+   *
+   * @return A String with the date in the format "dd.mm."
+   */
   public static String setDate() {
     int month;
     do {
-      System.out.print("set Month: ");
+      System.out.println("*************");
+      System.out.println("* set Month *");
+      System.out.println("*************");
+      System.out.print("=> ");
       month = scan.nextInt();
     } while (!(month <= 12 && month >= 1));
     System.out.println(" ");
@@ -95,7 +124,10 @@ public class learndiary {
 
     int dayOfMonth;
     do {
-      System.out.print("set day of Month: ");
+      System.out.println("********************");
+      System.out.println("* set day of Month *");
+      System.out.println("********************");
+      System.out.print("=> ");
       dayOfMonth = scan.nextInt();
     } while (!(dayOfMonth <= maxDays && dayOfMonth > 0));
     System.out.println(" ");
@@ -104,6 +136,9 @@ public class learndiary {
     return date;
   }
 
+  /**
+   * It's a menu that allows the user to input data into the arrays
+   */
   public static void main(String[] args) {
     int length = getlength();
     int[] durraration = new int[length];
@@ -130,34 +165,56 @@ public class learndiary {
 
     boolean quit = false;
 
-    char menu = 'i';
+    char menu;
 
     int i = 4;
 
     do {
       output_table(date, subject, activity, durraration, length);
 
-      System.out.println("select an option:");
-      System.out.println("[i] input data");
-      System.out.println("[q] quit");
+      System.out.println("********************");
+      System.out.println("* select an option *");
+      System.out.println("*  [i] input data  *");
+      System.out.println("*     [q] quit     *");
+      System.out.println("********************");
       System.out.print("=> ");
       menu = scan.next().charAt(0);
 
       switch (menu) {
         case 'q':
           quit = true;
+          break;
         case 'i':
           date[i] = setDate();
+          System.out.println("****************");
+          System.out.println("* what Subject *");
+          System.out.println("****************");
+          System.out.print("=> ");
           subject[i] = scan.next();
+          System.out.println("*****************");
+          System.out.println("* what activity *");
+          System.out.println("*****************");
+          System.out.print("=> ");
           activity[i] = scan.next();
+          System.out.println("*************************");
+          System.out.println("* what durraration[min] *");
+          System.out.println("*************************");
+          System.out.print("=> ");
           durraration[i] = scan.nextInt();
+          break;
         default:
           System.out.println(
-            "user interface is resetting, data will not be cleared"
+            "*************************************************************"
+          );
+          System.out.println(
+            "* !!user interface is resetting, data will not be cleared!! *"
+          );
+          System.out.println(
+            "*************************************************************"
           );
           break;
       }
       i++;
-    } while (quit = false);
+    } while (quit == false);
   }
 }
