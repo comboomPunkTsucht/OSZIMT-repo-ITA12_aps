@@ -6,7 +6,11 @@
  * @author Max Mustermann
  */
 
+import java.util.*;
+
 public class Lerntagebuch_Vorlage_B_C {
+
+  public Scanner scan = new Scanner(System.in);
 
   public static void main(String[] args) {
     /*** Vorbereiten der Arrays ***/
@@ -19,9 +23,19 @@ public class Lerntagebuch_Vorlage_B_C {
 
     // Erstellen der Arrays fuer die vier Spalten:
 
+    int[] durraration = new int[laenge];
+    String[] activity = new String[laenge];
+    String[] subject = new String[laenge];
+    String[] date = new String[laenge];
+
     /*** Festlegen der Beispieldaten ***/
 
     /*** Hauptschleife ***/
+
+    durraration[0] = 45;
+    activity[0] = "Übung zu Schleifen und Methode";
+    subject[0] = "PAS";
+    date[0] = "11.08.";
 
     // Variable fuer die Eingabe (Zeichen oder ganze Zahl)
     int eingabe = 0;
