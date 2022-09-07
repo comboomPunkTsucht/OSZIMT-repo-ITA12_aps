@@ -1,9 +1,23 @@
+/**
+ * It's a simple program that allows you to input data into an array and then outputs it in a table
+ * @author Aps, Fabian, ITA12
+ * @version 1.0.1 - 07.09.2022
+ */
 import java.util.*;
 
 public class learndiary {
 
   public static Scanner scan = new Scanner(System.in);
 
+  /**
+   * It prints out a table of the data in the arrays
+   *
+   * @param date an array of strings that contains the dates of the activities
+   * @param subject The subject of the activity.
+   * @param activity the activity that was done
+   * @param duration an array of integers
+   * @param length the number of rows in the table
+   */
   public static void output_table(
     String[] date,
     String[] subject,
@@ -32,6 +46,12 @@ public class learndiary {
     System.out.println("************************************************");
   }
 
+  /**
+   * It asks the user to input a number, and if the number is less than 10, it will ask the user to
+   * input a number again
+   *
+   * @return The length of the array.
+   */
   public static int getlength() {
     int length = 10;
     do {
@@ -45,6 +65,12 @@ public class learndiary {
     return length;
   }
 
+  /**
+   * It asks the user to input a month and a day of the month, and then returns a string containing the
+   * day and month in the format "dd.mm."
+   *
+   * @return A String with the date in the format "dd.mm."
+   */
   public static String setDate() {
     int month;
     do {
@@ -110,6 +136,9 @@ public class learndiary {
     return date;
   }
 
+  /**
+   * It's a menu that allows the user to input data into the arrays
+   */
   public static void main(String[] args) {
     int length = getlength();
     int[] durraration = new int[length];
