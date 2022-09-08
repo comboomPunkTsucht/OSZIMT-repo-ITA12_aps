@@ -49,6 +49,17 @@ if status is-interactive
     "/workspaces/OSZIMT-repo-ITA12_aps/.config/ookla-speedtest-1.1.1-linux-x86_64/speedtest"
     echo "--------------------------------------------------------------------------------" | lolcat -a -s 500000000000000000000000000000000000000000000000000000000000000000000000
     sudo nala upgrade -y | lolcat -a -s 500000000000000000000000000000000000000000000000000000000000000000000000
+    brew update | lolcat -a -s 500000000000000000000000000000000000000000000000000000000000000000000000  
+    brew upgrade | lolcat -a -s 500000000000000000000000000000000000000000000000000000000000000000000000  
     neofetch
+
+
+
+    # homebrew
+    test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)" > /dev/null
+    test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" > /dev/null
+    test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
+    echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
+
 end
 
