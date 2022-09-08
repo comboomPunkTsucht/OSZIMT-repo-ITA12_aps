@@ -43,6 +43,10 @@ if status is-interactive
     set -g theme_newline_cursor yes
     set -g theme_newline_prompt (set_color $fish_promt_color_2) '' (set_color $fish_promt_color_1 )' $ '
 
+    # aliases
+    alias rparrot "curl parrot.live | lolcat -a -s 500000000000000000000000000000000000000000000000000000000000000000000000"
+    alias rteleheck "telnet telehack.com | lolcat -a -s 500000000000000000000000000000000000000000000000000000000000000000000000"
+
     #fish_prompt
 
     echo "--------------------------------------------------------------------------------" | lolcat -a -s 500000000000000000000000000000000000000000000000000000000000000000000000
