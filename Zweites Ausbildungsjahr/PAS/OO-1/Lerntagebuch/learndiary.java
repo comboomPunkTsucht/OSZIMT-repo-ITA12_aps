@@ -141,24 +141,24 @@ public class learndiary {
    */
   public static void main(String[] args) {
     int length = getlength();
-    int[] durraration = new int[length];
+    int[] duration = new int[length];
     String[] activity = new String[length];
     String[] subject = new String[length];
     String[] date = new String[length];
 
-    durraration[0] = 45;
+    duration[0] = 45;
     activity[0] = "Übung zu Schleifen und Methode";
     subject[0] = "PAS";
     date[0] = "11.08.";
-    durraration[1] = 30;
+    duration[1] = 30;
     activity[1] = "Lerntagebuch - Planung erstellen";
     subject[1] = "PAS";
     date[1] = "12.08.";
-    durraration[2] = 55;
+    duration[2] = 55;
     activity[2] = "Ringparabel Motive";
     subject[2] = "De";
     date[2] = "12.08.";
-    durraration[3] = 30;
+    duration[3] = 30;
     activity[3] = "Arrays - Hausaufgaben";
     subject[3] = "PAS";
     date[3] = "14.08.";
@@ -170,7 +170,7 @@ public class learndiary {
     int i = 4;
 
     do {
-      output_table(date, subject, activity, durraration, length);
+      output_table(date, subject, activity, duration, length);
 
       System.out.println("********************");
       System.out.println("* select an option *");
@@ -197,10 +197,10 @@ public class learndiary {
           System.out.print("=> ");
           activity[i] = scan.next();
           System.out.println("*************************");
-          System.out.println("* what durraration[min] *");
+          System.out.println("* what duration[min] *");
           System.out.println("*************************");
           System.out.print("=> ");
-          durraration[i] = scan.nextInt();
+          duration[i] = scan.nextInt();
           break;
         default:
           System.out.println(
