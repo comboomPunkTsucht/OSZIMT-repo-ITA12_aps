@@ -132,7 +132,16 @@ public class learndiary {
     } while (!(dayOfMonth <= maxDays && dayOfMonth > 0));
     System.out.println(" ");
 
-    String date = dayOfMonth + "." + month + ".";
+    String date;
+    if (dayOfMonth < 10) {
+      date = "0" + dayOfMonth + "." + month + ".";
+    } else if (month < 10) {
+      date = dayOfMonth + ".0" + month + ".";
+    } else if (month < 10 && dayOfMonth < 10) {
+      date = "0" + dayOfMonth + ".0" + month + ".";
+    } else {
+      date = dayOfMonth + "." + month + ".";
+    }
     return date;
   }
 
@@ -216,7 +225,7 @@ public class learndiary {
             entry = -entry;
             entry--;
           }
-          for (int id = entry; i < length - 1; i++) {
+          for (int id = entry; i < length - 1; id++) {
             date[id] = date[id + 1];
             subject[id] = subject[id + 1];
             activity[id] = activity[id + 1];
