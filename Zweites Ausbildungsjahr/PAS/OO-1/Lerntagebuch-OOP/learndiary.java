@@ -126,9 +126,9 @@ public class learndiary {
     } while (!(dayOfMonth <= maxDays && dayOfMonth > 0));
     System.out.println(" ");
     String date;
-    if (dayOfMonth < 10) {
+    if (dayOfMonth < 10 && month > 9) {
       date = "0" + dayOfMonth + "." + month + ".";
-    } else if (month < 10) {
+    } else if (month < 10 && dayOfMonth > 9) {
       date = dayOfMonth + ".0" + month + ".";
     } else if (month < 10 && dayOfMonth < 10) {
       date = "0" + dayOfMonth + ".0" + month + ".";
@@ -146,6 +146,10 @@ public class learndiary {
 
     Entry[] entry = new Entry[length];
 
+    for (int i = 0; i < length; i++) {
+      entry[i] = new Entry();
+    }
+
     entry[0].duration = 45;
     entry[0].activity = "Übung zu Schleifen und Methode";
     entry[0].subject = "PAS";
@@ -156,7 +160,7 @@ public class learndiary {
     entry[1].date = "12.08.";
     entry[2].duration = 55;
     entry[2].activity = "Ringparabel Motive";
-    entry[2].subject = "De";
+    entry[2].subject = "De ";
     entry[2].date = "12.08.";
     entry[3].duration = 30;
     entry[3].activity = "Arrays - Hausaufgaben";
@@ -235,8 +239,11 @@ public class learndiary {
             entryid = -entryid;
             entryid--;
           }
-          for (int id = entryid; i < length - 1; id++) {
-            entry[id] = entry[id + 1];
+          for (int id = entryid; id < length - 1; id++) {
+            entry[id].date = entry[id + 1].date;
+            entry[id].subject = entry[id + 1].subject;
+            entry[id].activity = entry[id + 1].activity;
+            entry[id].duration = entry[id + 1].duration;
           }
           i--;
           break;

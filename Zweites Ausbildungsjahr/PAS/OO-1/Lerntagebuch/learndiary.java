@@ -133,9 +133,9 @@ public class learndiary {
     System.out.println(" ");
 
     String date;
-    if (dayOfMonth < 10) {
+    if (dayOfMonth < 10 && month > 9) {
       date = "0" + dayOfMonth + "." + month + ".";
-    } else if (month < 10) {
+    } else if (month < 10 && dayOfMonth > 9) {
       date = dayOfMonth + ".0" + month + ".";
     } else if (month < 10 && dayOfMonth < 10) {
       date = "0" + dayOfMonth + ".0" + month + ".";
@@ -165,7 +165,7 @@ public class learndiary {
     date[1] = "12.08.";
     duration[2] = 55;
     activity[2] = "Ringparabel Motive";
-    subject[2] = "De";
+    subject[2] = "De ";
     date[2] = "12.08.";
     duration[3] = 30;
     activity[3] = "Arrays - Hausaufgaben";
@@ -234,7 +234,7 @@ public class learndiary {
             entry = -entry;
             entry--;
           }
-          for (int id = entry; i < length - 1; id++) {
+          for (int id = entry; id < length - 1; id++) {
             date[id] = date[id + 1];
             subject[id] = subject[id + 1];
             activity[id] = activity[id + 1];
