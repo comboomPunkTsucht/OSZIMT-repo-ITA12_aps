@@ -175,6 +175,7 @@ public class learndiary {
       System.out.println("********************");
       System.out.println("* select an option *");
       System.out.println("*  [i] input data  *");
+      System.out.println("*  [d] delete data *");
       System.out.println("*     [q] quit     *");
       System.out.println("********************");
       System.out.print("=> ");
@@ -201,6 +202,27 @@ public class learndiary {
           System.out.println("*************************");
           System.out.print("=> ");
           duration[i] = scan.nextInt();
+          break;
+        case 'd':
+          System.out.println("************************");
+          System.out.println("* wich Entry to delete *");
+          System.out.println("************************");
+          int entry = scan.nextInt();
+          if (entry > 0) {
+            entry = entry - 1;
+          } else if (entry == 0) {
+            entry = 0;
+          } else if (entry < 0) {
+            entry = -entry;
+            entry--;
+          }
+          for (int id = entry; i < length - 1; i++) {
+            date[id] = date[id + 1];
+            subject[id] = subject[id + 1];
+            activity[id] = activity[id + 1];
+            duration[i] = duration[id + 1];
+          }
+          i--;
           break;
         default:
           System.out.println(

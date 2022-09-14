@@ -149,7 +149,8 @@
 				"esbenp.prettier-vscode",
 				"dotdevru.prettier-java",
 				"SpeedConsoleLogBuiTruyen3.java-log",
-				"vscjava.vscode-java-dependency"
+				"vscjava.vscode-java-dependency",
+				"Blackboxapp.blackbox"
 			]
 		}
 	}
