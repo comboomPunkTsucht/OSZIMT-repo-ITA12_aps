@@ -24,7 +24,17 @@ public class learndiary {
     System.out.println("************************************************");
     int i = 0;
     do {
-      entry[i].output_table_line();
+      System.out.println(
+        "* " +
+        entry[i].date +
+        " * " +
+        entry[i].subject +
+        " * " +
+        entry[i].activity +
+        " * " +
+        entry[i].duration +
+        " *"
+      );
       i++;
     } while (i < length);
     System.out.println("************************************************");
@@ -136,11 +146,27 @@ public class learndiary {
 
     Entry[] entry = new Entry[length];
 
-    entry[0] = new Entry("11.08.", "PAS", "Übung zu Schleifen und Methode", 45);
-    entry[1] =
-      new Entry("12.08.", "PAS", "Lerntagebuch - Planung erstellen", 30);
-    entry[2] = new Entry("12.08.", "DE ", "Ringparabel Motive", 55);
-    entry[3] = new Entry("14.08.", "PAS", "Arrays - Hausaufgaben", 30);
+    entry[0].duration = 45;
+    entry[0].activity = "Übung zu Schleifen und Methode";
+    entry[0].subject = "PAS";
+    entry[0].date = "11.08.";
+    entry[1].duration = 30;
+    entry[1].activity = "Lerntagebuch - Planung erstellen";
+    entry[1].subject = "PAS";
+    entry[1].date = "12.08.";
+    entry[2].duration = 55;
+    entry[2].activity = "Ringparabel Motive";
+    entry[2].subject = "De";
+    entry[2].date = "12.08.";
+    entry[3].duration = 30;
+    entry[3].activity = "Arrays - Hausaufgaben";
+    entry[3].subject = "PAS";
+    entry[3].date = "14.08.";
+
+    String dates = "01.01.";
+    String subjects = "   ";
+    String activitys = " ";
+    int durations = 0;
 
     boolean quit = false;
 
@@ -160,34 +186,41 @@ public class learndiary {
       System.out.print("=> ");
       menu = scan.next().charAt(0);
 
-      String date;
-      String subject;
-      String activity;
-      int duration;
-
       switch (menu) {
         case 'q':
           quit = true;
           break;
         case 'i':
-          date = setDate();
+          dates = setDate();
           System.out.println("****************");
           System.out.println("* what Subject *");
           System.out.println("****************");
           System.out.print("=> ");
-          subject = scan.next();
+          subjects = scan.next();
+          while (subjects.length() < 3) {
+            subjects += " ";
+          }
+          while (subjects.length() < 3) {
+            subjects += " ";
+          }
+          while (subjects.length() < 3) {
+            subjects += " ";
+          }
           System.out.println("*****************");
           System.out.println("* what activity *");
           System.out.println("*****************");
           System.out.print("=> ");
-          activity = scan.next();
+          activitys = scan.next();
           System.out.println("*************************");
           System.out.println("* what duration[min] *");
           System.out.println("*************************");
           System.out.print("=> ");
-          duration = scan.nextInt();
+          durations = scan.nextInt();
 
-          entry[i] = new Entry(date, subject, activity, duration);
+          entry[i].date = dates;
+          entry[i].subject = subjects;
+          entry[i].activity = activitys;
+          entry[i].duration = durations;
           break;
         case 'd':
           System.out.println("************************");

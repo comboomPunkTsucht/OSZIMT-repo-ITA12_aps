@@ -201,6 +201,15 @@ public class learndiary {
           System.out.println("****************");
           System.out.print("=> ");
           subject[i] = scan.next();
+          while (subject[i].length() < 3) {
+            subject[i] += " ";
+          }
+          while (subject[i].length() < 3) {
+            subject[i] += " ";
+          }
+          while (subject[i].length() < 3) {
+            subject[i] += " ";
+          }
           System.out.println("*****************");
           System.out.println("* what activity *");
           System.out.println("*****************");
