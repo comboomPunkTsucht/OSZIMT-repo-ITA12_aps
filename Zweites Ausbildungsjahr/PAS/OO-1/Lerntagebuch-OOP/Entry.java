@@ -4,4 +4,6 @@ public class Entry {
   public String activity = " ";
   public String subject = "   ";
   public String date = "01.01.";
+
+  //nice
 }
