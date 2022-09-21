@@ -3,9 +3,14 @@ import java.util.*;
 public class KontoTest {
 
   public static Scanner scan = new Scanner(System.in);
+  public static Random rand = new Random();
 
   public static void main(String[] args) {
     Konto konto[] = new Konto[10];
+
+    for (int i = 0; i < konto.length; i++) {
+      konto[i] = new Konto();
+    }
 
     konto[0].iban = 100200300;
     konto[1].iban = 200300400;
@@ -65,6 +70,21 @@ public class KontoTest {
      * 1 erriban
      */
 
-    Konto[] test = new Konto[10];
+    System.out.println("Z5");
+    for (int i = 0; i < konto.length; i++) {
+      System.out.println(
+        konto[i].inhaber + " " + konto[i].iban + " " + konto[i].telnum
+      );
+    }
+
+    int hasBerlin = 0;
+
+    for (int i = 0; i < konto.length; i++) {
+      if (konto[i].adresse.equalsIgnoreCase("Berlin"));
+      {
+        hasBerlin++;
+      }
+    }
+    System.out.println(hasBerlin + " life in Berlin");
   }
 }
