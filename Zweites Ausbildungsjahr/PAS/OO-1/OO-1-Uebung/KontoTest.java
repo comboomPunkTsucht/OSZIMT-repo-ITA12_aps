@@ -63,6 +63,7 @@ public class KontoTest {
     konto[4].inhaber = "Onkel Dagobert";
     konto[4].kontostand = 179769313486231570000.00;
     // konto[4].dispo = 3000000000;
+    konto[4].dispo = 3000000;
     /*
      * KontoTest.java:56: error: integer number too large
      * konto[4].dispo = 3000000000;
@@ -75,6 +76,14 @@ public class KontoTest {
       System.out.println(
         konto[i].inhaber + " " + konto[i].iban + " " + konto[i].telnum
       );
+    }
+    for (int i = 5; i < konto.length; i++) {
+      konto[i].iban = rand.nextInt(999999999 - 1) + 1;
+      konto[i].kontostand = rand.nextInt(999999999 - 1) + 1;
+      konto[i].dispo = rand.nextInt(999999999 - 1) + 1;
+      konto[i].telnum = rand.nextInt(99999 - 1) + 1;
+      konto[i].adresse = "Berlin";
+      konto[i].inhaber = "temp";
     }
 
     System.out.println("Z6");
