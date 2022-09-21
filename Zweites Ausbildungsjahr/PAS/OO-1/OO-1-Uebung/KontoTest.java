@@ -77,6 +77,7 @@ public class KontoTest {
       );
     }
 
+    System.out.println("Z6");
     int hasBerlin = 0;
 
     for (int i = 0; i < konto.length; i++) {
