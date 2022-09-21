@@ -78,10 +78,10 @@ public class KontoTest {
       );
     }
     for (int i = 5; i < konto.length; i++) {
-      konto[i].iban = rand.nextInt(999999999 - 1) + 1;
-      konto[i].kontostand = rand.nextInt(999999999 - 1) + 1;
-      konto[i].dispo = rand.nextInt(999999999 - 1) + 1;
-      konto[i].telnum = rand.nextInt(99999 - 1) + 1;
+      konto[i].iban = 0;
+      konto[i].kontostand = 0;
+      konto[i].dispo = 0;
+      konto[i].telnum = 0;
       konto[i].adresse = "Berlin";
       konto[i].inhaber = "temp";
     }
