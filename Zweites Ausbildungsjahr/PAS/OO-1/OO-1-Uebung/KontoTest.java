@@ -87,5 +87,11 @@ public class KontoTest {
       }
     }
     System.out.println(hasBerlin + "People life in Berlin");
+
+    System.out.println("Z7");
+
+    for (int i = 0; i < konto.length; i++) {
+      konto[i].kontostand += 100.00;
+    }
   }
 }
