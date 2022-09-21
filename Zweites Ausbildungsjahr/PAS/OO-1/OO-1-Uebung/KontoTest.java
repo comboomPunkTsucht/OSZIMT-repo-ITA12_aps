@@ -93,5 +93,32 @@ public class KontoTest {
     for (int i = 0; i < konto.length; i++) {
       konto[i].kontostand += 100.00;
     }
+
+    System.out.println("Z8");
+    System.out.println(
+      "*********************************************************************************************************************************************"
+    );
+    System.out.println(
+      "* lfd. Nr. * IBAN                               * Kontostand                          * Kontoinhaber      * Telefonnummer * Wohnort * Dispo *"
+    );
+    for (int i = 0; i < konto.length; i++) {
+      System.out.println(
+        "* " +
+        i +
+        " * " +
+        konto[i].iban +
+        " * " +
+        konto[i].kontostand +
+        " * " +
+        konto[i].inhaber +
+        " * " +
+        konto[i].telnum +
+        " * " +
+        konto[i].adresse +
+        " * " +
+        konto[i].dispo +
+        " *"
+      );
+    }
   }
 }
