@@ -82,8 +82,10 @@ public class KontoTest {
       konto[i].kontostand = 0;
       konto[i].dispo = 0;
       konto[i].telnum = 0;
-      konto[i].adresse = "Berlin";
       konto[i].inhaber = "temp";
+    }
+    for (int i = 0; i < konto.length; i++) {
+      konto[i].adresse = "Berlin";
     }
 
     System.out.println("Z6");
