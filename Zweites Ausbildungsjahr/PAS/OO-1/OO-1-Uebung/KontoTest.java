@@ -85,6 +85,6 @@ public class KontoTest {
         hasBerlin++;
       }
     }
-    System.out.println(hasBerlin + " life in Berlin");
+    System.out.println(hasBerlin + "People life in Berlin");
   }
 }
