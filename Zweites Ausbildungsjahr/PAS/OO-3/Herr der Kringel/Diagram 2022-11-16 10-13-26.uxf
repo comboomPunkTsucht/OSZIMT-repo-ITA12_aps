@@ -1,0 +1,35 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>60</x><y>150</y><w>210</w><h>60</h></coordinates><panel_attributes>_s1:Stamm_
+--
+name = "Altobarden"
+existirt_seit = "1247 n.d.K."
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>140</y><w>210</w><h>60</h></coordinates><panel_attributes>_s1:Stamm_
+--
+name = "Elbknechte"
+existirt_seit = "1023 n.d.K."</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>250</y><w>210</w><h>70</h></coordinates><panel_attributes>_z1:Zwerg_
+--
+name = "Gimli"
+alter = 140
+machtfaktor = 70</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>350</y><w>210</w><h>60</h></coordinates><panel_attributes>_g1:Mgegegenstandt_
+--
+type = "Axt"
+mWert = 12</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>380</x><y>350</y><w>210</w><h>60</h></coordinates><panel_attributes>_g3:Mgegegenstandt_
+--
+type = "Zauberstab"
+mWert = 45</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>380</x><y>250</y><w>210</w><h>70</h></coordinates><panel_attributes>_z2:Zwerg_
+--
+name = "Zwingli"
+alter = 70
+machtfaktor = 38</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>250</y><w>210</w><h>70</h></coordinates><panel_attributes>_z2:Zwerg_
+--
+name = "Gumli"
+alter = 163
+machtfaktor = 95</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>350</y><w>210</w><h>60</h></coordinates><panel_attributes>_g5:Mgegegenstandt_
+--
+type = "Axt"
+mWert = 17</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>450</y><w>210</w><h>60</h></coordinates><panel_attributes>_g2:Mgegegenstandt_
+--
+type = "Schwert"
+mWert = 15</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>380</x><y>450</y><w>210</w><h>60</h></coordinates><panel_attributes>_g4:Mgegegenstandt_
+--
+type = "Streithammer"
+mWert = 15</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>310</y><w>30</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>280</y><w>70</w><h>230</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;210;50;210;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>310</y><w>30</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>460</y><w>70</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;50;20</additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>270</y><w>70</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;50;20</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>280</y><w>70</w><h>220</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;50;10;50;200</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>310</y><w>30</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>190</y><w>30</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>200</y><w>30</w><h>70</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>170</y><w>230</w><h>100</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;210;20;210;80</additional_attributes></element></diagram>
