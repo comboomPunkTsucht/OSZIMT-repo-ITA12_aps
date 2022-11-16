@@ -1,0 +1,20 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>90</x><y>90</y><w>180</w><h>120</h></coordinates><panel_attributes>_g1:Gehege_
+--
+flaechenIh = 23
+name = "Affengehege"
+besucherattrativitaet = 6
+mBesucherattrativitaet = 10
+tieranzahl =2
+tiere[] = {a1, a2}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>270</y><w>130</w><h>100</h></coordinates><panel_attributes>_a2:Affe_
+--
+name = "Betty"
+alter = 2
+futter = "Bananen"
+futtermengePd = 2.3
+kunststuecjanzahl = 3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>230</x><y>270</y><w>130</w><h>100</h></coordinates><panel_attributes>_a1:Affe_
+--
+name = "Benny"
+alter = 4
+futter = "Bananen"
+futtermengePd = 4.5
+kunststuecjanzahl = 3</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>200</y><w>30</w><h>90</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>200</y><w>30</w><h>90</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element></diagram>
