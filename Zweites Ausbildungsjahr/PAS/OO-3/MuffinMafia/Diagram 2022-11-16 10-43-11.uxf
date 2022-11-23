@@ -1,34 +1,46 @@
-<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>360</x><y>420</y><w>210</w><h>70</h></coordinates><panel_attributes>_k1:Kette_
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>360</x><y>400</y><w>210</w><h>70</h></coordinates><panel_attributes>_k1:Kette_
 --
 name = "Smokin’Sugar"
-besitzer = "Senor Martino"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>170</y><w>210</w><h>90</h></coordinates><panel_attributes>_f1:Fiale_
+besitzer = "Senor Martino"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>150</y><w>210</w><h>90</h></coordinates><panel_attributes>_f1:Fiale_
 --
 ort = "Popcorn Plaza"
 angestelte = 7
 sitzplaeze = 40
-tagesUmsatz = 14000.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>170</y><w>210</w><h>90</h></coordinates><panel_attributes>_f2:Fiale_
+tagesUmsatz = 14000.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>150</y><w>210</w><h>90</h></coordinates><panel_attributes>_f2:Fiale_
 --
 ort = "Icecream Arena"
 angestelte = 3
 sitzplaeze = 6
-tagesUmsatz = 14000.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>620</x><y>170</y><w>210</w><h>90</h></coordinates><panel_attributes>_f3:Fiale_
+tagesUmsatz = 14000.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>620</x><y>150</y><w>210</w><h>90</h></coordinates><panel_attributes>_f3:Fiale_
 --
 ort = "Lollipop Road"
 angestelte = 4
 sitzplaeze = 24
-tagesUmsatz = 10700.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>250</y><w>190</w><h>210</h></coordinates><panel_attributes></panel_attributes><additional_attributes>170;10;170;190;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>250</y><w>30</w><h>190</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>250</y><w>260</w><h>210</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;190;240;190</additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>600</y><w>210</w><h>90</h></coordinates><panel_attributes>_g1:Gangster_
+tagesUmsatz = 10700.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>230</y><w>190</w><h>210</h></coordinates><panel_attributes></panel_attributes><additional_attributes>170;10;170;190;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>230</y><w>30</w><h>190</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>230</y><w>260</w><h>210</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;190;240;190</additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>580</y><w>210</w><h>90</h></coordinates><panel_attributes>_g1:Gangster_
 --
 name = "MightyMike"
 gehalt = 612.50
 vorstrafen = 3
-respektstufe = "ultraharter Typ"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>600</y><w>210</w><h>90</h></coordinates><panel_attributes>_g3:Gangster_
+respektstufe = "ultraharter Typ"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>580</y><w>210</w><h>90</h></coordinates><panel_attributes>_g3:Gangster_
 --
 name = "LittleLisa"
 gehalt = 612.50
 vorstrafen = 0
-respektstufe = "laestige Plage"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>600</y><w>210</w><h>90</h></coordinates><panel_attributes>_g2:Gangster_
+respektstufe = "laestige Plage"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>580</y><w>210</w><h>90</h></coordinates><panel_attributes>_g2:Gangster_
 --
 name = "FunnyFrank"
 gehalt = 612.50
 vorstrafen = 1
-respektstufe = "krasser Kaempfer"</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>450</y><w>210</w><h>170</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;190;20;190;150</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>480</y><w>30</w><h>140</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>450</y><w>210</w><h>170</h></coordinates><panel_attributes></panel_attributes><additional_attributes>190;20;10;20;10;150</additional_attributes></element></diagram>
+respektstufe = "krasser Kaempfer"</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>430</y><w>210</w><h>170</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;190;20;190;150</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>460</y><w>30</w><h>140</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>430</y><w>210</w><h>170</h></coordinates><panel_attributes></panel_attributes><additional_attributes>190;20;10;20;10;150</additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>720</y><w>210</w><h>60</h></coordinates><panel_attributes>_w1:Waffe_
+--
+name = "97er Magnum Mandel"
+froststufe = 4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>720</y><w>210</w><h>60</h></coordinates><panel_attributes>_w2:Waffe_
+--
+name = "97er Magnum Mandel"
+froststufe = 4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>810</y><w>210</w><h>60</h></coordinates><panel_attributes>_w3:Waffe_
+--
+name = "Cornetto Crazy"
+froststufe = 3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>720</y><w>210</w><h>60</h></coordinates><panel_attributes>_w4:Waffe_
+--
+name = " 80er Capri Orange"
+froststufe = 2</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>610</y><w>60</w><h>260</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;240;40;240;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>600</y><w>60</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;40;20</additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>660</y><w>30</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>660</y><w>30</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>660</y><w>30</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element></diagram>
