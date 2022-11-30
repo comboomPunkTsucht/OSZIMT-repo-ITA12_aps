@@ -1,0 +1,51 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>310</x><y>330</y><w>210</w><h>70</h></coordinates><panel_attributes>_p1:Plannet_
+--
+name = "Erde"
+landeplaetze = 2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>330</y><w>210</w><h>70</h></coordinates><panel_attributes>_p2:Plannet_
+--
+name = "Centaurus 7"
+landeplaetze = 1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>480</y><w>240</w><h>90</h></coordinates><panel_attributes>_r1:Raumschiff_
+--
+name = "EnterSplice NG"
+landeraume = 3
+mKapPerLaderaumInTonnen = 400.00
+antrieb = "Warp 4"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>480</y><w>240</w><h>90</h></coordinates><panel_attributes>_r2:Raumschiff_
+--
+name = "Star Carrier DF100"
+landeraume = 3
+mKapPerLaderaumInTonnen = 250.00
+antrieb = "Sol 8"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>480</y><w>210</w><h>70</h></coordinates><panel_attributes>_k2:Kapitaen_
+--
+name = "Hans Solo"
+grad = "Offzs. 2"</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>500</y><w>70</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;50;20</additional_attributes></element><element><id>Relation</id><coordinates><x>730</x><y>390</y><w>30</w><h>110</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>490</y><w>210</w><h>70</h></coordinates><panel_attributes>_k2:Kapitaen_
+--
+name = "Jochen T. Görk"
+grad = "Offzs. 2"</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>510</y><w>100</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;80;20</additional_attributes></element><element><id>Relation</id><coordinates><x>410</x><y>390</y><w>30</w><h>110</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>650</y><w>240</w><h>70</h></coordinates><panel_attributes>_l1:LadungInhalt_
+--
+name = "klingonischem Werkzeugstahl"
+mengeInTonnen = 400.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>560</y><w>200</w><h>110</h></coordinates><panel_attributes></panel_attributes><additional_attributes>180;10;180;30;10;30;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>650</y><w>210</w><h>70</h></coordinates><panel_attributes>_l2:LadungInhalt_
+--
+name = "Borg-Schrott"
+mengeInTonnen = 100.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>560</y><w>30</w><h>110</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>750</y><w>260</w><h>60</h></coordinates><panel_attributes>_31:LadungInhalt_
+--
+name = "Treibstoff vom Typ „Nuk- leus 1000"
+mengeInTonnen = 50.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>560</y><w>100</w><h>210</h></coordinates><panel_attributes></panel_attributes><additional_attributes>80;10;80;70;10;70;10;190</additional_attributes></element><element><id>UMLClass</id><coordinates><x>590</x><y>650</y><w>210</w><h>70</h></coordinates><panel_attributes>_l4:LadungInhalt_
+--
+name = "Pamps (grün)"
+mengeInTonnen = 120.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>850</x><y>650</y><w>210</w><h>70</h></coordinates><panel_attributes>_l4:LadungInhalt_
+--
+name = "Pamps (gelb)"
+mengeInTonnen = 130.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>690</x><y>560</y><w>30</w><h>110</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>790</x><y>560</y><w>140</w><h>110</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;50;120;50;120;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>140</y><w>210</w><h>70</h></coordinates><panel_attributes>_l5:LadungInhalt_
+--
+name = "synthe- tisches Klopapier"
+mengeInTonnen = 10.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>20</y><w>210</w><h>70</h></coordinates><panel_attributes>_w1:Weltall_
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>80</y><w>130</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>110;10;110;40;10;40;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>410</x><y>200</y><w>30</w><h>150</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>610</x><y>140</y><w>210</w><h>70</h></coordinates><panel_attributes>_l6:LadungInhalt_
+--
+name = "Blaufruchtmarmelade"
+mengeInTonnen = 60.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>80</y><w>100</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;40;80;40;80;60</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>200</y><w>30</w><h>150</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>140</y><w>210</w><h>70</h></coordinates><panel_attributes>_l7:LadungInhalt_
+--
+name = "Tribble-Futter"
+mengeInTonnen = 66.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>250</y><w>210</w><h>70</h></coordinates><panel_attributes>_l8:LadungInhalt_
+--
+name = "Tribble-Futter"
+mengeInTonnen = 66.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>200</y><w>130</w><h>150</h></coordinates><panel_attributes></panel_attributes><additional_attributes>110;10;110;30;10;30;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>790</x><y>270</y><w>90</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>70;20;10;20;10;60</additional_attributes></element></diagram>
