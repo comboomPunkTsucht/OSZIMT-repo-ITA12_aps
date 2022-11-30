@@ -1,0 +1,17 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>30</x><y>90</y><w>210</w><h>120</h></coordinates><panel_attributes>*Rennwagnen*
+--
+name
+fabe
+vmax
+--
+lenkeRechts()
+lenkeLinks()
+beschleunige</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>330</y><w>210</w><h>120</h></coordinates><panel_attributes>*Rennwagnen*
+--
+- name
+- fabe
+- vmax
+--
++ lenkeRechts(float): void
++ lenkeLinks(float): void
++ beschleunige(float): void</panel_attributes><additional_attributes></additional_attributes></element></diagram>
