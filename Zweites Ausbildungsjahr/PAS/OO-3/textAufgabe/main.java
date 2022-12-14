@@ -26,5 +26,39 @@ public class main {
     k3.auzahlen(99.9);
 
     k2.ueberweisen(k1, 3);
+
+    System.out.println(
+      k1.getIban() +
+      " " +
+      k1.getName() +
+      " " +
+      k1.getTelnum() +
+      " " +
+      k1.getKontostand() +
+      " " +
+      k1.getDispo()
+    );
+    System.out.println(
+      k2.getIban() +
+      " " +
+      k2.getName() +
+      " " +
+      k2.getTelnum() +
+      " " +
+      k2.getKontostand() +
+      " " +
+      k2.getDispo()
+    );
+    System.out.println(
+      k3.getIban() +
+      " " +
+      k3.getName() +
+      " " +
+      k3.getTelnum() +
+      " " +
+      k3.getKontostand() +
+      " " +
+      k3.getDispo()
+    );
   }
 }
