@@ -1,0 +1,23 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>180</x><y>120</y><w>210</w><h>150</h></coordinates><panel_attributes>*Konto*
+--
+iban
+name
+telnum
+kontostand
+dispo
+--
+einzahlen()
+auszahlen()
+ueberweisung()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>120</y><w>500</w><h>180</h></coordinates><panel_attributes>*Konto*
+--
+- iban:String
+- name:String
+- telnum:String
+ - kontostand:double
+- dispo:double
+--
++ Konto()
++ Konto(iban: String,name: String,telnum:String,kontostand:double,dispo:double)
++ einzahlen(double)
++ auszahlen(double)
++ ueberweisung(konto:Konto, betrag:double)</panel_attributes><additional_attributes></additional_attributes></element></diagram>
