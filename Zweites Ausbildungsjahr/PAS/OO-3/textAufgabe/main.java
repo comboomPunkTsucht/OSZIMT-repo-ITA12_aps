@@ -25,8 +25,6 @@ public class main {
     k2.einzahlen(99.9);
     k3.auzahlen(99.9);
 
-    if (k2.ueberweisen(true, 3) == true) {
-      System.out.println(k1.ueberweisen(false, 3));
-    }
+    k2.ueberweisen(k1, 3);
   }
 }

@@ -4,6 +4,7 @@ public class Konto {
   private String name;
   private String telnum;
   private double kontostand;
+  private double dispo = 100;
 
   public Konto() {}
 
@@ -42,7 +43,17 @@ public class Konto {
     return kontostand;
   }
 
-  public void setKontostand(double kontostand) {}
+  public void setKontostand(double kontostand) {
+    this.kontostand = kontostand;
+  }
+
+  public double getDispo() {
+    return dispo;
+  }
+
+  public void setDispo(double dispo) {
+    this.dispo = dispo;
+  }
 
   public void einzahlen(double betrag) {
     this.kontostand += betrag;
@@ -51,22 +62,26 @@ public class Konto {
   public void auzahlen(double betrag) {
     if ((this.kontostand - betrag) >= 0) {
       this.kontostand -= betrag;
+    } else if (((this.kontostand + this.dispo) - betrag) >= 0) {
+      this.kontostand += this.dispo;
+      this.dispo = 0;
+      this.kontostand -= betrag;
     } else {
       System.out.println("Try agin");
     }
   }
 
-  public boolean ueberweisen(boolean gebe, double betrag) {
-    if (gebe) {
-      if ((this.kontostand - betrag) >= 0) {
-        this.kontostand -= betrag;
-        return true;
-      } else {
-        return false;
-      }
+  public void ueberweisen(Konto konto, double betrag) {
+    if ((this.kontostand - betrag) >= 0) {
+      this.kontostand -= betrag;
+      konto.einzahlen(betrag);
+    } else if (((this.kontostand + this.dispo) - betrag) >= 0) {
+      this.kontostand += this.dispo;
+      this.dispo = 0;
+      this.kontostand -= betrag;
+      konto.auzahlen(betrag);
     } else {
-      this.kontostand += betrag;
-      return true;
+      System.out.println("Try agin");
     }
   }
 }
