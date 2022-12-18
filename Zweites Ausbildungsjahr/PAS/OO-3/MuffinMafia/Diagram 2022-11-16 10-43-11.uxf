@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>360</x><y>400</y><w>210</w><h>70</h></coordinates><panel_attributes>_k1:Kette_
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>360</x><y>400</y><w>210</w><h>70</h></coordinates><panel_attributes>_k1:Kette_
 --
 name = "Smokin’Sugar"
 besitzer = "Senor Martino"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>150</y><w>210</w><h>90</h></coordinates><panel_attributes>_f1:Fiale_
@@ -26,7 +26,8 @@ respektstufe = "ultraharter Typ"</panel_attributes><additional_attributes></addi
 name = "LittleLisa"
 gehalt = 612.50
 vorstrafen = 0
-respektstufe = "laestige Plage"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>580</y><w>210</w><h>90</h></coordinates><panel_attributes>_g2:Gangster_
+respektstufe = "laestige Plage"
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>580</y><w>210</w><h>90</h></coordinates><panel_attributes>_g2:Gangster_
 --
 name = "FunnyFrank"
 gehalt = 612.50
