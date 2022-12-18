@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>100</x><y>10</y><w>210</w><h>60</h></coordinates><panel_attributes>_s1:Stamm_
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><help_text>Space for diagram notesps</help_text><element><id>UMLClass</id><coordinates><x>100</x><y>10</y><w>210</w><h>60</h></coordinates><panel_attributes>_s1:Stamm_
 --
 name = "Altobarden"
 existirt_seit = "1247 n.d.K."
