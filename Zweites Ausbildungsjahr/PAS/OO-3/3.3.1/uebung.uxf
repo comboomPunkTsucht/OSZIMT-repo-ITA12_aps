@@ -1,0 +1,29 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>120</x><y>250</y><w>210</w><h>60</h></coordinates><panel_attributes>*Kino*
+--
+name
+adresse</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>580</y><w>210</w><h>70</h></coordinates><panel_attributes>*Vorfuerung*
+--
+datum
+uhrzeit</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>410</y><w>210</w><h>60</h></coordinates><panel_attributes>*Schauspieler*
+--
+name
+geburtsdatum</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>580</y><w>210</w><h>70</h></coordinates><panel_attributes>*Film*
+--
+titel
+laenge
+beschreibung</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>410</y><w>210</w><h>70</h></coordinates><panel_attributes>*Saal*
+--
+anzahlSitze
+istBehindertengerecht</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>470</y><w>130</w><h>130</h></coordinates><panel_attributes>lt=-
+m1=1..*
+m2=1
+wird gezeigt in ^</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>300</y><w>130</w><h>130</h></coordinates><panel_attributes>lt=-
+m1=1..*
+m2=1
+befindet sich in ^</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>600</y><w>170</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=0..*
+m2=1
+zeigt &gt;</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>460</y><w>110</w><h>140</h></coordinates><panel_attributes>lt=-
+m1=0..*
+m2=1..*
+spielt mit in v</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element></diagram>
