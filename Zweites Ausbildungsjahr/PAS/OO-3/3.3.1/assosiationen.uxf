@@ -1,0 +1,75 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>30</x><y>40</y><w>100</w><h>30</h></coordinates><panel_attributes>Aufabe 1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>90</y><w>540</w><h>240</h></coordinates><panel_attributes>*Autobesitzer*
+--
+- name:String
+- fuererscheinnummer:int
+- adresse:String
+- fahrzeugListe:Fahrzeug[]
+--
++ Autobesitzer()
++ Autobesitzer(name:String,fuererscheinnummer:int,adresse:String,Fahrzeug[]:fahrzeugListe)
++ getName():String
++ setName(String):void
++ getFuererscheinnummer():int
++ setFuererscheinnummer(Int):void
++ getAdresse():String
++ setAdresse(String):void
++ getFahrzeugListe():Fahrzeug[]
++ setFahrzeugListe(Fahrzeug[]):void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>440</y><w>400</w><h>200</h></coordinates><panel_attributes>*Fahrzeug*
+--
+- typ:String
+- baujahr:int
+- kennzeichen:String
+--
++ Fahrzeug()
++ Fahrzug(typ:String,baujahr:int,kennzeichen:String)
++ getTyp():String
++ setTyp(String):void
++ getBaujahr():int
++ setBaujahr(Int):void
++ getKennzeichen():String
++ setKennzeichen(String)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>320</y><w>80</w><h>140</h></coordinates><panel_attributes>lt=x-&gt;
+m1=1..*
+m2=1..*
+besitzt v</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>20</y><w>100</w><h>30</h></coordinates><panel_attributes>Aufabe 2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>90</y><w>320</w><h>200</h></coordinates><panel_attributes>*Kunde*
+--
+- name:String
+- kundennummer:int
+- konto:Konto
+--
++ Kunde()
++ Kunde(name:String,kundennummer:int,konto:Konto)
++ getName():String
++ setName(String):void
++ getKundennummer():int
++ setKundennummer(int):void
++ getKonto():Konto
++ setKonto(Konto):void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>440</y><w>350</w><h>200</h></coordinates><panel_attributes>*Konto*
+--
+- institut:String
+- kontonummer:int
+- bankleitzahl:String
+--
++ Konto()
++ Kunde(institut:String,kontonummer:int,bankleitzahl:String)
++ getInstitut():String
++ setInstitut(String):void
++ getKontonummer():int
++ setKontonnummer(int):void
++ getBankleitzahl():String
++ setBankleitzahl(String):void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>280</y><w>80</w><h>180</h></coordinates><panel_attributes>lt=x-&gt;
+m1=1
+m2=1
+besitzt v</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1030</x><y>20</y><w>100</w><h>30</h></coordinates><panel_attributes>Aufabe 3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>940</x><y>90</y><w>400</w><h>200</h></coordinates><panel_attributes>*Kategorie*
+--
+- bzeichnung:String
+- vorschauBild:String
+- filmListe:Film[]
+--
++ Kategorie()
++ Kategorie(bezeichnung:String,vorschauBild:String,filmListe:Film[])
++ getBezeichnung():String
++ setBzeichnung(String):void
++ getVorschauBild():String
++ setVorschauBild</panel_attributes><additional_attributes></additional_attributes></element></diagram>
