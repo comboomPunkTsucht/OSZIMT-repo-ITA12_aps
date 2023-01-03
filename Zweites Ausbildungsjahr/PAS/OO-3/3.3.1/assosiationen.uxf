@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>30</x><y>40</y><w>100</w><h>30</h></coordinates><panel_attributes>Aufabe 1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>90</y><w>540</w><h>240</h></coordinates><panel_attributes>*Autobesitzer*
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>30</x><y>40</y><w>100</w><h>30</h></coordinates><panel_attributes>Aufabe 1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>90</y><w>640</w><h>240</h></coordinates><panel_attributes>*Autobesitzer*
 --
 - name:String
 - fuererscheinnummer:int
@@ -30,7 +30,7 @@
 + setKennzeichen(String)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>320</y><w>80</w><h>140</h></coordinates><panel_attributes>lt=x-&gt;
 m1=1..*
 m2=1..*
-besitzt v</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>20</y><w>100</w><h>30</h></coordinates><panel_attributes>Aufabe 2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>90</y><w>320</w><h>200</h></coordinates><panel_attributes>*Kunde*
+besitzt v</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>20</y><w>100</w><h>30</h></coordinates><panel_attributes>Aufabe 2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>660</x><y>90</y><w>370</w><h>200</h></coordinates><panel_attributes>*Kunde*
 --
 - name:String
 - kundennummer:int
@@ -44,7 +44,7 @@ besitzt v</panel_attributes><additional_attributes>10;10;10;120</additional_attr
 + setKundennummer(int):void
 + getKonto():Konto
 + setKonto(Konto):void
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>440</y><w>350</w><h>200</h></coordinates><panel_attributes>*Konto*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>440</y><w>440</w><h>200</h></coordinates><panel_attributes>*Konto*
 --
 - institut:String
 - kontonummer:int
@@ -58,10 +58,10 @@ besitzt v</panel_attributes><additional_attributes>10;10;10;120</additional_attr
 + setKontonnummer(int):void
 + getBankleitzahl():String
 + setBankleitzahl(String):void
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>280</y><w>80</w><h>180</h></coordinates><panel_attributes>lt=x-&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>790</x><y>280</y><w>90</w><h>180</h></coordinates><panel_attributes>lt=x-&gt;
 m1=1
 m2=1
-besitzt v</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1030</x><y>20</y><w>100</w><h>30</h></coordinates><panel_attributes>Aufabe 3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>940</x><y>90</y><w>400</w><h>200</h></coordinates><panel_attributes>*Kategorie*
+besitzt v</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1220</x><y>20</y><w>100</w><h>30</h></coordinates><panel_attributes>Aufabe 3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1200</x><y>90</y><w>400</w><h>200</h></coordinates><panel_attributes>*Kategorie*
 --
 - bzeichnung:String
 - vorschauBild:String
