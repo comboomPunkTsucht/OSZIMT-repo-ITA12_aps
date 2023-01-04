@@ -1,0 +1,9 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>220</x><y>180</y><w>210</w><h>70</h></coordinates><panel_attributes>_c1:Computer_
+--
+name = "HaPeh007"
+cpu = "Zintel x3"
+ramInGB = 16</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>180</y><w>210</w><h>70</h></coordinates><panel_attributes>_m1:Monitor_
+--
+name = "M1"
+resulution = "3840×2160"
+sizeInInch  = 27</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>200</y><w>150</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element></diagram>
