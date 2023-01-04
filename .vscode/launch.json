@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch main",
+            "request": "launch",
+            "mainClass": "main",
+            "projectName": "OSZIMT-repo-ITA12_aps_d644fef1"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestPcMonitor",
+            "request": "launch",
+            "mainClass": "TestPcMonitor",
+            "projectName": "OSZIMT-repo-ITA12_aps_d644fef1"
+        },
+        {
+            "type": "java",
             "name": "Launch test",
             "request": "launch",
             "mainClass": "test",
