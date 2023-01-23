@@ -8,15 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  */
 public class Player2 extends Player1
 {
-    private int x = 0;
-    private int y = 0;
     Player2(){}
-    Player2(int x, int y){
-        this.x = x;
-        this.y = y;
-        setLocation(this.x, this.y);
-    
-    }
     /**
      * Act - tut, was auch immer Player2 tun will. Diese Methode wird aufgerufen, 
      * sobald der 'Act' oder 'Run' Button in der Umgebung angeklickt werden. 
@@ -26,9 +18,16 @@ public class Player2 extends Player1
         this.movement();
     }
     public void movement() {
-        if (Greenfoot.isKeyDown("W")){
-            this.y = getY() - 5;
-            setLocation(this.x, this.y);
-        }
+        if (Greenfoot.isKeyDown("Up")){
+            setLocation(getX(), (getY() - 5));
+            }else if (Greenfoot.isKeyDown("Right")){
+                setLocation((getX() + 5), getY());
+            }else if (Greenfoot.isKeyDown("Left")){
+                setLocation((getX() - 5), getY());
+            }else if (Greenfoot.isKeyDown("Right") && Greenfoot.isKeyDown("W")){
+                setLocation((getX() + 5 ), (getY() - 5));
+            }else if (Greenfoot.isKeyDown("Left") && Greenfoot.isKeyDown("W")){
+                setLocation((getX() - 5 ), (getY() - 5));
+            }else{setLocation(getX(), (getY() + 5));};
     }
 }
