@@ -1,3 +1,6 @@
+/**
+ * A Konto object has a iban, a name, a telnum, a kontostand, and a dispo
+ */
 public class Konto {
 
   private String iban;
@@ -15,50 +18,98 @@ public class Konto {
     this.kontostand = kontostand;
   }
 
+  
+  /** 
+   * @return String
+   */
   public String getIban() {
     return iban;
   }
 
+  
+  /** 
+   * @param iban
+   */
   public void setIban(String iban) {
     this.iban = iban;
   }
 
+  
+  /** 
+   * @return String
+   */
   public String getName() {
     return name;
   }
 
+  
+  /** 
+   * @param name
+   */
   public void setName(String name) {
     this.name = name;
   }
 
+  
+  /** 
+   * @return String
+   */
   public String getTelnum() {
     return telnum;
   }
 
+  
+  /** 
+   * @param telnum
+   */
   public void setTelnum(String telnum) {
     this.telnum = telnum;
   }
 
+  
+  /** 
+   * @return double
+   */
   public double getKontostand() {
     return kontostand;
   }
 
+  
+  /** 
+   * @param kontostand
+   */
   public void setKontostand(double kontostand) {
     this.kontostand = kontostand;
   }
 
+  
+  /** 
+   * @return double
+   */
   public double getDispo() {
     return dispo;
   }
 
+  
+  /** 
+   * @param dispo
+   */
   public void setDispo(double dispo) {
     this.dispo = dispo;
   }
 
+  
+  /** 
+   * @param betrag
+   */
   public void einzahlen(double betrag) {
     this.kontostand += betrag;
   }
 
+  
+  /** 
+   * @param betrag
+   */
   public void auzahlen(double betrag) {
     if ((this.kontostand - betrag) >= 0) {
       this.kontostand -= betrag;
@@ -71,6 +122,11 @@ public class Konto {
     }
   }
 
+  
+  /** 
+   * @param konto
+   * @param betrag
+   */
   public void ueberweisen(Konto konto, double betrag) {
     if ((this.kontostand - betrag) >= 0) {
       this.kontostand -= betrag;
