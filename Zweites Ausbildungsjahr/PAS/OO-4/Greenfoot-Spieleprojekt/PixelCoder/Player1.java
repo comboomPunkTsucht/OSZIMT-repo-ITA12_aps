@@ -15,19 +15,23 @@ public class Player1 extends Actor
      */
     public void act() 
     {
-        this.movement();
+        boolean haspressed = false;
+        this.movement(haspressed);
     }
-    public void movement() {
-        if (Greenfoot.isKeyDown("W")){
-            setLocation(getX(), (getY() - 5));
+    public void movement(boolean haspressed) {
+        if (Greenfoot.isKeyDown("W") && this.haspressed != true){
+            setLocation(getX(), (getY() - 10));
+            this.haspressed = true;
             }else if (Greenfoot.isKeyDown("D")){
                 setLocation((getX() + 5), getY());
             }else if (Greenfoot.isKeyDown("A")){
                 setLocation((getX() - 5), getY());
-            }else if (Greenfoot.isKeyDown("D") && Greenfoot.isKeyDown("W")){
-                setLocation((getX() + 5 ), (getY() - 5));
-            }else if (Greenfoot.isKeyDown("A") && Greenfoot.isKeyDown("W")){
-                setLocation((getX() - 5 ), (getY() - 5));
-            }else{setLocation(getX(), (getY() + 5));};
+            }else if (Greenfoot.isKeyDown("D") && Greenfoot.isKeyDown("W") && this.haspressed != true){
+                setLocation((getX() + 5 ), (getY() - 10));
+                this.haspressed = true;
+            }else if (Greenfoot.isKeyDown("A") && Greenfoot.isKeyDown("W") && this.haspressed != true){
+                setLocation((getX() - 5 ), (getY() - 10));
+                this.haspressed = true;
+            }else if (!(Greenfoot.isKeyDown("W"))){setLocation(getX(), (getY() + 1)); haspressed = false;};
     }
 }

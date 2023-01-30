@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  */
 public class Player2 extends Player1
 {
+    private boolean haspressed = false;
     Player2(){}
     /**
      * Act - tut, was auch immer Player2 tun will. Diese Methode wird aufgerufen, 
@@ -18,16 +19,21 @@ public class Player2 extends Player1
         this.movement();
     }
     public void movement() {
-        if (Greenfoot.isKeyDown("Up")){
-            setLocation(getX(), (getY() - 5));
+        if (Greenfoot.isKeyDown("Up") && this.haspressed != true){
+            setLocation(getX(), (getY() - 10));
+            this.haspressed = true;
             }else if (Greenfoot.isKeyDown("Right")){
                 setLocation((getX() + 5), getY());
+                
             }else if (Greenfoot.isKeyDown("Left")){
                 setLocation((getX() - 5), getY());
-            }else if (Greenfoot.isKeyDown("Right") && Greenfoot.isKeyDown("W")){
-                setLocation((getX() + 5 ), (getY() - 5));
-            }else if (Greenfoot.isKeyDown("Left") && Greenfoot.isKeyDown("W")){
-                setLocation((getX() - 5 ), (getY() - 5));
-            }else{setLocation(getX(), (getY() + 5));};
+                
+            }else if (Greenfoot.isKeyDown("Right") && Greenfoot.isKeyDown("W") && this.haspressed != true){
+                setLocation((getX() + 5 ), (getY() - 10));
+                this.haspressed = true;
+            }else if (Greenfoot.isKeyDown("Left") && Greenfoot.isKeyDown("W") && this.haspressed != true){
+                setLocation((getX() - 5 ), (getY() - 10));
+                this.haspressed = true;
+            }else if (!(Greenfoot.isKeyDown("Up"))){setLocation(getX(), (getY() + 1)); this.haspressed = false; };
     }
 }
