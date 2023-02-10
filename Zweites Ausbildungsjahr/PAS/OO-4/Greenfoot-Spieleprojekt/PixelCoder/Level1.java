@@ -13,6 +13,7 @@ public class Level1 extends World
      * Konstruktor für Objekte der Klasse MyWorld
      * 
      */
+    public Ziel z1 = new Ziel();
     public Level1()
     {    
         // Erstellt eine neue Welt mit 600x400 Zellen und einer Zell-Größe von 1x1 Pixeln.
@@ -20,33 +21,32 @@ public class Level1 extends World
         
         Player1 p1 = new Player1();
         Player2 p2 = new Player2();
-        GameBorder [] g1 = new GameBorder[100];
-        int temp = 0;
-        for (int i = 0; i < 28; i++){
+        int numberofG = 100;
+        GameBorder [] g1 = new GameBorder[numberofG];
+        for (int i = 0; i < numberofG; i++){
             g1[i] = new GameBorder();
-            addObject(g1[i], (temp), 710);
-            temp += 45;
         }
-        temp = 0;
-        for (int i = 28; i < 45; i++){
-            g1[i] = new GameBorder();
-            addObject(g1[i],1260 , (710- temp));
-            temp += 45;
-        }
-        temp = 0;
-        for (int i = 45; i < 62; i++){
-            g1[i] = new GameBorder();
-            addObject(g1[i], (temp),10);
-            temp += 45;
-        }
-        temp = 0;
-        for (int i = 62; i < 100; i++){
-            g1[i] = new GameBorder();
-            addObject(g1[i],20 , (710- temp));
-            temp += 45;
-        }
+        Ziel z1 = new Ziel();
+        addObject(g1[0], 615, 0);
+        addObject(g1[1], 615, 50);
+        addObject(g1[2], 615, 100);
+        addObject(g1[3], 615, 150);
+        addObject(g1[4], 615, 200);
+        addObject(g1[5], 615, 250);
+        addObject(g1[6], 615, 300);
+        addObject(g1[7], 615, 350);
+        addObject(g1[8], 615, 400);
+        addObject(g1[9], 615, 450);
+        addObject(g1[10], 615, 500);
+        addObject(g1[11], 615, 550);
+        addObject(g1[12], 815, 600);
+        addObject(g1[13], 665, 550);
+        addObject(g1[14], 715, 550);
+        addObject(g1[15], 765, 550);
+        addObject(z1, 615, 700);
         
-        addObject(p1, 640, 360);
-        addObject(p2, 640, 360);
+        
+        addObject(p1, 315, 360);
+        addObject(p2, 955, 360);
     }
 }

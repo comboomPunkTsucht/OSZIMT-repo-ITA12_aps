@@ -6,32 +6,68 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class Player1 extends Actor   
-{
-    Player1(){}
+public class Player1 extends Actor {
+    private int verticalspeed = 0;
+    
+    Player1() {
+    }
+
     /**
      * Act - tut, was auch immer Player2 tun will. Diese Methode wird aufgerufen, 
      * sobald der 'Act' oder 'Run' Button in der Umgebung angeklickt werden. 
      */
-    public void act() 
-    {
-        boolean haspressed = false;
-        this.movement(haspressed);
+    public void act() {
+        movement();
+        checkFalling();
     }
-    public void movement(boolean haspressed) {
-        if (Greenfoot.isKeyDown("W") && this.haspressed != true){
-            setLocation(getX(), (getY() - 10));
-            this.haspressed = true;
-            }else if (Greenfoot.isKeyDown("D")){
-                setLocation((getX() + 5), getY());
-            }else if (Greenfoot.isKeyDown("A")){
-                setLocation((getX() - 5), getY());
-            }else if (Greenfoot.isKeyDown("D") && Greenfoot.isKeyDown("W") && this.haspressed != true){
-                setLocation((getX() + 5 ), (getY() - 10));
-                this.haspressed = true;
-            }else if (Greenfoot.isKeyDown("A") && Greenfoot.isKeyDown("W") && this.haspressed != true){
-                setLocation((getX() - 5 ), (getY() - 10));
-                this.haspressed = true;
-            }else if (!(Greenfoot.isKeyDown("W"))){setLocation(getX(), (getY() + 1)); haspressed = false;};
+
+    public void movement() {
+        if (Greenfoot.isKeyDown("W") && verticalspeed == 0 && !underGameborder()) {
+            setLocation(getX(), (getY() - 55));
+        }
+        if (Greenfoot.isKeyDown("D") && !gameborderIsSideR()) {
+             setLocation((getX() + 5), getY());
+        } else if (Greenfoot.isKeyDown("A") && !gameborderIsSideL()) {
+             setLocation((getX() - 5), getY());
+        }
     }
+
+    public void falling() {
+        setLocation(getX(), (getY() + verticalspeed));
+        verticalspeed += 1;
+    }
+
+    public boolean onGround() {
+        Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, GameBorder.class);
+        return ground != null;
+    }
+    
+    public boolean underGameborder() {
+    Actor ground = getOneObjectAtOffset(
+      0,
+      (getImage().getHeight() / 2) + getImage().getHeight(),
+      GameBorder.class
+    );
+    return ground != null;
+  }
+  
+  public boolean gameborderIsSideR() {
+    Actor ground = getOneObjectAtOffset(25,0,GameBorder.class);
+    return ground != null;
+  }
+  public boolean gameborderIsSideL() {
+    Actor ground = getOneObjectAtOffset(-25,0,GameBorder.class);
+    return ground != null;
+  }
+  
+  
+
+    public void checkFalling() {
+        if ((this.onGround() == true || this.getY() >= 685) && this.getY() >= 50) {
+            verticalspeed = 0;
+        } else {
+            this.falling();
+        }
+    }
+
 }
