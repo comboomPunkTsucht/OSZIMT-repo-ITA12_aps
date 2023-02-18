@@ -5,8 +5,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/CPP",
-      "program": "/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/CPP/build/Debug/outDebug"
+      "cwd": "/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/CPP_Vocabulary_tester",
+      "program": "/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/CPP_Vocabulary_tester/build/Debug/outDebug"
     }
   ]
 }
