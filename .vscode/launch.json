@@ -1,46 +1,12 @@
 {
-    "configurations": [
-        {
-            "type": "java",
-            "name": "Launch test",
-            "request": "launch",
-            "mainClass": "test",
-            "projectName": "OSZIMT-repo-ITA12_aps_d644fef1"
-        },
-        {
-            "type": "java",
-            "name": "Launch main",
-            "request": "launch",
-            "mainClass": "main",
-            "projectName": "OSZIMT-repo-ITA12_aps_d644fef1"
-        },
-        {
-            "type": "java",
-            "name": "Launch TestPcMonitor",
-            "request": "launch",
-            "mainClass": "TestPcMonitor",
-            "projectName": "OSZIMT-repo-ITA12_aps_d644fef1"
-        },
-        {
-            "type": "java",
-            "name": "Launch test",
-            "request": "launch",
-            "mainClass": "test",
-            "projectName": "OSZIMT-repo-ITA12_aps_ab6ff2f2"
-        },
-        {
-            "type": "java",
-            "name": "Launch Wetterstation",
-            "request": "launch",
-            "mainClass": "Wetterstation",
-            "projectName": "OSZIMT-repo-ITA12_aps_ab6ff2f2"
-        },
-        {
-            "type": "java",
-            "name": "Launch Compare",
-            "request": "launch",
-            "mainClass": "Compare",
-            "projectName": "OSZIMT-repo-ITA12_aps_ab6ff2f2"
-        }
-    ]
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/CPP",
+      "program": "/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/CPP/build/Debug/outDebug"
+    }
+  ]
 }
