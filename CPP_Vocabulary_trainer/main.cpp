@@ -75,7 +75,7 @@ void wordAddDysplay(vector<string> voc) {
       cout << "****************" << endl;
 }
 void vocabularyTest(vector<string> voc_ger, vector<string> voc_eng) {
-      bool fertig = false;
+      bool done = false;
       string userInput;
       int random;
       do {
@@ -97,16 +97,16 @@ void vocabularyTest(vector<string> voc_ger, vector<string> voc_eng) {
         userInput = " ";
         cin >> userInput;
         if (userInput == "n" || userInput == "no") {
-          fertig = true;
+          done = true;
         }else if (userInput == "y" || userInput == "yes") {
-          fertig = false;
+          done = false;
         }
       } else {
         cout << "**************************************" << endl;
         cout << "* Try again with a other random Word *" << endl;
         cout << "**************************************" << endl;
       }
-} while (fertig == false);
+} while (done == false);
 }
 int main()
 {
