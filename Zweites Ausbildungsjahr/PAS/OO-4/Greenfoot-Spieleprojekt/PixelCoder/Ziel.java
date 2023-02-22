@@ -8,12 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  */
 public class Ziel extends Actor
 {
-    /**
-     * Act - tut, was auch immer Ziel tun will. Diese Methode wird aufgerufen, 
-     * sobald der 'Act' oder 'Run' Button in der Umgebung angeklickt werden. 
-     */
+    public int points;
     public void act() 
     {
-        // Ergänzen Sie Ihren Quelltext hier...
+        if(this.isTouching(Player1.class) || this.isTouching(Player1.class)) {
+            Greenfoot.setWorld(new Won());
+        }
     }    
 }

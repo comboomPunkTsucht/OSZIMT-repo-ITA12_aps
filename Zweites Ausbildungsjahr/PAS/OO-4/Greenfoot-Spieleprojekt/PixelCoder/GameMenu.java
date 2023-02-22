@@ -17,7 +17,11 @@ public class GameMenu extends World
     {    
         // Erstellt eine neue Welt mit 600x400 Zellen und einer Zell-Größe von 1x1 Pixeln.
         super(1280, 720, 1);
-        GameMenuChecker gmc1 = new GameMenuChecker();
-        addObject(gmc1, 640, 360);
+}
+
+public void act() {
+    if (Greenfoot.isKeyDown("Space")) {
+    Greenfoot.setWorld(new Level1());
+    }
 }
 }
