@@ -19,6 +19,7 @@ public class Player2 extends Player1 {
   public void act() {
     movement();
     checkFalling();
+    addPoints();
   }
 
   public void movement() {
@@ -69,4 +70,11 @@ public class Player2 extends Player1 {
       this.falling();
     }
   }
+  
+          public void addPoints() {
+    if (this.isTouching(CodeSnipets.class)) {
+        Level1.z1.points++;
+        this.removeTouching(CodeSnipets.class);
+    }
+}
 }

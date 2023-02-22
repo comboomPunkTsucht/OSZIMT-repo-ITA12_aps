@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  */
 public class Player1 extends Actor {
     private int verticalspeed = 0;
+
     
     Player1() {
     }
@@ -19,6 +20,7 @@ public class Player1 extends Actor {
     public void act() {
         movement();
         checkFalling();
+        addPoints();
     }
 
     public void movement() {
@@ -34,7 +36,7 @@ public class Player1 extends Actor {
 
     public void falling() {
         setLocation(getX(), (getY() + verticalspeed));
-        verticalspeed += 1;
+        verticalspeed++;
     }
 
     public boolean onGround() {
@@ -69,5 +71,12 @@ public class Player1 extends Actor {
             this.falling();
         }
     }
-
+    
+    
+    public void addPoints() {
+        if (this.isTouching(CodeSnipets.class)) {
+            Level1.z1.points++;
+            this.removeTouching(CodeSnipets.class);
+        }
+    }
 }
