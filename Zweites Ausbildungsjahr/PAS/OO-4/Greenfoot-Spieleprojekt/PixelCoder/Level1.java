@@ -59,10 +59,68 @@ public class Level1 extends World {
     addObject(g1[25], 715, 353);
     addObject(g1[26], 765, 353);
     addObject(g1[27], 815, 353);
-    addObject(g1[28], 815, 353);
-
-    addObject(p1, 315, 360);
-    addObject(p2, 955, 360);
+    addObject(g1[28], 865, 353);
+    addObject(c1[1], 915, 353);
+    addObject(g1[29], 965, 353);
+    addObject(g1[30], 1015, 303);
+    addObject(g1[31], 1065, 253);
+    addObject(g1[32], 1115, 203);
+    addObject(g1[33], 1165, 153);
+    addObject(g1[34], 1215, 103);
+    addObject(g1[35], 1265, 53);
+    addObject(c1[2], 1265, 3);
+    addObject(g1[36], 565, 697);
+    addObject(g1[37], 565, 601);
+    addObject(g1[38], 565, 502);
+    addObject(g1[39], 565, 403);
+    addObject(g1[40], 565, 304);
+    addObject(g1[41], 565, 205);
+    addObject(g1[42], 565, 106);
+    addObject(g1[43], 515, 100);
+    addObject(g1[44], 465, 100);
+    addObject(g1[45], 415, 100);
+    addObject(g1[46], 365, 100);
+    addObject(g1[47], 315, 100);
+    addObject(g1[48], 265, 100);
+    addObject(g1[49], 215, 100);
+    addObject(g1[50], 165, 100);
+    addObject(g1[51], 115, 100);
+    addObject(g1[52], 65, 100);
+    addObject(c1[3], 15, 100);
+    addObject(g1[53], 65, 150);
+    addObject(g1[54], 65, 200);
+    addObject(g1[55], 65, 250);
+    addObject(g1[56], 65, 300);
+    addObject(g1[57], 65, 350);
+    addObject(g1[58], 65, 400);
+    addObject(g1[59], 65, 450);
+    addObject(g1[60], 65, 500);
+    addObject(g1[61], 65, 550);
+    addObject(g1[62], 65, 600);
+    addObject(g1[63], 65, 650);
+    addObject(c1[4], 115, 200);
+    addObject(g1[64], 165, 300);
+    addObject(g1[65], 215, 250);
+    addObject(g1[66], 265, 300);
+    addObject(g1[67], 315, 300);
+    addObject(g1[68], 365, 300);
+    addObject(g1[69], 415, 300);
+    addObject(g1[70], 465, 300);
+    addObject(g1[71], 515, 300);
+    addObject(g1[72], 215, 300);
+    addObject(g1[73], 115, 300);
+    addObject(g1[74], 115, 250);
+    addObject(g1[75], 165, 250);
+    addObject(c1[5], 115, 400);
+    addObject(g1[76], 115, 450);
+    addObject(g1[77], 165, 450);
+    addObject(g1[78], 215, 500);
+    addObject(g1[79], 265, 550);
+    addObject(g1[80], 315, 600);
+    addObject(g1[81], 365, 650);
+    
+    addObject(p1, 315, 690);
+    addObject(p2, 955, 690);
   }
 
   public void addZiel() {
@@ -73,5 +131,6 @@ public class Level1 extends World {
 
   public void act() {
     addZiel();
+    showText("Code-Snippets: " + z1.points + "/" + numberofC, 120, 15);
   }
 }
