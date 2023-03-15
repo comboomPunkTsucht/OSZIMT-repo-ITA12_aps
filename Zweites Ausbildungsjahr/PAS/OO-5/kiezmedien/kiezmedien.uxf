@@ -1,0 +1,26 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><help_text>Space for diagram notessucheInSpotify()</help_text><element><id>UMLClass</id><coordinates><x>330</x><y>140</y><w>210</w><h>130</h></coordinates><panel_attributes>*Medium*
+--
+titel
+verlieren
+--
+sucheInAmazon()
+leiheMediumAus()
+gebeMediumZur�ck()
+sucheInSpotify()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>580</x><y>140</y><w>210</w><h>100</h></coordinates><panel_attributes>*CD*
+--
+artist
+anzahlTracks
+gesamtl�nge
+--
+sucheInSpotify()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>150</y><w>210</w><h>100</h></coordinates><panel_attributes>*DVD*
+--
+anzahlOscars
+egisseur
+--
+sucheInAmazon()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>460</y><w>210</w><h>100</h></coordinates><panel_attributes>*DV*
+--
+anzahlOscars
+egisseur
+--
+sucheInAmazon()</panel_attributes><additional_attributes></additional_attributes></element></diagram>
