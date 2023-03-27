@@ -13,4 +13,13 @@ public class Schiedsrichter extends Mitglieder {
     public void setAnzahlSpiele(int anzahlSpiele) {
         if (anzahlSpiele >= 0 ){this.anzahlSpiele = anzahlSpiele;}
     }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " anzahlSpiele='" + this.anzahlSpiele + "'" +
+            "}"; 
+    } 
+
 }

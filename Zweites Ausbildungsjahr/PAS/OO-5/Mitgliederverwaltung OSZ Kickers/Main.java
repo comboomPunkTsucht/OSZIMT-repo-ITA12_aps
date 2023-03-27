@@ -47,6 +47,16 @@ public class Main {
 
         
 
+        System.out.println(" ");
+        System.out.println("s1");
+        System.out.println(s1.toString());
+        System.out.println("m1");
+        System.out.println(m1.toString());
+        System.out.println("t1");
+        System.out.println(t1.toString());
+        System.out.println("sr1");
+        System.out.println(sr1.toString());
+
 
     }
 

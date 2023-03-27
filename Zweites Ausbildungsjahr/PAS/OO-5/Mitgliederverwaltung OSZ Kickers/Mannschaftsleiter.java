@@ -16,4 +16,15 @@ public class Mannschaftsleiter extends Spieler {
     public void setMannschaft(String mannschaft) {this.mannschaft = mannschaft;}
     public void setRabattBeitrag(double rabattBeitrag) {if (rabattBeitrag >= 0.0 ){this.rabattBeitrag = rabattBeitrag;}}
     
+
+    @Override
+    public String toString() {
+        return "{" +
+            " mannschaft='" + this.mannschaft + "'" +
+            ", rabattBeitrag='" + this.rabattBeitrag + "'" +
+            "}";
+    } 
+
+
+
 }
