@@ -25,7 +25,7 @@ public class Main {
         System.out.println(t1.getTelnum());
         System.out.println(t1.getBeitrag());
         System.out.println(" ");
-        //System.out.println(sr1.getAnzahlSpiele());
+        System.out.println(sr1.getAnzahlSpiele());
         System.out.println(sr1.getName());
         System.out.println(sr1.getTelnum());
         System.out.println(sr1.getBeitrag());

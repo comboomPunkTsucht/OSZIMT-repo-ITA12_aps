@@ -7,7 +7,7 @@ public class Schiedsrichter extends Mitglieder {
         super(name, telnum, beitrag);
         this.setAnzahlSpiele(anzahlSpiele);
     }
-    public int getAnzalSpiehle() {
+    public int getAnzahlSpiele() {
         return this.anzahlSpiele;
     }
     public void setAnzahlSpiele(int anzahlSpiele) {
