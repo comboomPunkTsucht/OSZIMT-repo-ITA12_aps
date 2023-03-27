@@ -14,4 +14,15 @@ public class Trainer extends Mitglieder {
 
     public void setLklasse(char lklasse) {this.lklasse = lklasse;}
     public void setGehalt(double gehalt) {if (gehalt >= 0.0 ){this.gehalt = gehalt;}}
+
+    
+
+    @Override
+    public String toString() {
+        return "{" +
+            " lklasse='" + this.lklasse + "'" +
+            ", gehalt='" + this.gehalt + "'" +
+            "}";
+    }
+    
 }

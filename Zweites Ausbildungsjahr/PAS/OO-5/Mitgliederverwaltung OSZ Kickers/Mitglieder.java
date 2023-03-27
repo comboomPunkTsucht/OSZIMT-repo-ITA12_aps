@@ -18,4 +18,5 @@ public abstract class Mitglieder {
     public void setName(String name) {this.name = name;}
     public void setTelnum(String telnum) {this.telnum = telnum;}
     public void setBeitrag(boolean beitrag) {this.beitrag = beitrag;}
+
 }

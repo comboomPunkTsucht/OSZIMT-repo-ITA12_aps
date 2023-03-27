@@ -15,5 +15,14 @@ public class Spieler extends Mitglieder {
     public void setTrikonr(int trikonr) {if (trikonr >= 0 && trikonr <= 99 ){this.trikonr = trikonr;}}
     public void setPos(String pos) {this.pos = pos;}
     
+
+    @Override
+    public String toString() {
+        return "{" +
+            " trikonr='" + this.trikonr + "'" +
+            ", pos='" + this.pos + "'" +
+            "}";
+    }
+
 }
 
