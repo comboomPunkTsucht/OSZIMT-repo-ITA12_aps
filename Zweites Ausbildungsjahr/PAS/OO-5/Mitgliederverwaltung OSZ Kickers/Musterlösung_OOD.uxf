@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>730</x><y>10</y><w>520</w><h>190</h></coordinates><panel_attributes>/*Mitglied*/
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>730</x><y>10</y><w>520</w><h>190</h></coordinates><panel_attributes>/*Mitglied*/
 --
 - name: String
 - telefonnummer: String
@@ -80,13 +80,13 @@
 + getManschaftsleiterListe: Manschaftsleiter
 + setManschaftsleiterListe(Manschaftsleiter): void
 + getTrainerListe(): Trainer
-+ setTrainerListe(Trainer): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>720</y><w>200</w><h>50</h></coordinates><panel_attributes>lt=&lt;-&gt;
++ setTrainerListe(Trainer): voidvoid</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>720</y><w>200</w><h>50</h></coordinates><panel_attributes>lt=&lt;-&gt;
 m1=1
 m2=1
 gehört zu &gt;</panel_attributes><additional_attributes>10;20;180;20</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>530</y><w>260</w><h>190</h></coordinates><panel_attributes>lt=&lt;-&gt;
 m1=11..22
 m2=1
-gehören zu &gt;</panel_attributes><additional_attributes>10;10;10;50;100;50;100;160;240;160</additional_attributes></element><element><id>Relation</id><coordinates><x>1060</x><y>460</y><w>110</w><h>230</h></coordinates><panel_attributes>lt=&lt;-&gt;
+gehören zu &gt;</panel_attributes><additional_attributes>10;10;10;50;100;50;100;160;240;160</additional_attributes></element><element><id>Relation</id><coordinates><x>1060</x><y>460</y><w>100</w><h>230</h></coordinates><panel_attributes>lt=&lt;-&gt;
 m1=1
 m2=1
 gehört zu v</panel_attributes><additional_attributes>10;10;10;210</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2290</x><y>670</y><w>1210</w><h>200</h></coordinates><panel_attributes>*Spiel*
