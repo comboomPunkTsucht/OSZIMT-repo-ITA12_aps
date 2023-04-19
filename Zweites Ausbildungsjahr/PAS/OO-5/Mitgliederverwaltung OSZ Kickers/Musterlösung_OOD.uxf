@@ -1,0 +1,108 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>730</x><y>10</y><w>520</w><h>190</h></coordinates><panel_attributes>/*Mitglied*/
+--
+- name: String
+- telefonnummer: String
+- jahresbeitrag: boolean
+
+--
++ Mitglied()
++ Mitglied(name: String, telefonnummer: String, jahresbeitrag: boolean)
++ getname():String
++ setname(String): void
++ getTelefonnummer(): String
++ setTelefonnummer(String): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>290</y><w>670</w><h>250</h></coordinates><panel_attributes>*Spieler*
+--
+- name: String
+- trikotnummer: int
+- spielposition: String
+- manschaftsListe: Manschaft
+--
++ Spieler()
++ Spieler(name: String, trikotnummer: int, spielposition: String, ManschaftsListe: Mannschaft)
++ getName(): String
++ setName(String): void
++ getTrikotnummer(): int
++ setTrikotnummer(int): void
++ getSpielPosition(): String
++ setSpielPosition(String): void
++ getManschaftsListe(): Manschaft
++ setManschaftsListe(Manschaft)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1360</x><y>290</y><w>450</w><h>200</h></coordinates><panel_attributes>*Schiedsrichter*
+--
+- name: String
+- anzahlGepfiffernerSpiele: int
+
+--
++ Schiedsrichter()
++ Schiedsrichter(name: String, anzahlGepfiffernerSpiele: int)
++ getName(): String
++ setName(String): void
++ getanzahlGepfiffernerSpiele(): int
++ setanzahlGepfiffernerSpiele(int): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>720</x><y>290</y><w>590</w><h>180</h></coordinates><panel_attributes>*Trainer*
+--
+- lizenzklasse: String
+- monatlicheAufwandsentschaedigung: double
+- manschaftsListe: Manschaft
+--
++ Trainer()
++ Trainer(lizenzklasse: String, monatlicheAufwandsentschaedigung: double)
++ getLizenzklasse(): String
++ setLizenzklasse(String): void
++ getMonatlicheAufwandsentschaedigung():double
++ setMonatlicheAufwandsentschaedigung(double): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>600</y><w>730</w><h>230</h></coordinates><panel_attributes>*Mannschaftsleiter*
+--
+- nameDerMannschaft: String
+- rabattAufJahresbeitrag: int
+- manschaftsListe: Manschaft
+--
++ Mannschaftsleiter()
++ Mannschaftsleiter(nameDerMannschaft: String, rabattAufJahresbeitrag: int, maschaftsListe: Manschaft)
++ getNameDerMannschaft(): String
++ setNameDerMannschaft(String): void
++ getRabattAufJahresbeitrag(): int
++ setRabattAufJahresbeitrag(int): void
++ getManschaftsListe(): Manschaft
++ setManschaftsListe(Manschaft)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>530</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>190</y><w>240</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>220;10;220;40;10;40;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>930</x><y>190</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>1100</x><y>190</y><w>360</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;340;40;340;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>900</x><y>670</y><w>1090</w><h>290</h></coordinates><panel_attributes>*Manschaft*
+--
+- name: String
+- spielklasse: String
+- spielerListe: Spieler[]
+- manschaftsleiterListe: Manschaftsleiter
+- trainerListe: Trainer
+--
++ Manschaft()
++ Spieler(name: String, spielklasse: String, spielerListe: Spieler[], manschaftsleiterListe: Manschaftsleiter[], trainerListe: Trainer[])
++ getName(): String
++ setName(String): void
++ getSpielerklasse(): String
++ set Spielerklasse(String): void
++ getSpielerListe(): Spieler[]
++ setSpielerListe(Spieler[]): void
++ getManschaftsleiterListe: Manschaftsleiter
++ setManschaftsleiterListe(Manschaftsleiter): void
++ getTrainerListe(): Trainer
++ setTrainerListe(Trainer): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>720</y><w>200</w><h>50</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=1
+m2=1
+gehört zu &gt;</panel_attributes><additional_attributes>10;20;180;20</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>530</y><w>260</w><h>190</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=11..22
+m2=1
+gehören zu &gt;</panel_attributes><additional_attributes>10;10;10;50;100;50;100;160;240;160</additional_attributes></element><element><id>Relation</id><coordinates><x>1060</x><y>460</y><w>110</w><h>230</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=1
+m2=1
+gehört zu v</panel_attributes><additional_attributes>10;10;10;210</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2290</x><y>670</y><w>1210</w><h>200</h></coordinates><panel_attributes>*Spiel*
+--
+- manschaftsListe: Manschaft
+- istheimManschaft: boolean
+- heimTore: int
+- gastTore: int
+- spielerListeMitRoterKarte: Spieler[]
+- spielerListeMitGelberkarte: Spieler[]
+--
++ Spiel()
++ Spiel(manschaftsListe: Manschaft, istHeimManschaft: boolean, heimTore: int, gastTore: int, spielerListeMitRoterKarte: Spieler[], spielerListeMitGelberKarte: Spieler[])
++ getManschaftsListe(): Manschaft
++ setManschaftsListe(Manschaft): void
++ getIstHeimManschaft(): boolean
++ setIstHeimManschaft(boolean): void
++ getHeimTore(): int
++ setHeimTore(</panel_attributes><additional_attributes></additional_attributes></element></diagram>
