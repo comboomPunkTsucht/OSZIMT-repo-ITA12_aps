@@ -1,0 +1,80 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notesS</help_text><element><id>UMLClass</id><coordinates><x>0</x><y>149</y><w>1990</w><h>300</h></coordinates><panel_attributes>*1.																																																																																																																																																																																																																																																																																					*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>179</y><w>660</w><h>230</h></coordinates><panel_attributes>*Driver*
+--
+- firstName: String
+- lastName: String
+- age: int
+- driverIDClass: String
+- points: int
+- vehicleList: Vehicle[]
+--
++ Driver()
++ Driver(firstname: String, lastName: String, age: int, driverIDClass: String, points: int)
++ get...()
++ set...()
++ drive(): void
++ swear(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>910</x><y>179</y><w>590</w><h>230</h></coordinates><panel_attributes>*Vehicle*
+--
+- litersPerkm: double
+- model: String
+- mass: double
+- vehicleClass: String
+--
++ Vehicle()
++ Vehicle(litersPerKm: double, model: String, mass: double, vehicleClass: String)
++ get...()
++ set...()
++ steer(): void
++ acclerate(): void
++ break(): void
++ signal(char): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>249</y><w>250</w><h>50</h></coordinates><panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+drives &gt;</panel_attributes><additional_attributes>10;20;230;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>489</y><w>1990</w><h>740</h></coordinates><panel_attributes>*2.																																																																																																																																																																																																																																																																																					*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>539</y><w>550</w><h>230</h></coordinates><panel_attributes>*Song*
+--
+- durationInms: int
+- title: String
+- ganre: String
+- artistList: Artist[]
+--
++ Song()
++ Song(durationInms: int, title: String, ganre: String, artistList: Artist[])
++ get...()
++ set...()
++ play(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>770</x><y>539</y><w>1190</w><h>260</h></coordinates><panel_attributes>*Media*
+--
+- type: String
+- title: String
+- ISBN: long
+- NuberOfSongs: int
+- totalDurationInms: int
+- price: double
+- label: String
+- SongList: Song
+- artistList: Artist[]
+--
++ Midea()
++ Media(type: String,title : String, ISBN: long, NumberOfSongs: int, totaltotalDurationInms: int, price: double, label: String, songList: Song[], artistList: Artist[])
++ get...()
++ set...()
++ play(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>500</x><y>959</y><w>660</w><h>230</h></coordinates><panel_attributes>*Artist*
+--
+- name: String
+- hairColor: String
+- gender: char
+- songList: Song[]
+- mediaList: Media[]
+--
++ Song()
++ Song(name: String, hairColor: String, gender: char, songList: Song[], mediaList: Media[])
++ get...()
++ set...()
++ sing(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>639</y><w>200</w><h>50</h></coordinates><panel_attributes>lt=x-&gt;
+m1=1..*
+m2=0..*
+contained in &gt;</panel_attributes><additional_attributes>10;20;180;20</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>759</y><w>100</w><h>220</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=1..*
+m2=1..*
+released v</panel_attributes><additional_attributes>10;10;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>860</x><y>789</y><w>100</w><h>190</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=1..*
+m2=1..*
+released v</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element></diagram>
