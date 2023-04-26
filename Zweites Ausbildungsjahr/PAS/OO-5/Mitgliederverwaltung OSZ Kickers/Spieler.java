@@ -23,7 +23,7 @@ public class Spieler extends Mitglieder {
         return "{" +
             " trikonr='" + this.trikonr + "'" +
             ", pos='" + this.pos + "'" + 
-            ", pos='" + this.pos + "'" + ", manschaft='" + manschaft.toString() + "'"
+            ", pos='" + this.pos + "'" + ", manschaft='" + manschaft.toString() + "'" +
             "}";
     }
 

@@ -6,13 +6,13 @@ public class Manschaft {
   private int minSpieler;
   private int maxSpieler;
   private Trainer trainer;
-  private Spiel[] spielListe
+  private Spiel[] spielListe;
 
-  public Munschaft() {}
+  public Manschaft() {}
 
   public Manschaft(
     String name,
-    String spielerklasse,
+    String spielklasse,
     Spieler[] spielerListe,
     int minSpieler,
     int maxSpieler,
@@ -20,12 +20,12 @@ public class Manschaft {
     Spiel[] spielListe
   ) {
     this.name = name;
-    this.spielklasse = spielerklasse;
+    this.spielklasse = spielklasse;
     this.spielerListe = spielerListe;
     this.minSpieler = minSpieler;
     this.maxSpieler = maxSpieler;
     this.trainer = trainer;
-    this.spielListe = spielListe
+    this.spielListe = spielListe;
   }
 
   public String getName() {
@@ -36,12 +36,12 @@ public class Manschaft {
     this.name = name;
   }
 
-  public String getSpilerklasse() {
-    return this.spielerklasse;
+  public String getSpilklasse() {
+    return this.spielklasse;
   }
 
-  public void setSpielerklasse(String spielerklasse) {
-    this.spielerklasse = spielerklasse;
+  public void setSpielklasse(String spielklasse) {
+    this.spielklasse = spielklasse;
   }
 
   public Spieler[] getSpielerListe() {
@@ -68,16 +68,12 @@ public class Manschaft {
     this.trainer = trainer;
   }
   public Spiel[] getSpielListe() {return this.spielListe;}
-  public void setSpielListe(Spiel[] spielListe) {this.spielListe = spielListe}
+  public void setSpielListe(Spiel[] spielListe) {
+    this.spielListe = spielListe;
+  }
 
   @Overide
   public String toString() {
-    return "{name='" + this.name + "'" + ",spielerklasse='" +
-    this.spielerklasse + "'" + ",spielerListe[]='" + 
-    this.Spielerliste + "'"+ ", minSpieler='" +
-    this.minSpieler + "'" + ", maxSpieler='" +
-    this.maxSpieler + "'" + ", trainer='" +
-    this.trainer.toString() + "'" + ", spielListe='"
-    this.spielListe + "'" + "}";
+    return "{name='" + this.name + "'" + ",spielerklasse='" + this.spielklasse + "'" + ",spielerListe[]='" + this.spielerListe + "'"+ ", minSpieler='" + this.minSpieler + "'" + ", maxSpieler='" + this.maxSpieler + "'" + ", trainer='" + this.trainer.toString() + "'" + ", spielListe='" + this.spielListe + "'" + "}";
   }
 }

@@ -48,7 +48,7 @@ public class Spiel {
         this.gastManschaft = gastManschaft;
     }
     public Spieler[] getRoteKarteListe() {return this.roteKarteListe;}
-    public void set RoteKarteListe(Spieler[] roteKarteListe) {
+    public void setRoteKarteListe(Spieler[] roteKarteListe) {
         this.roteKarteListe = roteKarteListe;
     }
     public Spieler[] getGelbeKarteListe() {return this.gelbeKarteListe;}
@@ -58,12 +58,6 @@ public class Spiel {
 
     @Overide
     public String toString() {
-        return "{datum='" + this.datum + "'" +
-        ", toreHeim='" + this.toreHeim + "'" +
-        ", toreGast='" + this.toreGast + "'" + 
-        ", heimManschaft='" + this.heimManschaft.toString() + "'" +
-        ", gastManschaft='" + this.gastManschaft.toString() + "'" +
-        ", roteKarteListe='" + this.roteKarteListe + "'" +
-        ", gelbeKarteListe='" + this.gelbeKarteListe + "'" + "}";
+        return "{datum='" + this.datum + "'" + ", toreHeim='" + this.toreHeim + "'" + ", toreGast='" + this.toreGast + "'" +  ", heimManschaft='" + this.heimManschaft.toString() + "'" + ", gastManschaft='" + this.gastManschaft.toString() + "'" + ", roteKarteListe='" + this.roteKarteListe + "'" + ", gelbeKarteListe='" + this.gelbeKarteListe + "'" + "}";
     }
 }
