@@ -1,12 +1,14 @@
 public class Spieler extends Mitglieder {
     private int trikonr;
     private String pos;
+    private Manschaft manschaft;
 
     public Spieler() {}
-    public Spieler(int trikonr, String pos, String name, String telnum, boolean beitrag) {
+    public Spieler(int trikonr, String pos, String name, String telnum, boolean beitrag, Manschaft manschaft) {
         super(name, telnum, beitrag);
         this.setTrikonr(trikonr);
         this.pos = pos;
+        this.manschaft = manschaft;
     }
 
     public int getTrikonr() {return this.trikonr;}
@@ -20,7 +22,8 @@ public class Spieler extends Mitglieder {
     public String toString() {
         return "{" +
             " trikonr='" + this.trikonr + "'" +
-            ", pos='" + this.pos + "'" +
+            ", pos='" + this.pos + "'" + 
+            ", pos='" + this.pos + "'" + ", manschaft='" + manschaft.toString() + "'"
             "}";
     }
 
