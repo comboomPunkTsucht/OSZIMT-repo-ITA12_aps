@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         Manschaft ma1 = new Manschaft();
         Spiel sp1 = new Spiel();
-        Spieler s1 = new Spieler(11, "Tor", "Herbert Müllermann", "+49 123 456789", true);
+        Spieler s1 = new Spieler(11, "Tor", "Herbert Müllermann", "+49 123 456789", true, ma1);
         Mannschaftsleiter m1 = new Mannschaftsleiter("U12", 10.5, 12, "Abwehr", "Hans Müller", "+49 123 456789", true);
         Trainer t1 = new Trainer('B', 1000.0, "Olaf Müller", "+49 123 456789", true);
         Schiedsrichter sr1 = new Schiedsrichter(20, "Thilo Wicktor", "+49 123 456789", true);
