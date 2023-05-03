@@ -3,7 +3,7 @@ public class Main {
         Manschaft ma1 = new Manschaft();
         Spiel sp1 = new Spiel();
         Spieler s1 = new Spieler(11, "Tor", "Herbert Müllermann", "+49 123 456789", true, ma1);
-        Mannschaftsleiter m1 = new Mannschaftsleiter("U12", 10.5, 12, "Abwehr", "Hans Müller", "+49 123 456789", true);
+        Mannschaftsleiter m1 = new Mannschaftsleiter("U12", 10.5, 12, "Abwehr", "Hans Müller", "+49 123 456789", true, ma1);
         Trainer t1 = new Trainer('B', 1000.0, "Olaf Müller", "+49 123 456789", true);
         Schiedsrichter sr1 = new Schiedsrichter(20, "Thilo Wicktor", "+49 123 456789", true);
 
@@ -13,7 +13,7 @@ public class Main {
         System.out.println(s1.getTelnum());
         System.out.println(s1.getBeitrag());
         System.out.println(" ");
-        System.out.println(m1.getMannschaft());
+        System.out.println(m1.getMannschaftString());
         System.out.println(m1.getRabattBeitrag());
         System.out.println(m1.getTrikonr());
         System.out.println(m1.getPos());
@@ -47,7 +47,9 @@ public class Main {
         s1.setTrikonr(temp1);
         System.out.println(s1.getTrikonr());
 
-        
+        ma1.setTrainer(t1);
+        sp1.setHeimManschaft(ma1);
+        sp1.setGastManschaft(ma1);
 
         System.out.println(" ");
         System.out.println("s1");
@@ -59,7 +61,7 @@ public class Main {
         System.out.println("sr1");
         System.out.println(sr1.toString());
         System.out.println("ma1");
-        System.out.Println(ma1.toString());
+        System.out.println(ma1.toString());
         System.out.println("sp1");
         System.out.println(sp1.toString());
 

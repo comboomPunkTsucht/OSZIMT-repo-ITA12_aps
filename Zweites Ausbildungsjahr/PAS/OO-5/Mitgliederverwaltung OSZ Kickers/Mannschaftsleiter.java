@@ -1,26 +1,26 @@
 public class Mannschaftsleiter extends Spieler {
-    private String mannschaft;
+    private String mannschaftString;
     private double rabattBeitrag;
 
     public Mannschaftsleiter() {}
 
-    public Mannschaftsleiter(String mannschaft, double rabattBeitrag, int trikonr, String pos, String name, String telnum,
-            boolean beitrag) {
-        super(trikonr, pos, name, telnum, beitrag);
-        this.mannschaft = mannschaft;
+    public Mannschaftsleiter(String mannschaftString, double rabattBeitrag, int trikonr, String pos, String name, String telnum,
+            boolean beitrag, Manschaft manschaft) {
+        super(trikonr, pos, name, telnum, beitrag, manschaft);
+        this.mannschaftString = mannschaftString;
         this.setRabattBeitrag(rabattBeitrag);
     }
-    public String getMannschaft() {return this.mannschaft;}
+    public String getMannschaftString() {return this.mannschaftString;}
     public double getRabattBeitrag() {return this.rabattBeitrag;}
 
-    public void setMannschaft(String mannschaft) {this.mannschaft = mannschaft;}
+    public void setMannschaftString(String mannschaftString) {this.mannschaftString = mannschaftString;}
     public void setRabattBeitrag(double rabattBeitrag) {if (rabattBeitrag >= 0.0 ){this.rabattBeitrag = rabattBeitrag;}}
     
 
     @Override
     public String toString() {
         return "{" +
-            " mannschaft='" + this.mannschaft + "'" +
+            " mannschaft='" + this.mannschaftString + "'" +
             ", rabattBeitrag='" + this.rabattBeitrag + "'" +
             "}";
     } 
