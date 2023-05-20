@@ -22,16 +22,16 @@ public class Fahrkartenautomat_2 extends JFrame {
     // Panel
     private JPanel pnlInhalt;
 
-    // Label f�r die �berschrift
+    // Label für die Überschrift
     /* TODO!! */
     private JLabel lbl_Tickets_waehlen;
 
-    // Textfeld f�r die Ausgabe
+    // Textfeld für die Ausgabe
     /* TODO!! */
     private JTextField tfd_TextFieldUp;
     private JTextField tfd_TextFieldDown;
 
-    // Buttons f�r die Tickets
+    // Buttons für die Tickets
     /* TODO!! */
     private JButton btn_Kurz;
     private JButton btn_AB;
@@ -43,7 +43,7 @@ public class Fahrkartenautomat_2 extends JFrame {
     private JButton btn_4_AB;
     private JButton btn_4_ABC;
 
-    // Speicher f�r den Betrag
+    // Speicher für den Betrag
     private double zuBezahlen;
     private int anzahl_Tickets;
 
@@ -168,7 +168,7 @@ public class Fahrkartenautomat_2 extends JFrame {
 	    }
 	});
 
-	// Panel zum Fenster hinzuf�gen
+	// Panel zum Fenster hinzufügen
 	this.setContentPane(pnlInhalt);
 	this.pack();
 	this.setSize(getMaximumSize());
