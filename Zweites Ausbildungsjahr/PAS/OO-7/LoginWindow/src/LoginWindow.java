@@ -154,13 +154,13 @@ public class LoginWindow {
 		    // TODO Auto-generated method stub
 		    if (userManagement.exist(tfd_Username.getText(), String.valueOf(tfd_Pwd.getPassword())) == true) {
 			frame.dispose();
-			new UMWindow(tfd_Username.getText());
 			JOptionPane.showOptionDialog(null, "Login in ........", "Login Sucsesfull",
 				JOptionPane.CLOSED_OPTION, JOptionPane.INFORMATION_MESSAGE, icon, null, 0);
+			new UMWindow(tfd_Username.getText());
 
 		    } else {
 			JOptionPane.showOptionDialog(null, "username or passwor are wrong", "Login unsucsesfull",
-				JOptionPane.CLOSED_OPTION, JOptionPane.ERROR_MESSAGE, icon, null, 0);
+				JOptionPane.CLOSED_OPTION, JOptionPane.ERROR_MESSAGE, null, null, 0);
 		    }
 		}
 	    });
