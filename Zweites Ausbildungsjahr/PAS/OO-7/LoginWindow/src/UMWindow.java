@@ -55,6 +55,7 @@ public class UMWindow {
 	    lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 	    lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 20));
 	    lblNewLabel.setName("lblNewLabel");
+	    lblNewLabel.setIcon(icon);
 	}
 	return lblNewLabel;
     }
