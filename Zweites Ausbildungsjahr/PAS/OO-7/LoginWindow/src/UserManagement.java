@@ -23,7 +23,7 @@ public class UserManagement {
     public void remove(User user) {
         // Entferne den übergebenen Benutzer aus der Liste
         for (int i = 0; i < userList.length; i++) {
-            if (userList[i].equals(user)) {
+            if (userList[i] != null && userList[i].getUsername().equals(user.getUsername())) {
                 userList[i] = null;
                 break;
             }

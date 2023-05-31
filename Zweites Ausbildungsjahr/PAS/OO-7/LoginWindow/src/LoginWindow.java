@@ -24,7 +24,7 @@ public class LoginWindow {
     private JPasswordField tfd_Pwd;
     private JButton btn_reset;
     private JButton btn_Login;
-    private UserManagement userManagement = new UserManagement();
+    private static UserManagement userManagement = new UserManagement();
     ImageIcon icon = new ImageIcon("icon.png");
 
     /**
@@ -62,7 +62,7 @@ public class LoginWindow {
 	frame.setTitle("LogIn - OSZ IMT Kickers");
 	frame.setName("frame");
 	frame.setType(Type.POPUP);
-	frame.setBounds(100, 100, 450, 173);
+	frame.setBounds(100, 100, 450, 200);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setLayout(null);
 	frame.getContentPane().add(getPanel());
@@ -71,7 +71,7 @@ public class LoginWindow {
     private JPanel getPanel() {
 	if (panel == null) {
 	    panel = new JPanel();
-	    panel.setBounds(0, 0, 450, 144);
+	    panel.setBounds(0, 0, 450, 172);
 	    panel.setName("panel");
 	    panel.setLayout(null);
 	    panel.add(getLbl_Username());
@@ -80,6 +80,28 @@ public class LoginWindow {
 	    panel.add(getTfd_Pwd());
 	    panel.add(getBtn_reset());
 	    panel.add(getBtn_Login());
+	    
+	    JButton btn_DeleteUser = new JButton("Delete User");
+	    btn_DeleteUser.setFont(new Font("Arial", Font.PLAIN, 13));
+	    btn_DeleteUser.setBounds(23, 133, 117, 29);
+	    btn_DeleteUser.addActionListener(new ActionListener() {
+	    	@Override
+			public void actionPerformed(ActionEvent e) {
+	    		userManagement.remove(new User(tfd_Username.getText(), String.valueOf(tfd_Pwd.getPassword())));
+	    	}
+	    });
+	    panel.add(btn_DeleteUser);
+	    
+	    JButton btn_AddUser = new JButton("Add User");
+	    btn_AddUser.setFont(new Font("Arial", Font.PLAIN, 13));
+	    btn_AddUser.setBounds(152, 133, 117, 29);
+	    btn_AddUser.addActionListener(new ActionListener() {
+	    	@Override
+			public void actionPerformed(ActionEvent e) {
+	    		userManagement.insert(new User(tfd_Username.getText(), String.valueOf(tfd_Pwd.getPassword())));
+	    	}
+	    });
+	    panel.add(btn_AddUser);
 	}
 	return panel;
     }
