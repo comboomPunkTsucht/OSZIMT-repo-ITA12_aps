@@ -1,38 +1,36 @@
+import java.util.ArrayList;
+
 /**
  * @author mahd
  *
  */
 public class UserManagement {
 
-    private User[] userList;
+    private ArrayList<User> userList = new ArrayList<User>();
     
     // Initialisierung der Benutzerliste im Konstruktor
-    public UserManagement() {
-        userList = new User[1]; // Die Größe der Benutzerliste sollte entsprechend der Anzahl der Benutzer festgelegt werden
-        userList[0] = new User("mahd", "fabian66");
+    public UserManagement() { // Die Größe der Benutzerliste sollte entsprechend der Anzahl der Benutzer festgelegt werden
+        userList.add(new User("mahd", "fabian66"));
     }
 
     public void insert(User user) {
         // Füge den übergebenen Benutzer zur Liste hinzu
-        User[] updatedList = new User[userList.length + 1];
-        System.arraycopy(userList, 0, updatedList, 0, userList.length);
-        updatedList[userList.length] = user;
-        userList = updatedList;
+        userList.add(user);
     }
 
     public void remove(User user) {
         // Entferne den übergebenen Benutzer aus der Liste
-        for (int i = 0; i < userList.length; i++) {
-            if (userList[i] != null && userList[i].getUsername().equals(user.getUsername())) {
-                userList[i] = null;
+        for (int i = 0; i < userList.size(); i++) {
+            if (userList.get(i) != null && (userList.get(i).getUsername().equals(user.getUsername()))) {
+            	userList.remove(i);
                 break;
             }
         }
     }
 
     public boolean exist(String username, String pwd) {
-        for (int i = 0; i < userList.length; i++) {
-            if (userList[i] != null && userList[i].getUsername().equals(username) && userList[i].getPWD().equals(pwd)) {
+        for (int i = 0; i < userList.size(); i++) {
+            if (userList.get(i) != null && userList.get(i).getUsername().equals(username) && userList.get(i).getPWD().equals(pwd)) {
                 return true;
             }
         }
