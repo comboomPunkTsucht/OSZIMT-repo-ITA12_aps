@@ -1,0 +1,205 @@
+import java.awt.EventQueue;
+import java.awt.Window.Type;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.AlgorithmParameters;
+import java.security.SecureRandom;
+import java.security.spec.KeySpec;
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.PBEKeySpec;
+import javax.crypto.spec.SecretKeySpec;
+import javax.swing.JButton;
+import javax.swing.JEditorPane;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import java.util.Base64;
+
+public class CipherWindow {
+
+    private JFrame frmOszimtcrypter;
+    private JPasswordField tfdPasswd;
+    private JEditorPane editorPane;
+    private File encryptedFile;
+
+    private static final String ALGORITHM = "AES/CBC/PKCS5Padding";
+    private static final int ITERATION_COUNT = 65536;
+    private static final int KEY_LENGTH = 256;
+
+    /**
+     * Launch the application.
+     */
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    CipherWindow window = new CipherWindow();
+                    window.frmOszimtcrypter.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * Create the application.
+     */
+    public CipherWindow() {
+        initialize();
+    }
+
+    /**
+     * Initialize the contents of the frame.
+     */
+    private void initialize() {
+        frmOszimtcrypter = new JFrame();
+        frmOszimtcrypter.setAlwaysOnTop(true);
+        frmOszimtcrypter.setTitle("OSZimt-Crypter");
+        frmOszimtcrypter.setBounds(100, 100, 450, 300);
+        frmOszimtcrypter.setType(Type.UTILITY);
+        frmOszimtcrypter.setVisible(true);
+        frmOszimtcrypter.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frmOszimtcrypter.getContentPane().setLayout(null);
+        frmOszimtcrypter.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent evt) {
+                onExit();
+            }
+        });
+
+        JPanel pnl1 = new JPanel();
+        pnl1.setBounds(0, 0, 434, 261);
+        frmOszimtcrypter.getContentPane().add(pnl1);
+        pnl1.setLayout(null);
+
+        JLabel lblpasswd = new JLabel("Password");
+        lblpasswd.setBounds(10, 11, 70, 14);
+        pnl1.add(lblpasswd);
+
+        tfdPasswd = new JPasswordField();
+        tfdPasswd.setBounds(90, 8, 334, 20);
+        pnl1.add(tfdPasswd);
+
+        JButton btnNewButton = new JButton("Encrypt");
+        btnNewButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String password = String.valueOf(tfdPasswd.getPassword());
+                String plaintext = editorPane.getText();
+
+                byte[] encryptedBytes = encrypt(password, plaintext);
+                if (encryptedBytes != null) {
+                    try {
+                        Files.write(encryptedFile.toPath(), encryptedBytes);
+                        System.out.println("File encrypted and saved.");
+                    } catch (IOException ex) {
+                        System.out.println("Error occurred while writing encrypted file: " + ex.getMessage());
+                    }
+                }
+            }
+        });
+        btnNewButton.setBounds(10, 36, 414, 23);
+        pnl1.add(btnNewButton);
+
+        JButton btnNewButton_1 = new JButton("Decrypt");
+        btnNewButton_1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String password = String.valueOf(tfdPasswd.getPassword());
+
+                try {
+                    byte[] encryptedBytes = Files.readAllBytes(encryptedFile.toPath());
+                    String decryptedText = decrypt(password, encryptedBytes);
+                    editorPane.setText(decryptedText);
+                    System.out.println("File decrypted and loaded.");
+                } catch (IOException ex) {
+                    System.out.println("Error occurred while reading encrypted file: " + ex.getMessage());
+                }
+            }
+        });
+        btnNewButton_1.setBounds(10, 70, 414, 23);
+        pnl1.add(btnNewButton_1);
+
+        editorPane = new JEditorPane();
+        editorPane.setBounds(10, 104, 414, 146);
+        pnl1.add(editorPane);
+
+        encryptedFile = new File("data.oszcryped");
+    }
+
+    private byte[] encrypt(String password, String plaintext) {
+        try {
+            SecureRandom random = new SecureRandom();
+            byte[] salt = new byte[16];
+            random.nextBytes(salt);
+
+            SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+            KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, ITERATION_COUNT, KEY_LENGTH);
+            SecretKey secretKey = new SecretKeySpec(factory.generateSecret(spec).getEncoded(), "AES");
+
+            Cipher cipher = Cipher.getInstance(ALGORITHM);
+            byte[] iv = new byte[cipher.getBlockSize()];
+            random.nextBytes(iv);
+            IvParameterSpec ivParams = new IvParameterSpec(iv);
+
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivParams);
+            byte[] encryptedText = cipher.doFinal(plaintext.getBytes(StandardCharsets.UTF_8));
+
+            byte[] result = new byte[salt.length + iv.length + encryptedText.length];
+            System.arraycopy(salt, 0, result, 0, salt.length);
+            System.arraycopy(iv, 0, result, salt.length, iv.length);
+            System.arraycopy(encryptedText, 0, result, salt.length + iv.length, encryptedText.length);
+
+            return result;
+        } catch (Exception e) {
+            System.out.println("Encryption error: " + e.getMessage());
+        }
+        return null;
+    }
+
+    private String decrypt(String password, byte[] encryptedData) {
+        try {
+            byte[] salt = new byte[16];
+            byte[] iv = new byte[16];
+            byte[] encryptedText = new byte[encryptedData.length - salt.length - iv.length];
+            System.arraycopy(encryptedData, 0, salt, 0, salt.length);
+            System.arraycopy(encryptedData, salt.length, iv, 0, iv.length);
+            System.arraycopy(encryptedData, salt.length + iv.length, encryptedText, 0, encryptedText.length);
+
+            SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+            KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, ITERATION_COUNT, KEY_LENGTH);
+            SecretKey secretKey = new SecretKeySpec(factory.generateSecret(spec).getEncoded(), "AES");
+
+            Cipher cipher = Cipher.getInstance(ALGORITHM);
+            IvParameterSpec ivParams = new IvParameterSpec(iv);
+            cipher.init(Cipher.DECRYPT_MODE, secretKey, ivParams);
+
+            byte[] decryptedText = cipher.doFinal(encryptedText);
+            return new String(decryptedText, StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            System.out.println("Decryption error: " + e.getMessage());
+        }
+        return null;
+    }
+
+    public void onExit() {
+        try {
+            Files.write(encryptedFile.toPath(), editorPane.getText().getBytes());
+            System.out.println("File saved.");
+        } catch (IOException ex) {
+            System.out.println("Error occurred while writing file: " + ex.getMessage());
+        }
+        System.err.println("Exit");
+        System.exit(0);
+    }
+}

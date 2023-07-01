@@ -1,0 +1,208 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.security.SecureRandom;
+import java.security.spec.KeySpec;
+import java.util.Arrays;
+
+import javax.crypto.*;
+import javax.crypto.spec.*;
+
+public class CipherWindow {
+private JFrame frmOszimtcrypter;
+private JPasswordField tfdPasswd;
+private File encryptedFile;
+private JEditorPane editorPane;
+
+    private static final String ALGORITHM = "AES/CBC/PKCS5Padding";
+    private static final int ITERATION_COUNT = 65536;
+    private static final int KEY_LENGTH = 256;
+
+
+    public CipherWindow() {
+        initialize();
+    }
+
+    private void initialize() {
+        frmOszimtcrypter = new JFrame();
+        frmOszimtcrypter.setTitle("OSZimt-Crypter");
+        frmOszimtcrypter.setBounds(100, 100, 450, 300);
+        frmOszimtcrypter.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        frmOszimtcrypter.addWindowListener(new WindowAdapter() {
+        	   public void windowClosing(WindowEvent evt) {
+        		     onExit();
+        		   }
+        		  });
+        
+
+        JMenuBar menuBar = new JMenuBar();
+        frmOszimtcrypter.setJMenuBar(menuBar);
+
+        JMenu fileMenu = new JMenu("File");
+        menuBar.add(fileMenu);
+
+        JMenuItem renameItem = new JMenuItem("Rename File");
+        fileMenu.add(renameItem);
+        
+        renameItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser = new JFileChooser();
+                int result = fileChooser.showSaveDialog(frmOszimtcrypter);
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    File selectedFile = fileChooser.getSelectedFile();
+                    // Rename the file
+                    // ...
+                }
+            }
+        });
+
+        JPanel pnl1 = new JPanel();
+        pnl1.setLayout(new BorderLayout(0, 0));
+        frmOszimtcrypter.getContentPane().add(pnl1);
+
+        JPanel pnlbutton = new JPanel();
+        pnl1.add(pnlbutton, BorderLayout.SOUTH);
+
+        JButton btnNewButton = new JButton("Encrypt");
+        btnNewButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String password = String.valueOf(tfdPasswd.getPassword());
+                String plaintext = editorPane.getText();
+                byte[] encryptedData = encrypt(password, plaintext);
+                try {
+                    Files.write(encryptedFile.toPath(), encryptedData);
+                    System.out.println("File encrypted and saved.");
+                } catch (IOException ex) {
+                    System.out.println("Error occurred while writing encrypted file: " + ex.getMessage());
+                }
+                editorPane.setText("");
+            }
+        });
+        pnlbutton.add(btnNewButton);
+
+        JButton btnNewButton_1 = new JButton("Decrypt");
+        btnNewButton_1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String password = String.valueOf(tfdPasswd.getPassword());
+                try {
+                    byte[] encryptedData = Files.readAllBytes(encryptedFile.toPath());
+                    String decryptedText = decrypt(password, encryptedData);
+                    editorPane.setText(decryptedText);
+                    System.out.println("File decrypted and loaded.");
+                } catch (IOException ex) {
+                    System.out.println("Error occurred while reading encrypted file: " + ex.getMessage());
+                }
+            }
+        });
+        pnlbutton.add(btnNewButton_1);
+
+        JPanel pnlpaswd = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        pnl1.add(pnlpaswd, BorderLayout.NORTH);
+
+        JLabel lblpasswd = new JLabel("Password");
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.anchor = GridBagConstraints.WEST;
+        pnlpaswd.add(lblpasswd, gbc);
+
+        tfdPasswd = new JPasswordField();
+        lblpasswd.setLabelFor(tfdPasswd);
+        tfdPasswd.setColumns(pnlpaswd.getPreferredSize().width - lblpasswd.getPreferredSize().width);
+        gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 1.0;
+        gbc.anchor = GridBagConstraints.WEST;
+        pnlpaswd.add(tfdPasswd, gbc);
+
+        editorPane = new JEditorPane();
+        pnl1.add(editorPane, BorderLayout.CENTER);
+
+        encryptedFile = new File("data.oszcryped");
+
+        frmOszimtcrypter.setVisible(true);
+    }
+
+    private byte[] encrypt(String password, String plaintext) {
+        try {
+            SecureRandom secureRandom = new SecureRandom();
+            byte[] salt = new byte[16];
+            secureRandom.nextBytes(salt);
+
+            SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+            KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, ITERATION_COUNT, KEY_LENGTH);
+            SecretKey secretKey = new SecretKeySpec(factory.generateSecret(spec).getEncoded(), "AES");
+
+            Cipher cipher = Cipher.getInstance(ALGORITHM);
+            byte[] iv = new byte[cipher.getBlockSize()];
+            secureRandom.nextBytes(iv);
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey, new IvParameterSpec(iv));
+            byte[] encryptedText = cipher.doFinal(plaintext.getBytes(StandardCharsets.UTF_8));
+
+            byte[] encryptedData = new byte[salt.length + iv.length + encryptedText.length];
+            System.arraycopy(salt, 0, encryptedData, 0, salt.length);
+            System.arraycopy(iv, 0, encryptedData, salt.length, iv.length);
+            System.arraycopy(encryptedText, 0, encryptedData, salt.length + iv.length, encryptedText.length);
+
+            return encryptedData;
+        } catch (Exception e) {
+            System.out.println("Encryption error: " + e.getMessage());
+        }
+        return null;
+    }
+
+    private String decrypt(String password, byte[] encryptedData) {
+        try {
+            byte[] salt = Arrays.copyOfRange(encryptedData, 0, 16);
+            byte[] iv = Arrays.copyOfRange(encryptedData, 16, 16 + 16);
+            byte[] encryptedText = Arrays.copyOfRange(encryptedData, 16 + 16, encryptedData.length);
+
+            SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+            KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, ITERATION_COUNT, KEY_LENGTH);
+            SecretKey secretKey = new SecretKeySpec(factory.generateSecret(spec).getEncoded(), "AES");
+
+            Cipher cipher = Cipher.getInstance(ALGORITHM);
+            cipher.init(Cipher.DECRYPT_MODE, secretKey, new IvParameterSpec(iv));
+            byte[] decryptedText = cipher.doFinal(encryptedText);
+
+            return new String(decryptedText, StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            System.out.println("Decryption error: " + e.getMessage());
+        }
+        return null;
+    }
+
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    new CipherWindow();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    public void onExit() {
+        try {
+            Files.write(encryptedFile.toPath(), editorPane.getText().getBytes());
+            System.out.println("File saved.");
+        } catch (IOException ex) {
+            System.out.println("Error occurred while writing file: " + ex.getMessage());
+        }
+        System.err.println("Exit");
+        System.exit(0);
+    }
+}

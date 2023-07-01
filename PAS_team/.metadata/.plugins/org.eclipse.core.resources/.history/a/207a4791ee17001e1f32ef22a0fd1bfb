@@ -1,0 +1,114 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Window.Type;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import java.awt.GridLayout;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+
+public class RegisterWindow {
+
+	private JFrame frmLoginForOszimtcrypter;
+	private JTextField tfdUsername;
+	private JPasswordField tfdPassword;
+	private UserManagement um = new UserManagement();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					RegisterWindow window = new RegisterWindow();
+					window.frmLoginForOszimtcrypter.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public RegisterWindow() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmLoginForOszimtcrypter = new JFrame();
+		frmLoginForOszimtcrypter.setResizable(false);
+		frmLoginForOszimtcrypter.setType(Type.POPUP);
+		frmLoginForOszimtcrypter.setTitle("Register for OSZimt-Crypter");
+		frmLoginForOszimtcrypter.setBounds(100, 100, 450, 150);
+		frmLoginForOszimtcrypter.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmLoginForOszimtcrypter.getContentPane().setLayout(new BorderLayout(0, 0));
+		
+		JPanel pnlMain = new JPanel();
+		frmLoginForOszimtcrypter.getContentPane().add(pnlMain, BorderLayout.CENTER);
+		pnlMain.setLayout(new BorderLayout(0, 0));
+		
+		JPanel pnlbutton = new JPanel();
+		pnlMain.add(pnlbutton, BorderLayout.SOUTH);
+		
+		JButton btnRegister = new JButton("Register");
+		pnlbutton.add(btnRegister);
+		
+		JPanel pnlTextfields = new JPanel();
+		pnlMain.add(pnlTextfields, BorderLayout.CENTER);
+		pnlTextfields.setLayout(new GridLayout(2, 1));
+		
+		JPanel pnlUser = new JPanel();
+		pnlTextfields.add(pnlUser);
+		pnlUser.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblUsername = new JLabel("username:");
+		pnlUser.add(lblUsername, BorderLayout.WEST);
+		
+		tfdUsername = new JTextField();
+		pnlUser.add(tfdUsername, BorderLayout.CENTER);
+		tfdUsername.setColumns(10);
+		
+		JPanel pnlPassord = new JPanel();
+		pnlTextfields.add(pnlPassord);
+		pnlPassord.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblPassword = new JLabel("password:");
+		pnlPassord.add(lblPassword, BorderLayout.WEST);
+		
+		tfdPassword = new JPasswordField();
+		pnlPassord.add(tfdPassword, BorderLayout.CENTER);
+		
+		JPanel pnlLabel = new JPanel();
+		pnlMain.add(pnlLabel, BorderLayout.NORTH);
+		
+		JLabel lblWindowText = new JLabel("Register for OSZimt-Crypter");
+		pnlLabel.add(lblWindowText);
+		btnRegister.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String username = tfdUsername.getText();
+				String password = String.valueOf(tfdPassword.getPassword());
+				um.addUser(username, password);
+				new LoginWindow();
+				frmLoginForOszimtcrypter.dispose();
+			}
+		});
+	}
+
+}

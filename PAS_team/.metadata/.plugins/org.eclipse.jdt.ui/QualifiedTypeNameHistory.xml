@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.awt.GridBagConstraints"/>
+    <fullyQualifiedTypeName name="java.awt.event.WindowAdapter"/>
+    <fullyQualifiedTypeName name="java.awt.event.WindowEvent"/>
+    <fullyQualifiedTypeName name="javax.crypto.spec.PBEKeySpec"/>
+    <fullyQualifiedTypeName name="javax.crypto.spec.SecretKeySpec"/>
+    <fullyQualifiedTypeName name="java.awt.EventQueue"/>
+    <fullyQualifiedTypeName name="java.awt.Dimension"/>
+    <fullyQualifiedTypeName name="java.awt.Desktop"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="javax.swing.JMenuItem"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="CipherWindow"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+</qualifiedTypeNameHistroy>

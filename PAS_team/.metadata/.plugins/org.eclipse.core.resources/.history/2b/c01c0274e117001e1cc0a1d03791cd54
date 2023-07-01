@@ -1,0 +1,29 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+/**
+ * 
+ */
+
+/**
+ * @author mahd
+ *
+ */
+public class FileHandler {
+
+    public static byte[] readFile(File file) throws IOException {
+        try (FileInputStream fis = new FileInputStream(file)) {
+            byte[] data = new byte[(int) file.length()];
+            fis.read(data);
+            return data;
+        }
+    }
+    
+    public static void writeFile(File file, byte[] data) throws IOException {
+        try (FileOutputStream fos = new FileOutputStream(file)) {
+            fos.write(data);
+        }
+    }
+	
+}
