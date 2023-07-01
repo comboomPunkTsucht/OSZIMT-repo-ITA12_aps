@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+org.eclipse.team.ui.apply_patch_in_sychronize_view=true
+org.eclipse.team.ui.run_import_in_background_=true
+org.eclipse.team.ui.show_author_in_compare_editor=true
+org.eclipse.team.ui.validate_edit_with_no_context=true
+org.eclipse.team.ui.view_syncinfo_in_label=true
