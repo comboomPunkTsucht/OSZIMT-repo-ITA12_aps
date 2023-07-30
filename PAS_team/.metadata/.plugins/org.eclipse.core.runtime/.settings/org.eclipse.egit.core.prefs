@@ -1,5 +1,5 @@
-GitRepositoriesView.GitDirectories=/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/PAS_team/PAS_team/.git\:
-GitRepositoriesView.GitDirectories.relative=PAS_team/.git\:
+GitRepositoriesView.GitDirectories=/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/PAS_team/PAS_team/.git\:/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/.git\:
+GitRepositoriesView.GitDirectories.relative=PAS_team/.git\:/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/.git\:
 RepositorySearchDialogDeepSearch=true
 RepositorySearchDialogSearchPath=/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/PAS_team
 core_http_client=jdk

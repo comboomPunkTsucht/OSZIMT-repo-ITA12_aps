@@ -12,6 +12,15 @@
     <fullyQualifiedTypeName name="javax.swing.JMenuItem"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="UserManagement"/>
     <fullyQualifiedTypeName name="CipherWindow"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="SecureEnclave"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="RegisterWindow"/>
+    <fullyQualifiedTypeName name="java.awt.Window.Type"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="FileHandler"/>
+    <fullyQualifiedTypeName name="LoginWindow"/>
+    <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 </qualifiedTypeNameHistroy>
