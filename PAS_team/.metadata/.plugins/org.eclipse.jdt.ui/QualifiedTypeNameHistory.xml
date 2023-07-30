@@ -23,4 +23,5 @@
     <fullyQualifiedTypeName name="FileHandler"/>
     <fullyQualifiedTypeName name="LoginWindow"/>
     <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
