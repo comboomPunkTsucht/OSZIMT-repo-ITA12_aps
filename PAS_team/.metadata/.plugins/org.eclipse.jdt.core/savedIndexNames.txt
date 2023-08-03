@@ -5,7 +5,6 @@ INDEX VERSION 1.132+/Users/mahd/DEV/OSZIMT-repo-ITA12_aps/PAS_team/.metadata/.pl
 3840559402.index
 916024713.index
 1731774833.index
-3939774360.index
 1865797976.index
 1454955622.index
 3028753604.index
