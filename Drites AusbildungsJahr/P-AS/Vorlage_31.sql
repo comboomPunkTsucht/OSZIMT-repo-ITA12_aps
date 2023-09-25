@@ -90,15 +90,25 @@ SELECT DISTINCT `Kategorie`
 	FROM `t_geraetetypen`
 -- 3. F�r den Support brauchen wir eine Liste der Switches, mit 
 --    Inventar-Nummer, Hostname und IP-Adresse.
-      
+SELECT DISTINCT `F_Inventar_Nr`, `P_Hostname`, `Management_IP`
+	FROM `t_switches`
 -- 4. F�r die Webseite brauchen wir eine Liste unserer Standorte, sortiert
 --    nach Geb�udenummer
-      
+SELECT DISTINCT *
+	FROM `t_gebaeude`
+    ORDER BY `P_Gebaeude_Nr` DESC
 -- 5. Die IT h�tte gerne eine Liste, in welchen R�umen sich momentan �berhaupt
 --    Ger�te befinden, bitte sortiert nach Geb�ude und Raumnummer.
-      
+SELECT DISTINCT `F_Raum_Nr`, `F_Gebaeude_Nr`
+	FROM `t_geraete`
+    WHERE `F_Raum_Nr` IS NOT NULL
 -- 6. Au�erdem brauchen wir eine Liste aller Abteilungsleitungen, sortiert
 --    nach Alphabet.
-      
+SELECT DISTINCT `Abteilungsleitung`
+	FROM `t_ansprechpartner`
+    ORDER BY `Abteilungsleitung` ASC
 -- 7. Als letztes brauchen wir noch die Liste aller Switches, die PoE 
 --    unterst�tzen (PoE_Faehig = "ja")
+SELECT DISTINCT *
+	FROM `t_switches`
+    WHERE `PoE_Faehig` = "ja"
