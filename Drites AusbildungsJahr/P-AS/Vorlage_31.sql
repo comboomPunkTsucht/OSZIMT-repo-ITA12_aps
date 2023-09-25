@@ -104,9 +104,9 @@ SELECT DISTINCT `F_Raum_Nr`, `F_Gebaeude_Nr`
     WHERE `F_Raum_Nr` IS NOT NULL
 -- 6. Au�erdem brauchen wir eine Liste aller Abteilungsleitungen, sortiert
 --    nach Alphabet.
-SELECT DISTINCT `Abteilungsleitung`
-	FROM `t_ansprechpartner`
-    ORDER BY `Abteilungsleitung` ASC
+SELECT DISTINCT `P_Gebaeude_Nr`, `Bezeichnung`
+	FROM `t_gebaeude`
+    ORDER BY `P_Gebaeude_Nr` ASC
 -- 7. Als letztes brauchen wir noch die Liste aller Switches, die PoE 
 --    unterst�tzen (PoE_Faehig = "ja")
 SELECT DISTINCT *
