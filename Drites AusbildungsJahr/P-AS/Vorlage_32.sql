@@ -61,3 +61,10 @@ SELECT DISTINCT `P_Inventar_Nr`, `Kaufpreis_Netto`, `Seriennummer`
     FROM `t_geraete`
     WHERE `Kaufpreis_Netto` < 10000.0 AND `Kaufpreis_Netto` > 1000.0
     ORDER BY `Kaufpreis_Netto`
+
+
+
+ DZX8VGesQ8
+
+
+ https://www.moralmachine.net/hl/de/results/270551471
