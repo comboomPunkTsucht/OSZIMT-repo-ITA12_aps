@@ -57,6 +57,7 @@ SELECT DISTINCT *
 --    Preissegment zwischen 1000€ und 10.000€? Bitte Inventarnummer, Netto-
 --    Preis und Seriennummer ausgeben, aufsteigend sortiert nach Kaufpreis
 --    sortieren.
-SELECT DISTINCT *
+SELECT DISTINCT `P_Inventar_Nr`, `Kaufpreis_Netto`, `Seriennummer`
     FROM `t_geraete`
     WHERE `Kaufpreis_Netto` < 10000.0 AND `Kaufpreis_Netto` > 1000.0
+    ORDER BY `Kaufpreis_Netto`
