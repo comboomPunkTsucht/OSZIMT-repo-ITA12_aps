@@ -25,7 +25,7 @@ SELECT SUM(ts.Anzahl_Ports) AS TotalPoEPorts
 SELECT COUNT(*) AS TotalIPPhones
     FROM t_geraetetypen tgt
     JOIN t_geraete tg ON tgt.P_Geraetetyp_Nr = tg.F_Geraetetyp_Nr
-    WHERE tgt.P_Geraetetyp_Nr IN (92, 93)
+    WHERE tgt.P_Geraetetyp_Nr IN (82, 83)
       AND tg.Funktional = 1
 -- e) Für die Versicherung muss ich wissen, wie teuer jeweils das teuerste
 --    Gerät in den verschiedenen Gebäuden ist, und wie viel die Geräte jeweils
