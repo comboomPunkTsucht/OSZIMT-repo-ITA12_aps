@@ -32,11 +32,11 @@ SELECT COUNT(*) AS TotalIPPhones
 --    insgesamt sind, jeweils sortiert von niedrig bis hoch.
 SELECT tge.P_Gebaeude_Nr,
            MAX(tg.Kaufpreis_Netto) AS MaxDeviceCost,
-           SUM(tg.Kaufpreis_Netto) AS TotalBuildingCost
+           COUNT(tg.Kaufpreis_Netto) AS TotalDevices
     FROM t_gebaeude tge
     JOIN t_geraete tg ON tge.P_Gebaeude_Nr = tg.F_Gebaeude_Nr
     GROUP BY tge.P_Gebaeude_Nr
-    ORDER BY TotalBuildingCost
+    ORDER BY TotalDevices
 
 -- f) Und dann war noch die Frage, in welchen Räumen der Durchschnittspreis
 --    der Geräte über 500 € liegt, dort bräuchten wir dann eventuell ein
@@ -85,3 +85,9 @@ SELECT tap.P_Ansprechpartner_Nr, tap.Nachname, tap.Vorname, COUNT(tr.P_Raum_Nr) 
     GROUP BY tap.P_Ansprechpartner_Nr
     HAVING ManagedRoomsCount > 5
     ORDER BY ManagedRoomsCount DESC
+
+
+
+
+
+
