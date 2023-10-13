@@ -38,7 +38,7 @@ SELECT ts.P_Hostname, th.Hersteller
     FROM t_switches ts
     JOIN t_geraete tg ON ts.F_Inventar_Nr = tg.P_Inventar_Nr
     JOIN t_geraetetypen tgt ON tg.F_Geraetetyp_Nr = tgt.P_Geraetetyp_Nr
-    JOIN t_hersteller th ON tgt.F_Hersteller_Nr = th.P_Hersteller_Nr;
+    JOIN t_hersteller th ON tgt.F_Hersteller_Nr = th.P_Hersteller_Nr
 
 -- f) Könnten Sie mir den Gesamtbestand pro Hersteller (Anzahl der Geräte)
 --    auflisten – mit Herstellernamen? Es sollen auch die Hersteller
@@ -50,4 +50,4 @@ SELECT th.Hersteller, COUNT(tg.P_Inventar_Nr) AS AnzahlGeräte
     FROM t_hersteller th
     LEFT JOIN t_geraetetypen tgt ON th.P_Hersteller_Nr = tgt.F_Hersteller_Nr
     LEFT JOIN t_geraete tg ON tgt.P_Geraetetyp_Nr = tg.F_Geraetetyp_Nr
-    GROUP BY th.Hersteller;
+    GROUP BY th.Hersteller
