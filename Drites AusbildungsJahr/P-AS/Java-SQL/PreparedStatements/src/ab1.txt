@@ -1,0 +1,5 @@
+1. Bezeichnungen der set-Methoden für verschiedene Datentypen in PreparedStatement:
+Ganzzahlen: setInt(int parameterIndex, int x)
+Fließkommazahlen: setDouble(int parameterIndex, double x)
+Datumswerte: setDate(int parameterIndex, Date x) (Verwenden Sie möglicherweise java.sql.Date)
+Wahrheitswerte: setBoolean(int parameterIndex, boolean x)
