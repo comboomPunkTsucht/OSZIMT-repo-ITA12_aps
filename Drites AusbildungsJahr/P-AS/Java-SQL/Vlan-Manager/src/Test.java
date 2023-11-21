@@ -1,10 +1,9 @@
 
 import java.util.Scanner;
 
-public class main {
+public class Test {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         Datenbank db = new Datenbank("jdbc:mysql://localhost:3306/learnit", "mahd", "fabian66");
         EinAusgabe einAusgabe = new EinAusgabe(db);
 
