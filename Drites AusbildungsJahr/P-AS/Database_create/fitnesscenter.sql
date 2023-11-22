@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS T_kurse (
     ksdauer_einheit VARCHAR(255),
     kszielgruppe VARCHAR(255),
     F_trnr INT,
-    FOREIGN KEY (F_trnr) REFERENCES T_trainer(P_trnr)
+    FOREIGN KEY (F_trnr) REFERENCES T_trainer(P_trnr) ON DELETE SET NULL
 );
 
 -- Erstellen Sie die Tabelle 'trainer'
@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS T_teilnahme (
     F_tekunr INT,
     teanmeldung DATE,
     teabmeldung DATE,
-    FOREIGN KEY (F_teksnr) REFERENCES T_kurse(P_ksnr),
-    FOREIGN KEY (F_tekunr) REFERENCES T_kunden(P_kunr)
+    FOREIGN KEY (F_teksnr) REFERENCES T_kurse(P_ksnr) ON DELETE CASCADE,
+    FOREIGN KEY (F_tekunr) REFERENCES T_kunden(P_kunr) ON DELETE CASCADE
 );
 
 -- Fügen Sie Daten in die Tabelle 'kunden' ein
@@ -81,3 +81,4 @@ INSERT INTO T_teilnahme VALUES
 (4, 100, 6163, '2017-10-02', '0000-00-00'),
 (5, 107, 6166, '2017-10-02', '0000-00-00'),
 (6, 105, 4946, '2017-10-02', '0000-00-00');
+
