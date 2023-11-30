@@ -62,7 +62,7 @@ INSERT INTO T_kunden VALUES
 (1001, 'Herr', 'Pflaume', 'Renè', 10781, 'Berlin', '9588745', '1980-07-24', 'pglaume@pflaume.net', 'Liebt Ausdauerkurse'),
 (1202, 'Frau', 'Müller', 'Anja', 10435, 'Potsdam', '3411833', '1983-06-30', 'anja@provider.de', 'Wasserratte'),
 (1210, 'Frau', 'Dorfmann', 'Yvonne', 26133, 'Oldenburg', '02345342489', '1981-08-07', 'yvonne@provider.de', ''),
-(1213, 'Herr', 'Krokowski', 'Timo', 10559, 'Berlin', '3944781', '1980-03-23', 'timo.de', '');
+(1213, 'Herr', 'Krokowski', 'Timo', 10559, 'Berlin', '3944781', '1980-03-23', 'timo@provider.de', '');
 
 -- Fügen Sie Daten in die Tabelle 'kurse' ein
 INSERT INTO T_kurse VALUES
