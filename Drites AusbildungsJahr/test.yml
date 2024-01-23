@@ -10,10 +10,12 @@
       - name.nachname@example.com
       - betrib@example.com
       - name2.nachname2@example.com
+    enve: "ENV"
+    mailserver: "example.com"
   tasks:
   - name: read txt file
     ansible.builtin.slurp:
-      src: R:/MicroStrategy/_Austausch/Mail_Ansible_Script/{{ item }}_Speicher.txt
+      src: C:/path/to/folder/{{ item }}_Speicher.txt
     register: txtFiles
     loop: "{{servers}}"
   - name: get content from txtFiles
@@ -72,7 +74,7 @@
               </tbody>
             </table>
             {% endfor %}
-            <p>Bei Rueckfragen wenden Sie sich bitte an microstrategy-betrieb@kfw.de.<br><br>Mit freundlichen Gruessen<br>ITg3 Microstrateggy Betrieb</p>
+            <p>Bei Rueckfragen wenden Sie sich bitte an betrib@example.com.<br><br>Mit freundlichen Gruessen<br>ITg3 Microstrateggy Betrieb</p>
         </body>
         </html>
   - name: Send email with Infos
