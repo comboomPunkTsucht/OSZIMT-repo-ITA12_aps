@@ -1,0 +1,79 @@
+---
+- name: ITg3_MSTR_Deploy-Framework-Commit-Mail-new
+  hosts: windows
+  gather_facts: no
+  vars:
+    servers:
+      - host1
+      - host2
+    email_adresse:
+      - name.nachname@example.com
+      - betrib@example.com
+      - name2.nachname2@example.com
+  tasks:
+  - name: read txt file
+    ansible.builtin.slurp:
+      src: R:/MicroStrategy/_Austausch/Mail_Ansible_Script/{{ item }}_Speicher.txt
+    register: txtFiles
+    loop: "{{servers}}"
+  - name: get content from txtFiles
+    ansible.builtin.set_fact:
+      txtFilesContent: "{{ txtFilesContent | default('') + ( item['content'] | b64decode ) + '\r\n' }}"
+    loop: "{{txtFiles['results']}}"  
+  - name: split txtFilesContent into lines
+    set_fact:
+      linesList: "{{ txtFilesContent | split('\r\n') }}"
+  - name: remove \r
+    set_fact:
+      linesList2: "{{linesList2 | default([]) + [ item |  replace('\r','')] }}"
+    loop: "{{linesList}}"
+  - name: split txtFile into paths and ids
+    set_fact:
+      paths_and_ids: "{{paths_and_ids | default([]) + item | split(';') }}"
+    loop: "{{linesList2}}"
+    when: item !=""
+# Convert CommitsArray to html
+  - name: Convert CommitsArray to HTML
+    set_fact:
+      html_body: >
+        <html>
+          <head>
+            <style>
+              table {
+                border-collapse: collapse;
+                width: 50%;
+              }
+              th, td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+              }
+            </style>
+          </head>
+          <body>
+            Hallo zusammen, <br><br> mit der folgenden Uebersicht erhalten Sie woechentlich den aktuellen SW-Stand (Commit-ID) des MicroStrategy Deployment Frameworkes (GIT Projekt Diverse-MSTR_DEPLOY_SCRIPTS) fuer Ihr entsprechendes MicroStrategy Projekt. Der Zustand betrifft die folgende Umgebung:<br><br> {{enve}} <br><br>
+            {% for server_index in range(0, servers|length) %}
+            <table>
+              <thead>
+                <tr>
+                  <th>Projekt</th>
+                  <th>{{ servers[server_index] }}'s Commit ID</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for i in range(0, 11, 2) %}
+                <tr>
+                    {% set path_index = i + (server_index * 12) %}
+                  <td>{{ paths_and_ids[path_index] }}</td>
+                    {% set commit_index = path_index + 1 %}
+                    <td>{{ paths_and_ids[commit_index] if commit_index < paths_and_ids|length else '' }}</td>
+                  {% endfor %}
+                </tr>
+              </tbody>
+            </table>
+            {% endfor %}
+            <p>Bei Rueckfragen wenden Sie sich bitte an microstrategy-betrieb@kfw.de.<br><br>Mit freundlichen Gruessen<br>ITg3 Microstrateggy Betrieb</p>
+        </body>
+        </html>
+  - name: Send email with Infos
+    win_shell: Send-MailMessage -From 'betrib@example.com' -To {{ email_adresse | join(', ')}} -Subject "MicroStrategy Deployment Framework Versionsstaende {{ enve }}" -body "{{ html_body }}" -BodyAsHtml -SmtpServer "{{ mailserver }}"  
