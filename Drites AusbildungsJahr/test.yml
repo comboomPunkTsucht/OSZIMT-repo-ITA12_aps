@@ -1,3 +1,37 @@
+#####################################Script 1##########################################################################################################################################################################################################################################################################################
+---
+- name: ITg3_MSTR_Deploy-Framework-Commit-Mail-suae53_get-Infos-from-other-server
+  hosts: windows
+  gather_facts: no 
+  tasks:
+  - name: Run the powershell script
+    ansible.windows.win_powershell:
+      script: |
+        # Hostname bekommen
+        $hostname = $env:COMPUTERNAME
+        # Pfad für den Austauschspeicher
+        $AustauschFile = "C:\path\to\folder\$hostname"+"_Speicher.txt"
+        # Löscht die Speicherdatei, falls vorhanden
+        if (Test-Path $AustauschFile) {
+            Remove-Item $AustauschFile
+        }
+        # Pfad, wo nach TXT-Dateien gesucht werden soll 
+        $MicroPfad = "C:\path\to\folder\to\search\"
+        # Gewünschter Dateiname
+        $CommitDateiName = "lastCommit_Diverse-MSTR_DEPLOY_SCRIPTS.txt"
+        # Sucht nach der neuesten TXT-Datei mit dem bestimmten Dateinamen im angegebenen Pfad und allen untergeordneten Ordnern
+        $CommitDatein = Get-ChildItem -Path $MicroPfad -Filter $CommitDateiName -Recurse -ErrorAction SilentlyContinue  
+        # Erstellt Austauschspeicherdatei
+        New-Item -Path $AustauschFile -ItemType File
+        # Überprüft, ob eine TXT-Datei aus den Produkten gefunden wurde
+        if ($CommitDatein -ne $null) {
+            # Gibt den Inhalt der neuesten TXT-Datei zeilenweise aus
+            foreach ($CommitDatei in $CommitDatein) {
+            Get-Content $CommitDatei.FullName | ForEach-Object { Add-Content $AustauschFile ($CommitDatei.FullName+";"+$_) #-NoNewline            
+            }
+          }
+        }
+#####################################Script 2##########################################################################################################################################################################################################################################################################################
 ---
 - name: ITg3_MSTR_Deploy-Framework-Commit-Mail-new
   hosts: windows
