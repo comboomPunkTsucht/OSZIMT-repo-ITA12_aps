@@ -38,8 +38,8 @@
   gather_facts: no
   vars:
     servers:
-      - host1
-      - host2
+      - MICKIE-MOUSE
+      - DONALD-DUCK
     email_adresse:
       - name.nachname@example.com
       - betrib@example.com
@@ -112,4 +112,4 @@
         </body>
         </html>
   - name: Send email with Infos
-    win_shell: Send-MailMessage -From 'betrib@example.com' -To {{ email_adresse | join(', ')}} -Subject "MicroStrategy Deployment Framework Versionsstaende {{ enve }}" -body "{{ html_body }}" -BodyAsHtml -SmtpServer "{{ mailserver }}"  
+    win_shell: Send-MailMessage -From 'betrib@example.com' -To {{ email_adresse | join(', ')}} -Subject "MicroStrategy Deployment Framework Versionsstaende {{ enve }}" -body "{{ html_body }}" -BodyAsHtml -SmtpServer "{{ mailserver }}"
