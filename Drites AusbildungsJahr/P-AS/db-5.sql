@@ -51,14 +51,14 @@ CREATE    TABLE IF NOT EXISTS `hersteller_t` (
           ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci;
 
 CREATE    TABLE IF NOT EXISTS `reparatur_t` (
-          `p_reparatur_nr` INT NOT NULL AUTO_INCREMENT                                                                                                            ,
-          `datum` DATE NOT NULL                                                                                                                                   ,
-          `reparaturzeitinh` FLOAT                                                                                                                                ,
-          `abholdatum` DATE                                                                                                                                       ,
-          `f_rechnungs_nr` INT NOT NULL                                                                                                                           ,
-          `f_rahmen_nr` VARCHAR(8) NOT NULL                                                                                                                       ,
-          PRIMARY KEY (`p_reparatur_nr`)                                                                                                                          ,
-          CONSTRAINT `fk_reparatur_rechnungs_nr` FOREIGN KEY (`f_rechnungs_nr`) REFERENCES `rechnung_t` (`p_rechnungs_nr`) ON UPDATE NO ACTION ON DELETE NO ACTION,
+          `p_reparatur_nr` INT NOT NULL AUTO_INCREMENT                                                                                                          ,
+          `datum` DATE NOT NULL                                                                                                                                 ,
+          `reparaturzeitinh` FLOAT                                                                                                                              ,
+          `abholdatum` DATE                                                                                                                                     ,
+          `f_rechnungs_nr` INT NOT NULL                                                                                                                         ,
+          `f_rahmen_nr` VARCHAR(8) NOT NULL                                                                                                                     ,
+          PRIMARY KEY (`p_reparatur_nr`)                                                                                                                        ,
+          CONSTRAINT `fk_reparatur_rechnungs_nr` FOREIGN KEY (`f_rechnungs_nr`) REFERENCES `rechnung_t` (`p_rechnungs_nr`) ON UPDATE CASCADE ON DELETE NO ACTION,
           CONSTRAINT `fk_reparatur_rahmen_nr` FOREIGN KEY (`f_rahmen_nr`) REFERENCES `fahrad_t` (`p_rahmen_nr`) ON UPDATE CASCADE ON DELETE NO ACTION
           ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci;
 
@@ -70,13 +70,13 @@ CREATE    TABLE IF NOT EXISTS `material_t` (
           ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci;
 
 CREATE    TABLE IF NOT EXISTS `rechnung_t` (
-          `p_rechnungs_nr` INT NOT NULL AUTO_INCREMENT                                                                                                      ,
-          `f_material_nr` INT NOT NULL                                                                                                                      ,
-          `anzahl` INT NOT NULL                                                                                                                             ,
-          `f_kunde_nr` INT NOT NULL                                                                                                                         ,
-          PRIMARY KEY (`p_rechnungs_nr`)                                                                                                                    ,
-          CONSTRAINT `fk_rechnung_material_nr` FOREIGN KEY (`f_material_nr`) REFERENCES `material_t` (`material_nr`) ON UPDATE NO ACTION ON DELETE NO ACTION,
-          CONSTRAINT `fk_rechnung_kunde_nr` FOREIGN KEY (`f_kunde_nr`) REFERENCES `kunden_t` (`p_kunden_nr`) ON UPDATE NO ACTION ON DELETE NO ACTION
+          `p_rechnungs_nr` INT NOT NULL AUTO_INCREMENT                                                                                                    ,
+          `f_material_nr` INT NOT NULL                                                                                                                    ,
+          `anzahl` INT NOT NULL                                                                                                                           ,
+          `f_kunde_nr` INT NOT NULL                                                                                                                       ,
+          PRIMARY KEY (`p_rechnungs_nr`)                                                                                                                  ,
+          CONSTRAINT `fk_rechnung_material_nr` FOREIGN KEY (`f_material_nr`) REFERENCES `material_t` (`material_nr`) ON UPDATE CASCADE ON DELETE NO ACTION,
+          CONSTRAINT `fk_rechnung_kunde_nr` FOREIGN KEY (`f_kunde_nr`) REFERENCES `kunden_t` (`p_kunden_nr`) ON UPDATE CASCADE ON DELETE NO ACTION
           ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci;
 
 -- Generiere 100 Dummy-Datensätze für die Tabelle 'kunden_t'
