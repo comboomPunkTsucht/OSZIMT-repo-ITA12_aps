@@ -1,1 +1,2 @@
 *.dmg !text !filter !merge !diff
+*.gmg filter=lfs diff=lfs merge=lfs -text
